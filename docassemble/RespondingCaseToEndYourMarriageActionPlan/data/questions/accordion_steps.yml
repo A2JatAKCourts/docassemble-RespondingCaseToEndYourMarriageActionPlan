@@ -1,5 +1,6 @@
 comment: |
-    last updated: 2025-09-04
+    last updated: 2025-09-08
+    adapting custody to divorce
     2025-06-04 until we get the doc1assemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64
 ---
 generic object: ALDocumentBundle
@@ -30,7 +31,7 @@ question: |
   # <i class="fa-thin fa-list"></i>Your Action Plan is ready!
   % endif
 subquestion: |
-  #### Your Action Plan for responding in your child custody case in ${ len(step_list) } steps
+  #### Your Action Plan for responding in your case case to end your marriage in ${ len(step_list) } steps
  
   % if get_config("debug", False):
   <button id="akc_expand_all" class="btn other stuff">Expand all</button>
@@ -48,7 +49,7 @@ subquestion: |
   ${ al_user_bundle.send_button_html(show_editable_checkbox=False) }
   
   % if get_config("debug", False):
-  [get the docx file](${ docx_responding_child_custody_action_plan_attachment.docx.url_for() })
+  [get the docx file](${ docx_responding_ending_marriage_action_plan_attachment.docx.url_for() })
   % endif 
    
 buttons:
@@ -162,13 +163,13 @@ code: |
       add_unique_step((fill_set_aside_step, "fill_set_aside_idx"), step_list)
     
   
-  if type_of_response.all_true('ak custody case', exclusive = True):
+  if type_of_response.all_true('ak divorce case', exclusive = True):
     proper_service = True
     if (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
       add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
     add_unique_step((answer_step, "answer_idx"), step_list)
 
-  if type_of_response.all_true('ak custody case', 'improper service'):
+  if (user_need == 'answer custody' and type_of_response.all_true('ak custody case', 'improper service')) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', 'improper service')):
     proper_service
 
   if type_of_response.any_true():
@@ -184,11 +185,11 @@ code: |
     if not ((type_of_response.all_true('wrong state', 'default') and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response['default'] and stage_of_default == 'judgment entered') or type_of_response.all_false()):
       add_unique_step((learn_more_about_process_step, "learn_more_about_process_idx"), step_list)
   
-  if type_of_response['ak custody case'] and not(type_of_response['default'] and stage_of_default == 'judgment entered') and (not(type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order')):
+  if ((user_need == 'answer custody' and type_of_response['ak custody case'])or (user_need == 'answer divorce' and type_of_response['ak divorce case'])) and not(type_of_response['default'] and stage_of_default == 'judgment entered') and (not(type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order')):
     if domestic_violence:
       add_unique_step((answer_domestic_violence_step, "answer_domestic_violence_idx"), step_list)
     #### if (wrong state or case in 2 states) and not served properly - do not ask paternity
-    if type_of_response.all_true('ak custody case', exclusive = True) or (type_of_response['ak custody case'] and (type_of_response.any_true('wrong state', 'case in 2 states') and type_of_response.all_false('improper service'))) or (type_of_response['ak custody case'] and (type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled'))):
+    if (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or ((user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and type_of_response['ak divorce case']) and (type_of_response.any_true('wrong state', 'case in 2 states') and type_of_response.all_false('improper service'))) or ((user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and type_of_response['ak divorce case']) and (type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled'))):
       if paternity:
         add_unique_step((paternity_step, "paternity_idx"), step_list)
 
@@ -1119,7 +1120,7 @@ subject: |
   Options if ${other_party_in_case} wants to talk about a Parenting Plan and starting a custody case
   % endif
 
-  % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'):
+  % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and type_of_response['ak divorce case'])or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'):
   % if response_to_complaint == 'agree':
   Review your options when you agree with what ${other_party_in_case} is asking
   % elif response_to_complaint == 'some':
@@ -1342,7 +1343,7 @@ comment: |
   use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64
 template: expect_after_answer_step
 subject: |
-  % if type_of_response.all_true('ak custody case', exclusive = True) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
+  % if (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
   Step ${ expect_after_answer_idx }: What to expect after you file your Answer
   % elif type_of_response.all_false():
   Step ${ expect_after_answer_idx }: What to expect after you file your Complaint
@@ -1360,7 +1361,7 @@ content: |
   
   Jurisdiction can be very complicated. [Talking to a lawyer](http://courts.alaska.gov/shc/shclawyer.htm) can help you decide which is the best state for your case.
   
-  % elif type_of_response.all_true('ak custody case', exclusive = True) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
+  % elif (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
   <div class='step-subheading'>The court will set a hearing</div>
 
   They will send you a notice with the date and time of the hearing.
@@ -1530,7 +1531,7 @@ content: |
   
   If the judge finds the domestic violence presumption applies, the judge will usually permit supervised contact between the parent and the children while the parent is completing a batterer's intervention or substance abuse treatment program. After the parent finishes the program and any other requirements the judge ordered, the judge may lift the supervision restriction and allow a different parenting schedule.
   
-  % if ((user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response['ak divorce case'])) and (response_to_complaint == 'none' and not want_help_to_agree):
+  % if ((user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive= True))) and (response_to_complaint == 'none' and not want_help_to_agree):
   <div class="step-subheading">Tell the judge your concerns</div>
   % endif 
 
@@ -1605,7 +1606,7 @@ subject: |
   % if type_of_response.all_false():
   Options if ${ other_party_in_case } wants to talk about a parenting plan & starting a custody case (agreement options tf)
   % endif
-  % if user_need == 'answer custody' and type_of_response['ak custody case']:
+  % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and type_of_response['ak divorce case']):
   % if response_to_complaint in('agree', 'some'): 
   Review your options when you agree with 
   % elif response_to_complaint == 'some':
