@@ -11,7 +11,7 @@ Want to disable the tests? Want to learn more? See ALKiln's docs: https://suffol
 
 @respondingdivorcedraft
 Scenario: responding_divorce_draft.yml runs
-  Given I start the interview at "responding_divorce_draft.yml"
+  Given I start the interview at "responding_ending_marriage_action_plan.yml"
   #And the maximum seconds for each Step in this Scenario is 50
   #And I get to the question id "downloads" with this data:
   #  | var | value | trigger |
