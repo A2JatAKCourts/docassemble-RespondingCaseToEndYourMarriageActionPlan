@@ -1,5 +1,5 @@
 comment: |
-    last updated: 2025-09-08
+    last updated: 2025-09-19
     adapting custody to divorce
     2025-06-04 until we get the doc1assemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64
 ---
@@ -74,10 +74,9 @@ code: |
   images_list = []
   distribution_certificate_list = []
   reply_certificate_list = []
-  other_party_in_case  = 'the other parent'
-  case_type = 'custody case'  
-  type_of_response['ak divorce case'] = False  
-  type_of_response['stay married'] = False
+  other_party_in_case  = 'your spouse'
+  # case_type = 'custody case'  
+  type_of_response['ak custody case'] = False 
   distribution_certificate_list.append({'image': distrib_cert_custody_divorce_image, 'text': "Certificate of Distribution shows the date the court sent your order to you."})
   # expect_after_motion is in what to expect step for filing motion for interim order w complaint, or answer/response, cannot use variable in docx template, must insert condition in what to expect step.
   expect_after_motion = ''
@@ -91,45 +90,60 @@ code: |
   
   # if len(type_of_response.true_values()) > 1:
   #   add_unique_step((pick_a_step_step, "pick_a_step_idx"), step_list)
+
+  if type_of_response.any_true():
+    case_type
+    if not (type_of_response['default'] and stage_of_default == 'judgment entered'):
+      if not minor_children:
+        wife_is_pregnant
   
   if type_of_response.all_true('improper service', exclusive = True):
     proper_service = False
     add_unique_step((proper_service_step, "proper_service_idx"), step_list)
     add_unique_step((decide_after_improper_service_step, "decide_after_improper_service_idx"), step_list)
-    add_unique_step((answer_step, "answer_idx"), step_list)
+    add_unique_step((answer_divorce_step, "answer_divorce_idx"), step_list)
          
   if type_of_response['wrong state']:
-    jurisdiction
-    add_unique_step((answer_jurisdiction_step, "answer_jurisdiction_idx"), step_list)
+    # jurisdiction
+    add_unique_step((answer_divorce_jurisdiction_step, "answer_divorce_jurisdiction_idx"), step_list)
     if type_of_response.any_true('improper service', 'default'):
       proper_service
       if type_of_response['default']:
         military
       add_unique_step((proper_service_step, "proper_service_idx"), step_list)
-    if type_of_response['improper service'] and jurisdiction and not proper_service:
+    if type_of_response['improper service'] and not proper_service:
       add_unique_step((decide_after_improper_service_step, "decide_after_improper_service_idx"), step_list)
     if not type_of_response['default']:
-      add_unique_step((answer_step, "answer_idx"), step_list)  
-      if not jurisdiction:
-        add_unique_step((dismiss_step, "dismiss_idx"), step_list) 
+      case_type
+      if not minor_children:
+        wife_is_pregnant
+      add_unique_step((answer_divorce_step, "answer_divorce_idx"), step_list)  
+      # if not jurisdiction:
+      #### check step heading of dismiss_step
+      add_unique_step((dismiss_divorce_step, "dismiss_divorce_idx"), step_list) 
     if type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled'):
-      if jurisdiction:
-        add_unique_step((default_options_step, "default_options_idx"), step_list)
-        add_unique_step((answer_step, "answer_idx"), step_list)  
-      else:
-        add_unique_step((dismiss_step, "dismiss_idx"), step_list)
+      case_type
+      if not minor_children:
+        wife_is_pregnant
+      # if jurisdiction:
+      #### check step heading of default_step
+      add_unique_step((default_options_step, "default_options_idx"), step_list)
+      add_unique_step((answer_divorce_step, "answer_divorce_idx"), step_list)  
+      # else:
+      #### check step heading of dismiss_step
+      add_unique_step((dismiss_divorce_step, "dismiss_divorce_idx"), step_list)
     if type_of_response['default'] and stage_of_default == 'judgment entered':
-      if jurisdiction:
-        add_unique_step((default_options_step, "default_options_idx"), step_list)
+      # if jurisdiction:
+      #   add_unique_step((default_options_step, "default_options_idx"), step_list)
       add_unique_step((learn_set_aside_step, "learn_set_aside_idx"), step_list)
       add_unique_step((fill_set_aside_step, "fill_set_aside_idx"), step_list)
 
 
   if type_of_response['case in 2 states']:
-    if stage_of_other_case == 'still going':
-      jurisdiction 
+    # if stage_of_other_case == 'still going':
+    #   jurisdiction 
     if stage_of_other_case in('still going', 'ended with no order') and not(type_of_response['default'] and stage_of_default == 'judgment entered'):
-      add_unique_step((answer_jurisdiction_step, "answer_jurisdiction_idx"), step_list)
+      add_unique_step((answer_divorce_jurisdiction_step, "answer_divorce_jurisdiction_idx"), step_list)
     if type_of_response['improper service'] or type_of_response['default']:
       proper_service
       if type_of_response['default']:
@@ -145,7 +159,7 @@ code: |
       add_unique_step((learn_set_aside_step, "learn_set_aside_idx"), step_list)
       add_unique_step((fill_set_aside_step, "fill_set_aside_idx"), step_list)
     if stage_of_other_case in('still going', 'ended with no order') and not (type_of_response['default'] and stage_of_default == 'judgment entered'):
-      add_unique_step((answer_step, "answer_idx"), step_list)
+      add_unique_step((answer_divorce_step, "answer_divorce_idx"), step_list)
     if (stage_of_other_case in('still going', 'ended with order') and (not (type_of_response['default'] and stage_of_default == 'judgment entered')) or (type_of_response['default'] and not proper_service and stage_of_default in('application filed', 'hearing scheduled'))):
       add_unique_step((dismiss_step, "dismiss_idx"), step_list)  
   
@@ -155,7 +169,7 @@ code: |
     add_unique_step((proper_service_step, "proper_service_idx"), step_list)
     add_unique_step((default_options_step, "default_options_idx"), step_list)
     if stage_of_default in('application filed','hearing scheduled'):
-      add_unique_step((answer_step, "answer_idx"), step_list)
+      add_unique_step((answer_divorce_step, "answer_divorce_idx"), step_list)
       if not proper_service:
         add_unique_step((dismiss_step, "dismiss_idx"), step_list)
     if stage_of_default == 'judgment entered':
@@ -167,7 +181,7 @@ code: |
     proper_service = True
     if (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
       add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
-    add_unique_step((answer_step, "answer_idx"), step_list)
+    add_unique_step((answer_divorce_step, "answer_divorce_idx"), step_list)
 
   if (user_need == 'answer custody' and type_of_response.all_true('ak custody case', 'improper service')) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', 'improper service')):
     proper_service
@@ -405,6 +419,7 @@ content: |
   % endif
 ---
 comment: |
+  Sept 9, 2025 formatting
   July 10, 2025
 template: decide_after_improper_service_step
 subject: |
@@ -421,9 +436,10 @@ content: |
   
   <div class="step-subheading">Move forward</div>
   Even if you were not properly served, you can file an Answer if:
+  
   % if type_of_response['wrong state']:
     *	You want to tell the Alaska court it does not have jurisdiction. Or
-  % else:  
+  % else:
     * You agree with ${ other_party_in_case } that there should be a case to 
   % if user_need == 'answer custody':
   get a custody, Parenting Plan and child support order. Or
@@ -830,7 +846,7 @@ content: |
   % if user_need == 'answer divorce':
   % if minor_children or wife_is_pregnant in('husband', 'not husband'):
     % if type_of_response['ak divorce case'] and case_type == 'divorce':
-       **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832 ** [[Fill-in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-832.pdf)]
+       **ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832** [[Fill-in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-832.pdf)]
     % elif type_of_response['ak divorce case'] and case_type == 'legal separation':
       **Answer & Counterclaim to Legal Separation With Children, SHC-094** [Word](https://courts.alaska.gov/shc/family/docs/shc-094.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-094n.pdf)
     % endif

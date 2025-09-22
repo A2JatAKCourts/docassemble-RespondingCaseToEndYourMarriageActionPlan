@@ -1,0 +1,154 @@
+template: answer_divorce_jurisdiction_step
+subject: |
+  Step ${ answer_divorce_jurisdiction_idx }:
+  % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order':
+  You can move forward with your Alaska case
+  % else:
+  Learn if Alaska is the right state for your custody case
+  % endif
+content: |
+  % if type_of_response['case in 2 states'] and stage_of_case == 'ended with no order':
+  If the case in the other state is over, but did not 
+  % if user_need == 'answer divorce':
+  end your marriage
+  % else:
+  issue any orders
+  % endif
+  , you can move forward with the Alaska case.
+
+  % else:
+
+  % if user_need == 'answer divorce':
+
+  % if type_of_response['wrong state']:
+  When spouses and children live in different states or have recently moved, the Alaska court may not have the authority, called "jurisdiction" over all issues in your case.
+  The judge will look
+  % elif type_of_response['case in 2 states']:
+  When deciding which court should hear a divorce case, both courts will look at which court has the authority, called "jurisdiction" over the issues in your case.
+  The courts will look at:
+  % endif
+
+  * both spouses' "residency," and
+  % if type_of_response['wrong state']:
+  * if the Alaska court
+  % elif type_of_response['case in 2 states']:
+  * which court 
+  % endif
+  * has the authority, called "jurisdiction" to enter the divorce orders.
+
+  % endif # end divorce
+
+  You can argue that the Alaska court is the wrong court for your ${ case_type } if the court does not have the authority, called "jurisdiction," to issue a 
+  % if user_need == 'answer custody':
+  custody decree, parenting plan, and child support order
+  % elif user_need == 'answer divorce':
+  divorce decree and findings of fact and conclusions of law dividing your property and debt
+  % if (minor_children or wife_is_pregnant in ('husband','not husband')):
+  , parenting plan, and child support order
+  % endif
+  % endif
+  .
+
+  % if user_need == 'answer divorce':
+  <div class="step-subheading">The court's power to grant a divorce is based on residency.</div>
+
+  % if military:
+  There are 3 options for where a military member or spouse can file a divorce case:
+
+  * The state where the military member or spouse is stationed. If you or your spouse are serving in the military and are continuously stationed at a military base in Alaska for at least 30 days, you can file for a divorce.
+  * The state where one spouse is a resident. When filing for divorce or dissolution in Alaska, a person is generally an Alaska resident if they are in Alaska and plan to stay.
+  * The state where the military member claims legal residency (place where military member plans to live after discharge or retirement).
+
+  Although either spouse may file for divorce in any of these locations, the court may not have the authority, called jurisdiction, to take other actions.
+
+  % else:
+  The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce or dissolution, a person is generally an Alaska resident if they are in Alaska and plan to stay.
+
+  If you or your spouse meet this residency requirement, an Alaska court can grant you a divorce and end your marriage. But if one of you does not live in Alaska, the court may not have the authority, called jurisdiction, to take other actions.
+
+  % endif # end military
+
+  <div class="step-subheading">The Court's power to divide property and debt
+  % if minor_children or wife_is_pregnant in ('husband', 'not husband'):
+  and enter a parenting plan custody order
+  % endif
+  is based on the court's authority, called jurisdiction.</div>
+
+  If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt.
+
+  If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property.
+
+  % endif # user_need == 'answer divorce'
+
+  % if (user_need == 'answer custody' and jurisdiction) or (user_need == 'answer divorce' and (minor_children or wife_is_pregnant in ('husband','not husband'))):
+
+  Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children's "home state." The Alaska court has jurisdiction to make decisions, enter a parenting plan, or order child support.
+
+  % if user_need == 'answer custody':
+    If you want to learn about other reasons Alaska might be the wrong court for your case, [talking to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm) can help. 
+  % endif
+  % endif
+
+  % if (user_need == 'answer custody' and not jurisdiction) or (user_need == 'answer divorce' and (minor_children or wife_is_pregnant in ('husband','not husband'))):
+
+  % if user_need == 'answer custody' and not jurisdiction:
+  Generally,
+  % else:
+  But
+  % endif
+  if your children have not lived in Alaska for the last 6 months, Alaska is not the children's "home state," and the Alaska court does not have jurisdiction to make decisions, enter a parenting plan, or order child support.
+
+  Sometimes there is no home state. For example, if a baby is less than 6 months old and has moved between states, there may not be a "home state." The Alaska court may be able to decide issues about the child, even though the child hasn't lived here for 6 months. 
+  % if user_need == 'answer custody'and not jurisdiction:
+  If you think your child does not have a home state, [talking to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm) can help you decide the best state for your case.
+  % endif
+  % endif 
+
+  % if user_need == 'answer divorce':
+    <<div class = "example">
+      <p class = "heading">Note</div> 
+    Jurisdiction and residency can be complicated.  You may want to <a href = "https://courts.alaska.gov/shc/shclawyer.htm">talk to a lawyer</a> if you are not sure if Alaska is the right place for your case.</div> 
+  % endif
+  
+  % if user_need == 'answer divorce' or (user_need == 'answer custody' and ((type_of_response['wrong state'] and jurisdiction) or type_of_response['case in 2 states'])):
+  Or you can get help from the resources listed in Step ${ get_help_idx }: Get more information or help.
+  % endif #  jurisdiction over children
+
+
+  % if type_of_response['wrong state'] or (type_of_response.all_true('case in 2 states', 'default') and (type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled'))):
+
+  % if type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce'):
+  If you think your
+  % if (user_need == 'answer custody' and jurisdiction):
+  custody case
+  % elif user_need == 'answer divorce':
+  divorce case
+  % endif
+  should be in another state, you can tell the judge in the Affirmative Defense section of your **Answer** and attach a **Motion to Dismiss**.
+  % endif
+
+  % if type_of_response.all_false('default'):
+  % if type_of_response['wrong state'] and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce'):
+  See:
+
+  * Step ${ answer_divorce_idx }: Fill out the forms to respond and tell the court Alaska is the wrong state within 20 days, and
+  * Step ${ dismiss_divorce_idx }: File a motion to dismiss your Alaska case.
+
+  Whatever you decide, you should file an **Answer** to respond to the Complaint.
+
+  If you do not respond 
+  % if type_of_response.all_false('improper service'):
+  within 20 days
+  % endif
+  , ${ other_party_in_case } can ask for a default judgment, and the judge can decide without hearing from you.
+  % endif  # fill out forms, if not default
+  % endif  # if not default
+  % endif  # conditions when case should be in another state
+  % endif  # if else not case in 2 states ended with no order
+
+
+
+
+
+
+  

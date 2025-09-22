@@ -1,5 +1,5 @@
 Comment: |
-  2025-09-08 1st draft based on responding_child_custody_action_plan.yml
+  2025-19-08 1st draft based on responding_child_custody_action_plan.yml
 
 ---
 include:
@@ -8,7 +8,10 @@ include:
   - docassemble.AKA2JBranding:aka2j_templates.yml    
   - docassemble.AKA2JBranding:aka2j_motion_response_templates.yml    
   - docassemble.AKA2JBranding:aka2j_mod_cust_div_templates.yml
-  - accordion_steps_draft.yml
+  - accordion_steps.yml
+  - does_this_work.yml
+  - answer_divorce_jurisdiction_residency_step.yml
+  - dismiss_divorce_step.yml
 ---
 metadata:
   title: >-
@@ -141,14 +144,37 @@ fields:
     field: type_of_response['stay married']
     datatype: yesnowide
 validation code: |
+  # Mark type_of_response as gathered so DA won’t ask for more answers
   type_of_response.gathered = True
+
+  # Seed defaults: make sure every checkbox key exists with a True/False value
+  for k in (
+      'ak divorce case',
+      'improper service',
+      'wrong state',
+      'case in 2 states',
+      'default',
+      'nocase',
+      'stay married',
+  ):
+      type_of_response.setdefault(k, False)
+
+  # Enforce mutual exclusivity:
+  # If both somehow end up True, "case in 2 states" takes priority
+  if type_of_response.get('case in 2 states', False):
+      type_of_response['wrong state'] = False
+  elif type_of_response.get('wrong state', False):
+      type_of_response['case in 2 states'] = False
+
+
+  
 under: |
   #### <i class="fa-regular fa-lightbulb"></i> Learn more ####
   We provide information about the process in Alaska only. Look for information in other states on their [court](https://www.ncsc.org/information-and-resources/state-court-websites) and [legal aid programs'](https://lawhelp.org) websites.
 ---
 id: Minor children
 question: |
-  Do you have and ${ other_party_in_case } have any children who are under age 18?
+  Do you and ${ other_party_in_case } have any children who are under age 18?
 fields:
   - no label: minor_children
     datatype: yesnoradio
