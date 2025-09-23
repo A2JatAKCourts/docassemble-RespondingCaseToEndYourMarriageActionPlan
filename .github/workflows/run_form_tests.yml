@@ -6,19 +6,18 @@ on:
     inputs:
       tags:
         required: False
-        description: 'Optional. Use a "tag expression" specify which tagged tests to run. See https://cucumber.io/docs/cucumber/api/#tag-expressions for syntax.'
-  # `show_docker_output` is an experimental ALKiln feature
-  show_docker_output:
-    required: false
-    default: false
-    type: boolean
-    description: 'Experimental feature. Show the docker logs while building the GitHub server container. It will also save the docker log artifact. This might show sensitive config information.'
-  # To run your tests on a schedule, delete the first "#" symbol at the beginning of each line below.
-  ## Also see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
-  ## Also see https://crontab.guru/examples.html
-  #schedule:
-  #  - cron: '0 1 * * TUE'
-
+        description: 'Optional. Use a "tag expression" specify which tagged tests to run (https://cucumber.io/docs/cucumber/api/#tag-expressions)'
+      # `show_docker_output` is an experimental ALKiln feature
+      show_docker_output:
+        required: false
+        default: false
+        type: boolean
+        description: 'Experimental feature. Show the docker logs while building the GitHub server container. It will also save the docker log artifact. This might show sensitive config information.'
+      # To run your tests on a schedule, delete the first "#" symbol at the beginning of each line below.
+      ## Also see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+      ## Also see https://crontab.guru/examples.html
+      #schedule:
+      #  - cron: '0 1 * * TUE'
 jobs:
 
   alkiln-github-tests:
