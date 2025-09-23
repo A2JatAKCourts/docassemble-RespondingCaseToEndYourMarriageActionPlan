@@ -229,12 +229,12 @@ content: |
         % if response_to_complaint == 'none' and want_help_to_agree:
           Forms to use if you reach an agreement
         % endif
-        % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or wife_is_pregnant in('husband', 'not husband')):
+        % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or wife_is_pregnant in('husband', 'not husband'))):
           **Parenting Plan Agreement & Order, SHC-1128** [Word](https://courts.alaska.gov/shc/family/docs/shc-1128.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1128n.pdf)
           Do **not** sign the Order section.
         % endif
         **Joint Motion to Put Settlement on the Record, SHC-1063** [Word](https://courts.alaska.gov/shc/family/docs/shc-1063.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1063n.pdf)
-        % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or wife_is_pregnant in('husband', 'not husband')):
+        % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or wife_is_pregnant in('husband', 'not husband'))):
           **Custody Findings of Fact & Conclusions of Law, DR-460** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-460.pdf)
           **Custody Judgment, DR-465** [Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-465.pdf)
         % endif
