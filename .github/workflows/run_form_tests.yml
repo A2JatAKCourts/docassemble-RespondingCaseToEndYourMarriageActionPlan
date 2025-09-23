@@ -18,7 +18,6 @@ on:
       ## Also see https://crontab.guru/examples.html
       #schedule:
       #  - cron: '0 1 * * TUE'
-
 jobs:
 
   alkiln-github-tests:
