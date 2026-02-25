@@ -1,5 +1,5 @@
 Comment: |
-  2025-19-08 1st draft based on responding_child_custody_action_plan.yml
+ 2026-02-15
 
 ---
 include:
@@ -9,6 +9,8 @@ include:
   - docassemble.AKA2JBranding:aka2j_motion_response_templates.yml    
   - docassemble.AKA2JBranding:aka2j_mod_cust_div_templates.yml
   - accordion_steps.yml
+  - testing_domestic_violence.yml
+  - true_filing_questions.yml
   # - divorce_answer_step.yml
   # - answer_divorce_jurisdiction_residency_step.yml
   # - dismiss_divorce_step.yml
@@ -368,7 +370,10 @@ fields:
 ---
 id: Domestic violence
 comment: |
-  last updated 2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
+  last updated 2026-02-18
+  - delete type_of_response.all_true('ak custody case', exclusive = True) and in subquestion
+  - fixed content and format of subquestion.
+  2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
 question: |
   Do you want your Action Plan to include information about domestic violence resources and how domestic violence
   % if type_of_response.all_true('ak custody case', exclusive = True) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
@@ -377,15 +382,25 @@ question: |
   affects your case?
   % endif
 subquestion: |
-  If there is 
-  % if type_of_response.all_true('ak custody case', exclusive = True) and response_to_complaint == 'none' and not want_help_to_agree:
-  a history of 
+  If there is abuse or domestic violence in your marriage,
+  % if type_of_response.all_false() or (type_of_response['ak divorce case'] and ((case_type == 'divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and ((want_legal_separation == 'yes' and not minor_children and wife_is_pregnant == 'not pregnant' and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (want_legal_separation in ('no', 'unsure') and not minor_children and wife_is_pregnant == 'not pregnant' and want_help_to_agree))))):
+  it may affect whether you are comfortable trying to reach an agreement with your spouse about the issues in your case. 
   % endif
-  abuse or domestic violence between you and ${ other_party_in_case }, it may affect your case and 
-  % if type_of_response.all_true('ak custody case', exclusive = True) and not (response_to_complaint == 'none' and not want_help_to_agree):
-  what you can agree to in 
+  % if type_of_response['ak divorce case']:
+  % if (case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and ((response_to_complaint == 'none' and not want_help_to_agree) or (response_to_complaint in('agree','some'))) and (minor_children or wife_is_pregnant in ('husband', 'not husband'))) or (case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and (minor_children or wife_is_pregnant in ('husband','not husband'))):
+  it may affect your case${'.' if not minor_children and wife_is_pregnant == 'not pregnant' else ''}
   % endif
-  your parenting plan.
+  % if minor_children or wife_is_pregnant in ('husband', 'not husband'):
+  % if (case_type == 'divorce' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'agree','some') or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and want_help_to_agree):
+  and what you can agree to in your Parenting Plan.
+  % elif ((case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and not want_help_to_agree)):
+  and the Parenting Plan.
+  % endif # want_help_to_agree
+  % endif # minor_children
+  % if not minor_children and wife_is_pregnant == 'not pregnant' and ((case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and not want_help_to_agree) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree)):
+  there may be additional resources available to you.
+  % endif # not minor_children and not want_help_to_agree
+  % endif # type_of_response == 'ak divorce case'
 
 fields:
   - no label: domestic_violence
@@ -406,9 +421,9 @@ fields:
   - no label: response_to_complaint
     input type: radio
     choices:
-      - I agree with everything ${ other_party_in_case } asked for in the Complaint.: agree
-      - I agree with some of what ${ other_party_in_case } asked for in the Complaint.: some
-      - I do not agree with what ${ other_party_in_case } asked for in the Complaint.: none
+      - I agree with everything my spouse asked for in the Complaint.: agree
+      - I agree with some of what my spouse asked for in the Complaint.: some
+      - I do not agree with what my spouse asked for in the Complaint.: none
 ---
 id: Agree with legal separation
 question: |
@@ -425,13 +440,7 @@ id: Is wife pregnant
 question: |
   Is wife pregnant?
 subquestion: |
-   If a wife is pregnant when 
-   % if case_type == 'divorce':
-   a marriage ends
-   % else:
-   a couple legally separates
-   % endif
-   , the law considers the husband to be the father. If the husband is the father, the court will decide a parenting plan and child support. If the husband is not the father, the court can remove the husband’s rights and responsibilities for that child.
+   If a wife is pregnant when ${ 'a marriage ends' if case_type == 'divorce' else 'a couple legally separates' }, the law considers the husband to be the father. If the husband is the father, the court will decide a Parenting Plan and child support. If the husband is not the father, the court can remove the husband’s rights and responsibilities for that child.
 fields:
   - no label: wife_is_pregnant
     datatype: radio
@@ -458,20 +467,14 @@ fields:
   - no label: settlement
     datatype: yesnoradio
 ---
-id: Paternity
+id: Children born during marriage
 question: |
-  Do you want your Action Plan to include information about paternity?
+  Were any children born during the marriage not the husband's?
 subquestion: |
-  Sometimes paternity is an issue in a custody case.  
-  
-  Establishing paternity means legally determining the biological father of a child.  
-  
-  Once established, the father's name can be placed on the child's birth certificate and he has legal and financial responsibility for the child. 
-  
-  Disestablishing paternity is legally un-naming a man as the child's biological father.  
+  The law considers a husband to be the father of any children born during a marriage. If the husband is not the father, the court can remove the husband's rights and responsibilities for that child. This is called disestablishing paternity.
 fields:
-  - no label: paternity
-    datatype: yesnoradio
+  - no label: children_of_the_marriage
+    datatype: yesnomaybe
 ---
 id: Cases in 2 states - still going?
 question: |
