@@ -64,7 +64,7 @@ Scenario: Row #61
     And I tap the "#ZGVmYXVsdF9vcHRpb25zX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Option 1. Move forward with the case"
     And I should see the phrase "You agree with your spouse that there should be a case to end your marriage."
-    And I should see the phrase "Option 3. Or, tell the judge you were not served the correct way and ask to dismiss the case"
+    And I should see the phrase "Option 2. Tell the judge you were not served the correct way and ask to dismiss the case"
     And I should see the phrase "Option 3. Do nothing"
     And I should see the phrase "Step 3: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
