@@ -1,6 +1,6 @@
 @default
 Feature: User paths
-# 2026-02-24
+# 2026-02-27
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -120,7 +120,6 @@ Scenario: Row #63
     | user_need                   | answer divorce    |         | 
     | type_of_response['default'] | True              |         | 
     | case_type                   | legal separation  |         | 
-    | want_legal_separation       | yes               |         | 
     | stage_of_default            | judgment entered  |         | 
     | military                    | False             |         | 
     | proper_service              | True              |         | 

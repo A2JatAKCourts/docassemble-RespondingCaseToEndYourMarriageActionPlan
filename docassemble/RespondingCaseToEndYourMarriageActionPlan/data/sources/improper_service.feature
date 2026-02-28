@@ -1,6 +1,6 @@
 @service
 Feature: User paths
-# 2026-02-24
+# 2026-02-26
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -116,6 +116,7 @@ Scenario: Row #6
     And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "Check the box telling the court "I do NOT agree to a legal separation because I want the marriage to end in a divorce."
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "Step 4: If you decide to move forward, fill out the Certificate of Service"
     And I should see the phrase "Step 5: If you decide to move forward, file your documents with the court and serve your spouse"
