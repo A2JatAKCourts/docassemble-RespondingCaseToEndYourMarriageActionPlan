@@ -1,6 +1,6 @@
 @wrong_state
 Feature: user paths
-# 2026-02-27
+# 2026-03-02
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -32,7 +32,7 @@ Scenario: Row #7
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
     And I should see the phrase "Step 2: Learn about proper service"
-    And I should see the phrase "Step 3: Fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 3: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "If you think Alaska is not the "home state," you can ask the court to dismiss your case:"
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your divorce case."
@@ -228,7 +228,7 @@ Scenario: Row #30
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
-    And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 2: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
@@ -324,7 +324,7 @@ Scenario: Row #33 - Wrong state alone, legal separation + pregnant (husband) - L
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
-    And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days" 
+    And I should see the phrase "Step 2: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state" 
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, mark the box at the beginning of the section that says "I have no counterclaims.""
@@ -372,7 +372,7 @@ Scenario: Row #36 - Wrong state alone, divorce + minor children - Learn if Alask
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
-    And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 2: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "I make the counterclaims below"
@@ -424,7 +424,7 @@ Scenario: Row #70
     And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options if your spouse asked for a default judgment"
-    And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 4: If you decide to move forward, Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer  even though it is late."
     And I should see the phrase "Fill in the title  "accepting a late Answer"."
@@ -582,7 +582,7 @@ Scenario: Row #78
     And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options if your spouse asked for a default judgment"
-    And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 4: If you decide to move forward, Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer  even though it is late."
     And I should see the phrase "Fill in the title  "accepting a late Answer"."
@@ -768,7 +768,7 @@ Scenario: Row #86
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
-    And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 2: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "If you think Alaska is not the "home state," you can ask the court to dismiss your case:"
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your legal separation case."
@@ -860,7 +860,7 @@ Scenario: Row #252
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
-    And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 2: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "If you think Alaska is not the "home state," you can ask the court to dismiss your case:"
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your legal separation case."
@@ -912,7 +912,7 @@ Scenario: Row #254
     And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options if your spouse asked for a default judgment"
-    And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 4: If you decide to move forward, Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer  even though it is late."
     And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
@@ -1107,7 +1107,7 @@ Scenario: Row #258
     And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options if your spouse asked for a default judgment"
-    And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 4: If you decide to move forward, Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, mark the box at the beginning of the section that says "I have no counterclaims.""
@@ -1252,7 +1252,7 @@ Scenario: Row #273
     And I should see the phrase "Step 2: Learn about proper service"
 # The decide after improper service step should not be present when proper_service is True
 # The answer step still appears
-    And I should see the phrase "Step 3: Fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 3: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."

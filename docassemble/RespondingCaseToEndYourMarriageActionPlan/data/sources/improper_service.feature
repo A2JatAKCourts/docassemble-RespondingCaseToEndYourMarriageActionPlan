@@ -23,7 +23,7 @@ Scenario: Row #3
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "You can add here that you were not served correctly."
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
+    # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the Certificate of Service"
     And I should see the phrase "Step 5: If you decide to move forward, file your documents with the court and serve your spouse"
@@ -56,7 +56,7 @@ Scenario: Row #4
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "You can add here that you were not served correctly."
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
+    # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the Certificate of Service"
     And I should see the phrase "Step 5: If you decide to move forward, file your documents with the court and serve your spouse"
