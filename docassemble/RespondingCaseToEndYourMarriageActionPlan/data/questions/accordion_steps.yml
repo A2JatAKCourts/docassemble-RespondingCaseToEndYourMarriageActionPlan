@@ -307,7 +307,7 @@ code: |
       image_list.append(new_image)
 ---
 comment: |
-  2026-02-10
+  2026-03-02
   2025-09-19 from answer_divorce_jurisdiction_residency_step.yml
 template: answer_jurisdiction_step 
 subject: |
@@ -376,11 +376,7 @@ content: |
 
   % endif # end military
 
-  <div class="step-subheading">The Court's power to divide property and debt
-  % if minor_children or wife_is_pregnant in ('husband', 'not husband'):
-  and enter a Parenting Plan or custody order
-  % endif
-  is based on the court's authority, called jurisdiction</div>
+  <div class="step-subheading">The Court's power to divide property and debt ${ 'and enter a Parenting Plan or custody order ' if minor_children or wife_is_pregnant in ('husband', 'not husband') else '' }is based on the court's authority, called jurisdiction</div>
 
   If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt.
 
@@ -388,7 +384,7 @@ content: |
 
   % endif # user_need == 'answer divorce'
 
-  % if (user_need == 'answer custody' and jurisdiction) or (user_need == 'answer divorce' and (minor_children or wife_is_pregnant in ('husband','not husband'))):
+  % if (user_need == 'answer custody' and jurisdiction) or (user_need == 'answer divorce' and minor_children) or (user_need == 'answer divorce' and wife_is_pregnant in ('husband','not husband')):
 
   Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children's "home state." The Alaska court has jurisdiction to make decisions, enter a Parenting Plan, or order child support.
 
@@ -904,7 +900,7 @@ content: |
     **Answer & Counterclaim to Legal Separation With Children, SHC-094** [Word](https://courts.alaska.gov/shc/family/docs/shc-094.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-094n.pdf)
   % endif
   % if not minor_children and wife_is_pregnant in('husband', 'not husband'):
-    You must use this form because wife_is_pregnant.
+    You must use this form because wife is pregnant.
   % endif
   % elif not minor_children and wife_is_pregnant == 'not pregnant':
   % if case_type == 'divorce':
