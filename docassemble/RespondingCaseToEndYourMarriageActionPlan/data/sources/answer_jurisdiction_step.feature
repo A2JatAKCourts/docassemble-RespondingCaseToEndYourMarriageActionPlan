@@ -5,8 +5,8 @@ Feature: User paths
 Background: 
   Given the maximum seconds for each Step is 90
 
-@row32
-Scenario: Row #32 — Wrong state alone, divorce + minor children → Learn if Alaska is right state (shows both paragraphs)
+@AnswerJurisdictionStepRow32
+Scenario: Row #AnswerJurisdictionStep32 — Wrong state alone, divorce + minor children → Learn if Alaska is right state (shows both paragraphs)
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
     | var                             | value          | trigger | 
@@ -29,8 +29,8 @@ Scenario: Row #32 — Wrong state alone, divorce + minor children → Learn if A
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
 
-@row33
-Scenario: Row #33 — Wrong state alone, legal separation + pregnant (husband) → Learn if Alaska is right state (shows both paragraphs)
+@AnswerJurisdictionStepRow33
+Scenario: Row #AnswerJurisdictionStep33 — Wrong state alone, legal separation + pregnant (husband) → Learn if Alaska is right state (shows both paragraphs)
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
     | var                             | value            | trigger | 
@@ -55,8 +55,8 @@ Scenario: Row #33 — Wrong state alone, legal separation + pregnant (husband) �
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
 
-@row38
-Scenario: Row #38 — Wrong state alone, divorce + minor children → Learn if Alaska is right state (shows both paragraphs)
+@AnswerJurisdictionStepRow38
+Scenario: Row #AnswerJurisdictionStep38 — Wrong state alone, divorce + minor children → Learn if Alaska is right state (shows both paragraphs)
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
     | var                             | value          | trigger | 
@@ -78,8 +78,8 @@ Scenario: Row #38 — Wrong state alone, divorce + minor children → Learn if A
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
 
-@row14
-Scenario: Row #14 — Wrong state alone, legal separation + minor children → Learn if Alaska is right state (shows both paragraphs)
+@AnswerJurisdictionStepRow14
+Scenario: Row #AnswerJurisdictionStep14 — Wrong state alone, legal separation + minor children → Learn if Alaska is right state (shows both paragraphs)
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
     | var                                  | value            | trigger | 
@@ -104,8 +104,8 @@ Scenario: Row #14 — Wrong state alone, legal separation + minor children → L
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
 
-@row37
-Scenario: Row #37 — C2S alone, still going, divorce + minor children → Learn if Alaska is right state
+@AnswerJurisdictionStepRow37
+Scenario: Row #AnswerJurisdictionStep37 — C2S alone, still going, divorce + minor children → Learn if Alaska is right state
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
     | var                                  | value          | trigger | 
@@ -142,8 +142,8 @@ Scenario: Row #37 — C2S alone, still going, divorce + minor children → Learn
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
 
-@row39
-Scenario: Row #39 — C2S alone, still going, divorce + minor children → Learn if Alaska is right state
+@AnswerJurisdictionStepRow39
+Scenario: Row #AnswerJurisdictionStep39 — C2S alone, still going, divorce + minor children → Learn if Alaska is right state
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
     | var                                  | value            | trigger | 
