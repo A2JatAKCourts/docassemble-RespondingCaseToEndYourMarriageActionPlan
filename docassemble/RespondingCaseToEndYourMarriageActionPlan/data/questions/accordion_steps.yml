@@ -703,7 +703,7 @@ content: |
   % else:
     You may want to tell the judge you were not served properly and ask to set aside the default judgment. 
   % endif
-  % else:
+  % else: # not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') but still (type_of_response['default'] and stage_of_default == 'judgment entered')
   % if not proper_service:
     If you were not served the correct way, you can tell the judge and ask the judge to set aside the judgment.
   % endif
@@ -733,8 +733,9 @@ content: |
   custody
   % endif
   order in the other state, it can be very complicated. It may be best to tell the judge about the other order and try to set aside the Alaska order. 
-  % endif
+  % endif # type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'
   You should decide quickly. The longer you wait, the harder it is to set aside the court's order.
+  
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
       You may want to [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm). 
   % else:
@@ -981,7 +982,7 @@ content: |
   % if user_need == 'answer divorce':
   Check the box:
   % if case_type == 'divorce' :
-    * I make the counterclaims below. If I asked the court to dismiss the case in section B (Affirmative Defenses), and the court does not dismiss the case, I do not waive my claim about the court’s lack of jurisdiction.
+  I make the counterclaims below. If I asked the court to dismiss the case in section B (Affirmative Defenses), and the court does not dismiss the case, I do not waive my claim about the court’s lack of jurisdiction.
   % elif case_type == 'legal separation':
   I have stated above that the case should be dismissed because the Alaska court does
   not have jurisdiction over the marital estate${ ' and/or child custody' if minor_children else '' }${ ' and/or child custody' if not minor_children and wife_is_pregnant in('husband', 'not husband') else '' }.
@@ -1004,7 +1005,7 @@ content: |
 
   % if user_need == 'answer divorce':
   % if (case_type == 'legal separation' and want_legal_separation == 'yes') or case_type == 'divorce':
-  If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says "I have no counterclaims." 
+  If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims." 
   % elif case_type == 'legal separation' and want_legal_separation in ('unsure', 'no' ):
   ${ 'If you decide you want a divorce instead of a legal separation, check' if want_legal_separation == 'unsure' else 'Check'  } the box telling the court "I do NOT agree to a legal separation because I want the marriage to end in a divorce."
   % endif
