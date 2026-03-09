@@ -1,5 +1,5 @@
 comment: |
-    2026-03-02
+    2026-03-06
     2025-06-04 until we get the docassemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64f
 ---
 generic object: ALDocumentBundle
@@ -234,7 +234,7 @@ code: |
     add_unique_step((cert_of_service_step, "cert_of_service_idx"), step_list)
     add_unique_step((answer_file_and_serve_step, "answer_file_and_serve_idx"), step_list)
 
-    if not ((type_of_response['default'] and stage_of_default == 'judgment entered') or (type_of_response.all_true('wrong state', 'default') and user_need == 'answer custody' and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order')):
+    if not ((type_of_response['default'] and stage_of_default == 'judgment entered') or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response.all_true('wrong state', 'default') and user_need == 'answer custody' and not jurisdiction)):
       add_unique_step((read_drpo_step, "read_drpo_idx"), step_list)
   
     add_unique_step((expect_after_answer_step, "expect_after_answer_idx"), step_list)
@@ -734,8 +734,9 @@ content: |
   % endif
   order in the other state, it can be very complicated. It may be best to tell the judge about the other order and try to set aside the Alaska order. 
   % endif # type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'
+
   You should decide quickly. The longer you wait, the harder it is to set aside the court's order.
-  
+
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
       You may want to [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm). 
   % else:
@@ -1025,7 +1026,7 @@ content: |
   Because you did not file an **Answer** within 20 days of getting the Complaint, ask the judge to accept your **Answer** even though it is late.
   
     * Fill out a **TF-706 Motion (Request) and Affidavit** [Fill-in PDF](https://public.courts.alaska.gov/web/forms/docs/tf-706.pdf).
-      * Fill in the title, "accepting a late Answer." And
+      * Fill in the title, "accepting a late Answer". And
       * File it with your Answer.
   % endif
   % if stage_of_default == 'hearing scheduled':
@@ -1504,7 +1505,8 @@ content: |
   </ul>
 ---
 comment: |
-  last updated 2026-02-18 heading to reflect no agreement, no help wanted and no kids, not pregnant
+  last updated 2026-03-09
+  2026-02-18 heading to reflect no agreement, no help wanted and no kids, not pregnant
   2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
   compare this step with AKA2J domestic_violence_step  headings and content.
   [Comparing domestic violence in answering divorce google sheet](https://docs.google.com/spreadsheets/d/1AUnHuheq_VsuTufg75G9cM5TGnd3OAa7-jd-RzIwnA4/edit?usp=sharing), tab for asking cust div and 
@@ -1512,9 +1514,9 @@ template: answer_domestic_violence_step
 subject: |
   Step ${ answer_domestic_violence_idx }:
   % if type_of_response.any_true():
-  % if ((user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response('ak divorce case', exclusive = True) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)) or (user_need == 'answer divorce' and type_of_response['ak divorce case'] and case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
+  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)) or (user_need == 'answer divorce' and type_of_response['ak divorce case'] and case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
   Abuse or domestic violence resources and reaching an agreement
-  % elif user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive == True) and not minor_children and wife_is_pregnant == 'not pregnant' and (((case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')) and response_to_complaint == 'none') or (case_type == 'legal separation' and want_legal_separation in('no', 'unsure'))) and not want_help_to_agree:
+  % elif user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and not minor_children and wife_is_pregnant == 'not pregnant' and (((case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')) and response_to_complaint == 'none') or (case_type == 'legal separation' and want_legal_separation in('no', 'unsure'))) and not want_help_to_agree:
   Abuse or domestic violence resources
   % else:
   Abuse or domestic violence and parenting
@@ -1538,7 +1540,7 @@ content: |
     * You can get information about asking the court for a protective order by answering more questions. See the Court Guide Action Plan: [Protective Orders](https://docassemble.akcourts.gov/start/ProtectiveOrders).
     * See if you qualify for [legal assistance through your local domestic violence program](https://www.andvsa.org/for-survivors/) or [Alaska Legal Services Corporation](https://www.alsc-law.org/apply-for-services).
   
-  % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusvie = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True) and case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
+  % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True) and case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
   % if user_need == 'answer divorce':
   However, some people in a marriage with domestic violence are comfortable reaching an agreement about 
   % if minor_children:
@@ -1585,7 +1587,7 @@ content: |
   A "history of domestic violence" is defined by the law as either one incident of domestic violence that caused serious physical injury, or more than one incident. The parent's domestic violence behavior needs to fit under one of the domestic violence crimes in the law. There does not have to be a protective order or criminal case for the court to find a parent has a history of domestic violence. The court can find domestic violence based on one parent's testimony.
   % endif
   
-  % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusvie = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True) and case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
+  % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True) and case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
   % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
   <div class='step-subheading'>Considerations if you and ${ other_party_in_case } cannot agree</div>
   % endif
@@ -1602,7 +1604,7 @@ content: |
   
   If the judge finds the domestic violence presumption applies, the judge will usually permit supervised contact between the parent and the children while the parent is completing a batterer's intervention or substance abuse treatment program. After the parent finishes the program and any other requirements the judge ordered, the judge may lift the supervision restriction and allow a different parenting schedule.
   
-  % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusvie = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True) and case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
+  % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True) and case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
   <div class="step-subheading">Tell the judge your concerns</div>
   % endif 
   

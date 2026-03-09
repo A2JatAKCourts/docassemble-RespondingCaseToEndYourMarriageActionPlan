@@ -370,7 +370,7 @@ fields:
 ---
 id: Domestic violence
 comment: |
-  last updated 2026-02-18
+  last updated 2026-03-09
   - delete type_of_response.all_true('ak custody case', exclusive = True) and in subquestion
   - fixed content and format of subquestion.
   2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
@@ -382,37 +382,41 @@ question: |
   affects your case?
   % endif
 subquestion: |
-  If there is abuse or domestic violence in your marriage,
-  % if type_of_response.all_false() or (type_of_response['ak divorce case'] and ((case_type == 'divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and ((want_legal_separation == 'yes' and not minor_children and wife_is_pregnant == 'not pregnant' and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (want_legal_separation in ('no', 'unsure') and not minor_children and wife_is_pregnant == 'not pregnant' and want_help_to_agree))))):
+  If there is abuse or domestic violence in your marriage
+  % if type_of_response.all_false() or ((type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and ((case_type == 'divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and ((want_legal_separation == 'yes' and not minor_children and wife_is_pregnant == 'not pregnant' and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (want_legal_separation in ('no', 'unsure') and not minor_children and wife_is_pregnant == 'not pregnant' and want_help_to_agree))))):
   it may affect whether you are comfortable trying to reach an agreement with your spouse about the issues in your case. 
   % endif
-  % if type_of_response['ak divorce case']:
-  % if (case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and ((response_to_complaint == 'none' and not want_help_to_agree) or (response_to_complaint in('agree','some'))) and (minor_children or wife_is_pregnant in ('husband', 'not husband'))) or (case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and (minor_children or wife_is_pregnant in ('husband','not husband'))):
+  % if type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True):
+  % if ((case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and not want_help_to_agree)):
   it may affect your case${'.' if not minor_children and wife_is_pregnant == 'not pregnant' else ''}
-  % endif
-  % if minor_children or wife_is_pregnant in ('husband', 'not husband'):
-  % if (case_type == 'divorce' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'agree','some') or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and want_help_to_agree):
+  % if (minor_children or wife_is_pregnant in ('husband', 'not husband')):
+  % if ((case_type == 'divorce' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and want_help_to_agree)):
   and what you can agree to in your Parenting Plan.
   % elif ((case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and not want_help_to_agree)):
   and the Parenting Plan.
   % endif # want_help_to_agree
   % endif # minor_children
-  % if not minor_children and wife_is_pregnant == 'not pregnant' and ((case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and not want_help_to_agree) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree)):
+  % endif # affect your case
+  % else: 
   there may be additional resources available to you.
   % endif # not minor_children and not want_help_to_agree
-  % endif # type_of_response == 'ak divorce case'
-
 fields:
   - no label: domestic_violence
     datatype: yesnoradio
 under: |
+  % if minor_children or not minor_children and wife_is_pregnant in('husband', 'not husband'):
   #### <i class="fa-regular fa-lightbulb"></i> Learn more ####
-  % if type_of_response.all_true('ak custody case', exclusive = True) and response_to_complaint in('agree', 'some'):
-  Sometimes a person in a relationship with domestic violence feels pressured to agree to things they do not want. And the
-  % else:
-  The 
+  % if type_of_response.all_false() or (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (case_type == 'legal separation' and want_legal_separation == 'yes') or (case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
+  Sometimes a person in a relationship with domestic violence feels pressured to agree to things they do not want.
   % endif
-  law presumes that a parent with a "history of domestic violence" may not get custody and unsupervised visitation without completing some court-approved treatment. The parent’s domestic violence behavior needs to fit under one of the domestic violence crimes in the law. A "history of domestic violence" is defined as one incident that caused serious physical injury, or more than one incident. The court can find domestic violence based on one parent’s testimony even if there was no protective order or criminal case.
+  The law presumes that a parent with a "history of domestic violence" may not get custody and unsupervised visitation without completing some court-approved treatment.
+  
+  The parent’s domestic violence behavior needs to fit under one of the domestic violence crimes in the law.
+  
+  A "history of domestic violence" is defined as one incident that caused serious physical injury, or more than one incident. 
+  
+  The court can find domestic violence based on one parent’s testimony, even if there was no protective order or criminal case.
+  % endif
 ---
 id: Agree
 question: |
