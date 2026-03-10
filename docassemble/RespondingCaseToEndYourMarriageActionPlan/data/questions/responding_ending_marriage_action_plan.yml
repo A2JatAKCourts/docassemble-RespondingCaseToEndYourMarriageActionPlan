@@ -142,7 +142,7 @@ fields:
     field: type_of_response.nocase
     datatype: yesnowide
     uncheck others: True
-  - label: My spouse wants to end the marriage, but I want to stay married..
+  - label: My spouse wants to end the marriage, but I want to stay married.
     field: type_of_response['stay married']
     datatype: yesnowide
 validation code: |

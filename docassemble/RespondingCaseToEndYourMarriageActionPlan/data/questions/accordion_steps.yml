@@ -1,5 +1,5 @@
 comment: |
-    2026-03-06
+    2026-03-10 moving children of the marriage and wife is pregnant closer to beginning of interview if ak divorce case is combined with anything else
     2025-06-04 until we get the docassemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64f
 ---
 generic object: ALDocumentBundle
@@ -117,6 +117,12 @@ code: |
   
   if type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order' and type_of_response['default']) or type_of_response.all_true('default', exclusive = True) or type_of_response.all_true('default case', 'improper service') or type_of_response.all_false():    
     if not minor_children:
+      wife_is_pregnant
+  if (type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')) or (type_of_case['default'] and stage_of_default in ('application filed', 'hearing scheduled'))) and type_of_response['ak divorce case']:
+    if minor_children:
+      if not children_of_the_marriage:
+         wife_is_pregnant
+    else:
       wife_is_pregnant
      
   
@@ -248,8 +254,8 @@ code: |
   
   #### only ask paternity
   if (user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'wrong state') or (type_of_response.all_true('ak divorce case', 'default') and stage_of_default in('application filed', 'hearing scheduled') or (type_of_response.all_true('ak divorce case', 'case in 2 states') and stage_of_other_case in('still going', 'ended with no order'))))):
-    if (user_need == 'answer custody' and paternity) or (user_need == 'answer divorce' and type_of_response['ak divorce case'] and (minor_children and (children_of_the_marriage is True or children_of_the_marriage is None) or (not minor_children and wife_is_pregnant == 'not husband'))):
-        add_unique_step((paternity_step, "paternity_idx"), step_list)
+    if (user_need == 'answer custody' and paternity) or (user_need == 'answer divorce' and ((minor_children and children_of_the_marriage) or (minor_children and children_of_the_marriage is None) or (minor_children and not children_of_the_marriage and wife_is_pregnant == 'not husband') or (not minor_children and wife_is_pregnant == 'not husband'))):
+      add_unique_step((paternity_step, "paternity_idx"), step_list)
 
 
   if type_of_response.all_false():
