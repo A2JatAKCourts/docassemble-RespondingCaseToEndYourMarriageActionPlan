@@ -111,6 +111,21 @@ code: |
       if case_type == 'legal separation':
         want_legal_separation
 
+  
+  
+  # if type_of_response['stay married']:
+  #   case_type
+  #   add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
+  # if type_of_response.all_false('default'):
+  #   if type_of_response.any_true('ak divorce case', 'improper service', 'wrong state', 'case in 2 states') and not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
+  #     if case_type == 'legal separation':
+  #       want_legal_separation
+  # if type_of_response['default']:
+  #   case_type
+  #   if stage_of_default in ('application filed', 'hearing scheduled') and not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
+  #     if case_type == 'legal separation':
+  #       want_legal_separation
+
   # Military only when at least one template that uses it will be shown (answer_jurisdiction_step or proper_service_step).
   if type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')) or type_of_response['default']:
     military
@@ -228,8 +243,8 @@ code: |
     if case_type == 'legal separation' and want_legal_separation in('no', 'unsure'):
       if want_legal_separation == 'unsure':
         add_unique_step((divorce_legal_separation_diff_step, "divorce_legal_separation_diff_idx"), step_list) 
-      if want_help_to_agree:
-        add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
+    #  if want_help_to_agree:
+    #    add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
     # if case_type == 'legal separation' and want_legal_separation == 'unsure':  
     #   add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
     add_unique_step((answer_step, "answer_idx"), step_list)
@@ -970,12 +985,14 @@ content: |
   
   % if type_of_response.any_true('improper service', 'default') and not proper_service:
     * You can add here that you were not served correctly.
-  % endif
-  
+  % else:
+  % if type_of_response.all_false('wrong state', 'case in 2 states'):
   If you have no affirmative defenses:
   
     * Check the box at the beginning of the section that states, "I have no affirmative defenses." 
     * Go to the Counterclaims section.
+  % endif
+  % endif
   
   **C. Counterclaims**<br>
   Use this section, to tell the court your version of the facts and what you want to happen in your case.

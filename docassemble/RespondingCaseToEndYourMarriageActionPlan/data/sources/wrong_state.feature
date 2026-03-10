@@ -884,7 +884,7 @@ Scenario: Row #254
     And I should see the phrase "Option 1. Move forward with the case"
     And I should see the phrase "You agree with your spouse that there should be a case to end your marriage and get a custody, Parenting Plan, and child support order."
     And I should see the phrase "Option 2. Do nothing"
-    And I should see the phrase "Step 4: If you decide to move forward, Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
+    And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
     And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer  even though it is late."
     And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
@@ -933,7 +933,7 @@ Scenario: Row #255
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "Step 2: Learn about default judgment"
@@ -1031,7 +1031,7 @@ Scenario: Row #257
     And I should see the phrase "if the Alaska court has the authority, called "jurisdiction," to enter the divorce orders."
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military True
-    And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
+    And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
     And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -1040,7 +1040,7 @@ Scenario: Row #257
     And I should see the phrase "Step 3: Options if your spouse asked for a default judgment"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Fill out a TF-706 Motion (Request) and Affidavit"
-    And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer  even though it is late."
+    And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late."
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITHOUT CHILDREN, DR-837"
     And I should see the phrase "I make the counterclaims below"
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your divorce case."
@@ -1076,6 +1076,7 @@ Scenario: Row #258
     | military                            | True              |         | 
     | minor_children                      | True              |         | 
     | children_of_the_marriage            | False             |         | 
+    | wife_is_pregnant                    | husband           |         | 
     | proper_service                      | False             |         | 
     | domestic_violence                   | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
@@ -1210,8 +1211,8 @@ Scenario: Row #266
     And I should see the phrase "Step 8: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 11: Learn about paternity"
-    And I should see the phrase "Step 12: Abuse or domestic violence and parenting"
+    And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
+    And I should see the phrase "Step 12: Learn about paternity"
     And I should see the phrase "Step 13: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
