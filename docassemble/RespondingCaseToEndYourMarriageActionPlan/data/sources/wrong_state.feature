@@ -649,7 +649,7 @@ Scenario: Row #81
     And I should see the phrase "You agree with your spouse that there should be a case to end your marriage and get a custody, Parenting Plan, and child support order"
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late.  See Step 4: Fill out the forms to respond."
+    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late. See Step 4: Fill out the forms to respond."
     And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
@@ -770,7 +770,7 @@ Scenario: Row #251
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
-    And I should see the phrase "When spouses live in different states or have recently moved, the Alaska court may not have the authority, called “jurisdiction,” over all issues in your case."
+    And I should see the phrase "When spouses and children live in different states or have recently moved, the Alaska court may not have the authority, called “jurisdiction,” over all issues in your case."
     And I should see the phrase "if the Alaska court has the authority, called "jurisdiction," to enter the divorce orders."
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military False
@@ -809,7 +809,9 @@ Scenario: Row #252
     | user_need                           | answer divorce   |         | 
     | type_of_response['ak divorce case'] | True             |         | 
     | type_of_response['wrong state']     | True             |         | 
-    | case_type                           | legal separation |         | 
+    | case_type                           | legal separation |         |
+    | want_legal_separation               | yes              |         | 
+    | military                            | True             |         | 
     | minor_children                      | True             |         | 
     | children_of_the_marriage            | True             |         | 
     | domestic_violence                   | True             |         | 
@@ -1083,7 +1085,7 @@ Scenario: Row #258
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
-    And I should see the phrase "Step 2: Learn about default judgment"
+    And I should see the phrase "Step 2: Learn about proper service and default judgment"
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options if your spouse asked for a default judgment"
     And I should see the phrase "Option 1. Move forward with the case"
@@ -1182,7 +1184,7 @@ Scenario: Row #266
 # When service was improper, the user is asked if they want to move forward or wait
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
 # The answer step still appears because jurisdiction is true
-    And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
+    And I should see the phrase "Step 4: Fill out the forms to respond and ask to dismiss if you think Alaska is the wrong state"
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "I make the counterclaims below"
     And I should see the phrase "You can add here that you were not served correctly."

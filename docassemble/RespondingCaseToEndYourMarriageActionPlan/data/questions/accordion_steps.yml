@@ -247,8 +247,8 @@ code: |
       add_unique_step((answer_domestic_violence_step, "answer_domestic_violence_idx"), step_list)
   
   #### only ask paternity
-  if (user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or  (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True))):
-      if (user_need == 'answer custody' and paternity) or (user_need == 'answer divorce' and type_of_response['ak divorce case'] and (minor_children and (children_of_the_marriage is True or children_of_the_marriage is None) or wife_is_pregnant == 'not husband')):
+  if (user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'wrong state') or (type_of_response.all_true('ak divorce case', 'default') and stage_of_default in('application filed', 'hearing scheduled') or (type_of_response.all_true('ak divorce case', 'case in 2 states') and stage_of_other_case in('still going', 'ended with no order'))))):
+    if (user_need == 'answer custody' and paternity) or (user_need == 'answer divorce' and type_of_response['ak divorce case'] and (minor_children and (children_of_the_marriage is True or children_of_the_marriage is None) or (not minor_children and wife_is_pregnant == 'not husband'))):
         add_unique_step((paternity_step, "paternity_idx"), step_list)
 
 
@@ -781,7 +781,8 @@ content: |
     And because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late. See Step ${ answer_idx }: Fill out the forms to respond.
   % endif
   % if stage_of_default == 'hearing scheduled':
-    Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late.  See Step ${ answer_idx }: Fill out the forms to respond.
+  
+    Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late. See Step ${ answer_idx }: Fill out the forms to respond.
   % endif
   % if not proper_service:
     <div class="step-subheading">Option 2. Tell the judge you were not served the correct way and ask to dismiss the case</div>
