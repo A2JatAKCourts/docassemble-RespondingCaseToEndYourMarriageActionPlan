@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "docassemble.RespondingCaseToEndYourMarriageActionPlan"
-version = "26.03.10"
+version = "26.03.11"
 description = "A docassemble extension."
 readme = "README.md"
 authors = [
