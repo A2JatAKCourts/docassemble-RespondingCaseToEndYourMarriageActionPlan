@@ -1,5 +1,5 @@
 Comment: |
-  2025-19-08 1st draft based on responding_child_custody_action_plan.yml
+ 2026-03-10
 
 ---
 include:
@@ -9,17 +9,19 @@ include:
   - docassemble.AKA2JBranding:aka2j_motion_response_templates.yml    
   - docassemble.AKA2JBranding:aka2j_mod_cust_div_templates.yml
   - accordion_steps.yml
+  # - testing_domestic_violence.yml
+  # - true_filing_questions.yml
   # - divorce_answer_step.yml
   # - answer_divorce_jurisdiction_residency_step.yml
   # - dismiss_divorce_step.yml
 ---
 metadata:
   title: >-
-    Responding in your child custody case  - action plan
+    Responding in a case to end your marriage  - action plan
   short title: >-
-    Child custody responding
+   Ending your marriage - responding
   description: |-
-    Action plan for responding in your child custody case
+    Action plan for responding in a case to end your marriage
   tags:
     - "FA-04-00-00-00"
   authors:
@@ -46,7 +48,7 @@ code: |
 ---
 
 code: |
-  interview_short_title = "Responding in child custody"
+  interview_short_title = "Responding in divorce or legal separation"
 ---
 code: |
   al_form_type = "other" 
@@ -107,70 +109,39 @@ comment: |
 id: responding_in_your_ending_marriage_case_action_plan - intro validation code
 continue button field: responding_ending_marriage_action_plan_intro
 question: |
-  Responding in your case to end your marriage
+  Responding in your divorce or legal separation case
 subquestion: |
-  This Guided Assistant asks you questions and uses your answers to build a Personal Action Plan - a list of steps to help you respond in your child custody case. Your Action Plan will include information about the Alaska court process and other resources.
+  This Guided Assistant asks you questions and uses your answers to build an Action Plan - a list of steps to help you respond in your child custody case. Your Action Plan will include information about the Alaska court process and other resources.
   
   What information do you need?
 fields:
-  - label: My spouse started a court case to end our marriage and I want to respond.
-    field: type_of_response['ak divorce case']
-    datatype: yesnowide
-  - label: My spouse started a court case to end our marriage, but did not give me the filed documents in the correct way.
-    field: type_of_response['improper service']
-    datatype: yesnowide
-    help: |
-      ${ capitalize(other_party_in_case) } is supposed to give you a copy by process server, or send it by certified mail/restricted delivery/return receipt. 
-  - label: My spouse started a court case to end our marriage in Alaska, but I think the case should be in a different state.
-    field: type_of_response['wrong state']
-    datatype: yesnowide
-    disable if: type_of_response['case in 2 states']
-    help: |
-      Pick this choice if only one case was filed and you think it should **not** have been filed in Alaska. 
-  - label: 2 cases to end our marriage were filed – Alaska and another state.
-    field: type_of_response['case in 2 states']
-    datatype: yesnowide
-    disable if: type_of_response['wrong state']
-    help: |
-      Pick this choice if cases to end your marriage were filed in both Alaska and another state. This choice includes steps if you think Alaska is the wrong state.
-  - label: My spouse started a case to end our marriage, I did not respond, and I got papers about a "default judgment."
-    field: type_of_response['default']
-    datatype: yesnowide
-  - label: My spouse has not started a case to end our marriage yet, but wants to see if we can end the marriage and agree on all the issues.
-    field: type_of_response.nocase
-    datatype: yesnowide
-    uncheck others: True
-  - label: My spouse wants to end the marriage, but I want to stay married..
-    field: type_of_response['stay married']
-    datatype: yesnowide
-validation code: |
-  # Mark type_of_response as gathered so DA won’t ask for more answers
-  type_of_response.gathered = True
-
-  # Seed defaults: make sure every checkbox key exists with a True/False value
-  for k in (
-      'ak divorce case',
-      'improper service',
-      'wrong state',
-      'case in 2 states',
-      'default',
-      'nocase',
-      'stay married',
-  ):
-      type_of_response.setdefault(k, False)
-
-  # Enforce mutual exclusivity:
-  # If both somehow end up True, "case in 2 states" takes priority
-  if type_of_response.get('case in 2 states', False):
-      type_of_response['wrong state'] = False
-  elif type_of_response.get('wrong state', False):
-      type_of_response['case in 2 states'] = False
-
-
-  
+  - no label: type_of_response
+    datatype: checkboxes
+    choices:
+      - "My spouse started a court case to end our marriage and I want to respond.": ak divorce case
+      - "My spouse started a court case to end our marriage, but did not give me the filed documents in the correct way.": improper service
+        help: |
+          ${ capitalize(other_party_in_case) } is supposed to give you a copy by process server, or send it by certified mail/restricted delivery/return receipt. 
+      - "My spouse started a court case to end our marriage in Alaska, but I think the case should be in a different state.": wrong state
+        help: |
+          Pick this choice if only one case was filed and you think it should **not** have been filed in Alaska. 
+      - "2 cases to end our marriage were filed – Alaska and another state.": case in 2 states
+        help: |
+          Pick this choice if cases to end your marriage were filed in both Alaska and another state. This choice includes steps if you think Alaska is the wrong state.
+      - "My spouse started a case to end our marriage, I did not respond, and I got papers about a 'default judgment.'": default
+      - "My spouse wants to end the marriage, but I want to stay married.": stay married
+    none of the above: |
+      My spouse has not started a case to end our marriage yet, but wants to see if we can end the marriage and agree on all the issues.
+  - note: |
+      <span style = "background-color: pink" >Choose only one or the other: "The case was filed in the wrong state." or "The case was filed in 2 states." If the case was filed in 2 states and you think Alaska is the wrong state, your Action Plan will give you your next steps.</span>
+    js show if: |
+      val("type_of_response['wrong state']") && val("type_of_response['case in 2 states']")
 under: |
   #### <i class="fa-regular fa-lightbulb"></i> Learn more ####
   We provide information about the process in Alaska only. Look for information in other states on their [court](https://www.ncsc.org/information-and-resources/state-court-websites) and [legal aid programs'](https://lawhelp.org) websites.
+validation code: | 
+  if type_of_response['wrong state'] and type_of_response['case in 2 states']:
+    validation_error("Pick only 1 of these 2 choices, 'I think the other parent filed in the wrong state', <strong>or</strong> '2 custody cases were filed.' You cannot pick both.")
 ---
 id: Minor children
 question: |
@@ -368,7 +339,10 @@ fields:
 ---
 id: Domestic violence
 comment: |
-  last updated 2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
+  last updated 2026-03-09
+  - delete type_of_response.all_true('ak custody case', exclusive = True) and in subquestion
+  - fixed content and format of subquestion.
+  2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
 question: |
   Do you want your Action Plan to include information about domestic violence resources and how domestic violence
   % if type_of_response.all_true('ak custody case', exclusive = True) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
@@ -377,27 +351,41 @@ question: |
   affects your case?
   % endif
 subquestion: |
-  If there is 
-  % if type_of_response.all_true('ak custody case', exclusive = True) and response_to_complaint == 'none' and not want_help_to_agree:
-  a history of 
+  If there is abuse or domestic violence in your marriage
+  % if type_of_response.all_false() or ((type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and ((case_type == 'divorce' and not minor_children and wife_is_pregnant == 'not pregnant' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and ((want_legal_separation == 'yes' and not minor_children and wife_is_pregnant == 'not pregnant' and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (want_legal_separation in ('no', 'unsure') and not minor_children and wife_is_pregnant == 'not pregnant' and want_help_to_agree))))):
+  it may affect whether you are comfortable trying to reach an agreement with your spouse about the issues in your case. 
   % endif
-  abuse or domestic violence between you and ${ other_party_in_case }, it may affect your case and 
-  % if type_of_response.all_true('ak custody case', exclusive = True) and not (response_to_complaint == 'none' and not want_help_to_agree):
-  what you can agree to in 
-  % endif
-  your parenting plan.
-
+  % if type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True):
+  % if ((case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and not want_help_to_agree)):
+  it may affect your case${'.' if not minor_children and wife_is_pregnant == 'not pregnant' else ''}
+  % if (minor_children or wife_is_pregnant in ('husband', 'not husband')):
+  % if ((case_type == 'divorce' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and want_help_to_agree)):
+  and what you can agree to in your Parenting Plan.
+  % elif ((case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and not want_help_to_agree)):
+  and the Parenting Plan.
+  % endif # want_help_to_agree
+  % endif # minor_children
+  % endif # affect your case
+  % else: 
+  there may be additional resources available to you.
+  % endif # not minor_children and not want_help_to_agree
 fields:
   - no label: domestic_violence
     datatype: yesnoradio
 under: |
+  % if minor_children or not minor_children and wife_is_pregnant in('husband', 'not husband'):
   #### <i class="fa-regular fa-lightbulb"></i> Learn more ####
-  % if type_of_response.all_true('ak custody case', exclusive = True) and response_to_complaint in('agree', 'some'):
-  Sometimes a person in a relationship with domestic violence feels pressured to agree to things they do not want. And the
-  % else:
-  The 
+  % if type_of_response.all_false() or (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (case_type == 'legal separation' and want_legal_separation == 'yes') or (case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
+  Sometimes a person in a relationship with domestic violence feels pressured to agree to things they do not want.
   % endif
-  law presumes that a parent with a "history of domestic violence" may not get custody and unsupervised visitation without completing some court-approved treatment. The parent’s domestic violence behavior needs to fit under one of the domestic violence crimes in the law. A "history of domestic violence" is defined as one incident that caused serious physical injury, or more than one incident. The court can find domestic violence based on one parent’s testimony even if there was no protective order or criminal case.
+  The law presumes that a parent with a "history of domestic violence" may not get custody and unsupervised visitation without completing some court-approved treatment.
+  
+  The parent’s domestic violence behavior needs to fit under one of the domestic violence crimes in the law.
+  
+  A "history of domestic violence" is defined as one incident that caused serious physical injury, or more than one incident. 
+  
+  The court can find domestic violence based on one parent’s testimony, even if there was no protective order or criminal case.
+  % endif
 ---
 id: Agree
 question: |
@@ -406,9 +394,9 @@ fields:
   - no label: response_to_complaint
     input type: radio
     choices:
-      - I agree with everything ${ other_party_in_case } asked for in the Complaint.: agree
-      - I agree with some of what ${ other_party_in_case } asked for in the Complaint.: some
-      - I do not agree with what ${ other_party_in_case } asked for in the Complaint.: none
+      - I agree with everything my spouse asked for in the Complaint.: agree
+      - I agree with some of what my spouse asked for in the Complaint.: some
+      - I do not agree with what my spouse asked for in the Complaint.: none
 ---
 id: Agree with legal separation
 question: |
@@ -425,13 +413,7 @@ id: Is wife pregnant
 question: |
   Is wife pregnant?
 subquestion: |
-   If a wife is pregnant when 
-   % if case_type == 'divorce':
-   a marriage ends
-   % else:
-   a couple legally separates
-   % endif
-   , the law considers the husband to be the father. If the husband is the father, the court will decide a parenting plan and child support. If the husband is not the father, the court can remove the husband’s rights and responsibilities for that child.
+   If a wife is pregnant when ${ 'a marriage ends' if case_type == 'divorce' else 'a couple legally separates' }, the law considers the husband to be the father. If the husband is the father, the court will decide a Parenting Plan and child support. If the husband is not the father, the court can remove the husband’s rights and responsibilities for that child.
 fields:
   - no label: wife_is_pregnant
     datatype: radio
@@ -458,20 +440,14 @@ fields:
   - no label: settlement
     datatype: yesnoradio
 ---
-id: Paternity
+id: Children born during marriage
 question: |
-  Do you want your Action Plan to include information about paternity?
+  Were any children born during the marriage not the husband's?
 subquestion: |
-  Sometimes paternity is an issue in a custody case.  
-  
-  Establishing paternity means legally determining the biological father of a child.  
-  
-  Once established, the father's name can be placed on the child's birth certificate and he has legal and financial responsibility for the child. 
-  
-  Disestablishing paternity is legally un-naming a man as the child's biological father.  
+  The law considers a husband to be the father of any children born during a marriage. If the husband is not the father, the court can remove the husband's rights and responsibilities for that child. This is called disestablishing paternity.
 fields:
-  - no label: paternity
-    datatype: yesnoradio
+  - no label: children_of_the_marriage
+    datatype: yesnomaybe
 ---
 id: Cases in 2 states - still going?
 question: |
