@@ -942,7 +942,7 @@ Scenario: Row #255
     And I should see the phrase "You agree with your spouse that there should be a case to end your marriage and get a custody, Parenting Plan, and child support order."
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Fill in the title,"accepting a late Answer.""
     And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITHOUT CHILDREN, DR-837"
@@ -1240,7 +1240,6 @@ Scenario: Row #273
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
     And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
-    And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
