@@ -95,36 +95,30 @@ code: |
 
   #### Question order #####
   
-  if type_of_response['ak divorce case']:
-    case_type
+  # if type_of_response['ak divorce case']:
+  #   case_type
+  #  
+  # if type_of_response['stay married']:
+  #   add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
+  # if type_of_response['wrong state']:
+  #   case_type
+  # if type_of_response['case in 2 states']:
+  #   case_type
+  #   stage_of_other_case
+  # if type_of_response['default']:
+  #   case_type
+  #   if stage_of_default in ('application filed', 'hearing scheduled'):
+  #     if case_type == 'legal separation':
+  #       want_legal_separation
+
+  type_of_response
+  case_type
   
   if type_of_response['stay married']:
     add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
-  if type_of_response['wrong state']:
-    case_type
-  if type_of_response['case in 2 states']:
-    case_type
-    stage_of_other_case
-  if type_of_response['default']:
-    case_type
-    if stage_of_default in ('application filed', 'hearing scheduled'):
-      if case_type == 'legal separation':
-        want_legal_separation
-
-  
-  
-  # if type_of_response['stay married']:
-  #   case_type
-  #   add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
-  # if type_of_response.all_false('default'):
-  #   if type_of_response.any_true('ak divorce case', 'improper service', 'wrong state', 'case in 2 states') and not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
-  #     if case_type == 'legal separation':
-  #       want_legal_separation
-  # if type_of_response['default']:
-  #   case_type
-  #   if stage_of_default in ('application filed', 'hearing scheduled') and not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
-  #     if case_type == 'legal separation':
-  #       want_legal_separation
+  if type_of_response.any_true('ak divorce case', 'improper service', 'wrong state', 'case in 2 states', 'default') and (not (type_of_response['default'] and stage_of_other_default == 'judgment entered' ) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order')):
+    if case_type == 'legal separation':
+      want_legal_separation
 
   # Military only when at least one template that uses it will be shown (answer_jurisdiction_step or proper_service_step).
   if type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')) or type_of_response['default']:
