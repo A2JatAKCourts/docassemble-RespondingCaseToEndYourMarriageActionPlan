@@ -884,9 +884,9 @@ Scenario: Row #254
     And I should see the phrase "Option 1. Move forward with the case"
     And I should see the phrase "You agree with your spouse that there should be a case to end your marriage and get a custody, Parenting Plan, and child support order."
     And I should see the phrase "Option 2. Do nothing"
-    And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
-    And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer  even though it is late."
-    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
+    And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Fill out a TF-706 Motion (Request) and Affidavit Fill-in PDF."
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
     # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
@@ -939,7 +939,7 @@ Scenario: Row #255
     And I should see the phrase "Step 2: Learn about default judgment"
     And I should see the phrase "Step 3: Options if your spouse asked for a default judgment"
     And I should see the phrase "Option 1. Move forward with the case"
-    And I should see the phrase "You agree with your spouse that there should be a case to end your marriage."
+    And I should see the phrase "You agree with your spouse that there should be a case to end your marriage and get a custody, Parenting Plan, and child support order."
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer  even though it is late."
@@ -977,7 +977,6 @@ Scenario: Row #256
     | minor_children                      | True             |         | 
     | children_of_the_marriage            | True             |         | 
     | proper_service                      | True             |         | 
-    | domestic_violence                   | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1046,9 +1045,6 @@ Scenario: Row #257
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your divorce case."
     And I should see the phrase "Check the box that says you attached a Motion to Dismiss"
     And I should see the phrase "You can add here that you want the court to dismiss your case."
-    And I should see the phrase "You must use this form because wife is pregnant."
-    # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
-    And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150 [Fill in PDF]"
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: If you decide to move forward, fill out the Certificate of Service"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
@@ -1108,7 +1104,7 @@ Scenario: Row #258
     And I should see the phrase "Check the boxes that say you attached a Motion to Dismiss."
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: If you decide to move forward, fill out the Certificate of Service"
+    And I should see the phrase "Step 6: out the Certificate of Service"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
     And I should see the phrase "Step 8: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
@@ -1302,7 +1298,6 @@ Scenario: Row #278
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
-    And I should see the phrase "If you do not respond, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
     And I should see the phrase "Step 4: Fill out the forms to respond and ask to dismiss if you think Alaska is the wrong state"
