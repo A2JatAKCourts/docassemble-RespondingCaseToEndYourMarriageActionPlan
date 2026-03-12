@@ -116,7 +116,7 @@ code: |
   
   if type_of_response['stay married']:
     add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
-  if type_of_response.any_true('ak divorce case', 'improper service', 'wrong state', 'case in 2 states', 'default') and (not (type_of_response['default'] and stage_of_other_default == 'judgment entered') or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order')):
+  if type_of_response.any_true('ak divorce case', 'improper service', 'wrong state', 'case in 2 states', 'default') and (not((type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response['default'] and stage_of_default == 'judgment entered'))):
     if case_type == 'legal separation':
       want_legal_separation
 
@@ -472,10 +472,14 @@ content: |
     * You got the court documents by certified mail, restricted delivery, return receipt, and you had to sign your name to get the papers.
 
   Giving you the court documents is called "serving you." 
-
+  
+  % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
+  After you are served, you have **20** days to respond.
+  % else:
   After you are served, you have **20** days to file an Answer.
 
   If you do not file an Answer in 20 days, ${ other_party_in_case } may ask the court for a default judgment.
+  % endif
   % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response['default'] and proper_service) or (type_of_response.any_true('wrong state', 'case in 2 states') and not proper_service):
   <div class="step-subheading">Default judgment</div>
   % endif
@@ -1137,21 +1141,19 @@ subject: |
   % endif
 content: |
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-    % if (type_of_response['improper service'] and not proper_service and type_of_response.all_false('default')) or type_of_response['default']:
-  Your situation is complicated. You may want to [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm). If you do not respond to the Alaska case, the Alaska judge may enter a custody order. This could be very complicated if you already have a ${ case_type } order in another state. It is best to file a Motion to Dismiss your Alaska case to tell the Alaska judge 
+    % if type_of_response['default'] or (type_of_response.any_true('improper service') and not proper_service):
+  Your situation is complicated. You may want to [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm). If you do not respond to the Alaska case, the Alaska judge may enter a custody order. This could be very complicated if you already have a ${ case_type } order in another state. It is best to file a **Motion to Dismiss** your Alaska case to tell the Alaska judge 
       % if proper_service:
-        about the order from the other state
+        about the order from the other state.
       % else:
-        (1) about the order from the other state and (2) that you were not served properly
+        (1) about the order from the other state and (2) that you were not served properly.
       % endif
-      .
     % else:
   If the case in the other state is over and the other court issued final orders, you can file a **Motion to Dismiss** your Alaska case.
     % endif
   
   File a copy of the final orders from the other state, and any other documents that support your request.
   % endif
-
   
   % if (type_of_response['improper service'] and not proper_service) or type_of_response['default']:
   If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://courts.alaska.gov/trialcourts/index.htm#recs) on the court's website. 
