@@ -18,8 +18,8 @@ Scenario: Row #3
 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
-    And I should see the phrase "Military protections"
     And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
+    And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
     And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
@@ -85,8 +85,8 @@ Scenario: Row #5
 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
-    And I should see the phrase "Military protections"
     And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
+    And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
     And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
