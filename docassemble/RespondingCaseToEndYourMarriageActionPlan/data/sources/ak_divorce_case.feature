@@ -1,23 +1,23 @@
 @ak_divorce_case
 Feature: User paths
-# 2026-03-16
+# 2026-03-17
 
-Background:
+Background: 
   Given the maximum seconds for each Step is 90
 
 @row167
 Scenario: Row #167
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | True           |         |
-    | wife_is_pregnant                    | husband        |         |
-    | response_to_complaint               | agree          |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | True           |         | 
+    | children_of_the_marriage            | True           |         | 
+    | wife_is_pregnant                    | husband        |         | 
+    | response_to_complaint               | agree          |         | 
+    | domestic_violence                   | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -27,7 +27,6 @@ Scenario: Row #167
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you \"agree with all of the statements in the complaint.\""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -48,16 +47,16 @@ Scenario: Row #167
 Scenario: Row #169
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | yes          |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | True           |         |
-    | wife_is_pregnant                    | not pregnant   |         |
-    | response_to_complaint               | agree          |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | yes              |         | 
+    | minor_children                      | True             |         | 
+    | children_of_the_marriage            | True             |         | 
+    | wife_is_pregnant                    | not pregnant     |         | 
+    | response_to_complaint               | agree            |         | 
+    | domestic_violence                   | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -69,7 +68,6 @@ Scenario: Row #169
     And I should see the phrase "\"Check\"  the box telling the court \"I do NOT agree to a legal separation because I want the marriage to end in a divorce.\""
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you \"agree with all of the statements in the complaint.\""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -90,15 +88,15 @@ Scenario: Row #169
 Scenario: Row #172
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | False          |         |
-    | wife_is_pregnant                    | not pregnant   |         |
-    | response_to_complaint               | agree          |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | True           |         | 
+    | children_of_the_marriage            | False          |         | 
+    | wife_is_pregnant                    | not pregnant   |         | 
+    | response_to_complaint               | agree          |         | 
+    | domestic_violence                   | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -109,7 +107,6 @@ Scenario: Row #172
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you \"agree with all of the statements in the complaint.\""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -130,16 +127,16 @@ Scenario: Row #172
 Scenario: Row #173
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | no        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | None           |         |
-    | wife_is_pregnant                    | husband        |         |
-    | response_to_complaint               | agree          |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | no               |         | 
+    | minor_children                      | True             |         | 
+    | children_of_the_marriage            | None             |         | 
+    | wife_is_pregnant                    | husband          |         | 
+    | response_to_complaint               | agree            |         | 
+    | domestic_violence                   | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -150,7 +147,6 @@ Scenario: Row #173
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you \"agree with all of the statements in the complaint.\""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -171,15 +167,15 @@ Scenario: Row #173
 Scenario: Row #177
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | True           |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | agree          |         |
-    | domestic_violence                   | False          |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | True           |         | 
+    | children_of_the_marriage            | True           |         | 
+    | wife_is_pregnant                    | not husband    |         | 
+    | response_to_complaint               | agree          |         | 
+    | domestic_violence                   | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -204,16 +200,16 @@ Scenario: Row #177
 Scenario: Row #180
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | unsure         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | False          |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | agree          |         |
-    | domestic_violence                   | False          |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | unsure           |         | 
+    | minor_children                      | True             |         | 
+    | children_of_the_marriage            | False            |         | 
+    | wife_is_pregnant                    | not husband      |         | 
+    | response_to_complaint               | agree            |         | 
+    | domestic_violence                   | False            |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -224,7 +220,6 @@ Scenario: Row #180
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you \"agree with all of the statements in the complaint.\""
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court \"I do NOT agree to a legal separation because I want the marriage to end in a divorce.\""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -240,15 +235,15 @@ Scenario: Row #180
 Scenario: Row #183
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | None           |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | agree          |         |
-    | domestic_violence                   | False          |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | True           |         | 
+    | children_of_the_marriage            | None           |         | 
+    | wife_is_pregnant                    | not husband    |         | 
+    | response_to_complaint               | agree          |         | 
+    | domestic_violence                   | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -258,7 +253,6 @@ Scenario: Row #183
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you \"agree with all of the statements in the complaint.\""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -274,16 +268,16 @@ Scenario: Row #183
 Scenario: Row #186
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | yes         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | True           |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | some           |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | yes              |         | 
+    | minor_children                      | True             |         | 
+    | children_of_the_marriage            | True             |         | 
+    | wife_is_pregnant                    | not husband      |         | 
+    | response_to_complaint               | some             |         | 
+    | domestic_violence                   | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -295,7 +289,6 @@ Scenario: Row #186
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "\"Check\"  the box telling the court \"I do NOT agree to a legal separation because I want the marriage to end in a divorce.\""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -318,15 +311,15 @@ Scenario: Row #186
 Scenario: Row #193
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | None           |         |
-    | wife_is_pregnant                    | not pregnant   |         |
-    | response_to_complaint               | some           |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | True           |         | 
+    | children_of_the_marriage            | None           |         | 
+    | wife_is_pregnant                    | not pregnant   |         | 
+    | response_to_complaint               | some           |         | 
+    | domestic_violence                   | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -336,7 +329,6 @@ Scenario: Row #193
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -359,16 +351,16 @@ Scenario: Row #193
 Scenario: Row #195
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | no        |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | True           |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | some           |         |
-    | domestic_violence                   | False          |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | no               |         | 
+    | minor_children                      | True             |         | 
+    | children_of_the_marriage            | True             |         | 
+    | wife_is_pregnant                    | not husband      |         | 
+    | response_to_complaint               | some             |         | 
+    | domestic_violence                   | False            |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -396,15 +388,15 @@ Scenario: Row #195
 Scenario: Row #201
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | None           |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | some           |         |
-    | domestic_violence                   | False          |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | True           |         | 
+    | children_of_the_marriage            | None           |         | 
+    | wife_is_pregnant                    | not husband    |         | 
+    | response_to_complaint               | some           |         | 
+    | domestic_violence                   | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -414,7 +406,6 @@ Scenario: Row #201
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -430,17 +421,17 @@ Scenario: Row #201
 Scenario: Row #205
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | unsure  |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | True           |         |
-    | wife_is_pregnant                    | not pregnant   |         |
-    | response_to_complaint               | none           |         |
-    | want_help_to_agree                  | True           |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | unsure           |         | 
+    | minor_children                      | True             |         | 
+    | children_of_the_marriage            | True             |         | 
+    | wife_is_pregnant                    | not pregnant     |         | 
+    | response_to_complaint               | none             |         | 
+    | want_help_to_agree                  | True             |         | 
+    | domestic_violence                   | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -481,16 +472,16 @@ Scenario: Row #205
 Scenario: Row #210
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | None           |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | none           |         |
-    | want_help_to_agree                  | True           |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | True           |         | 
+    | children_of_the_marriage            | None           |         | 
+    | wife_is_pregnant                    | not husband    |         | 
+    | response_to_complaint               | none           |         | 
+    | want_help_to_agree                  | True           |         | 
+    | domestic_violence                   | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -525,17 +516,17 @@ Scenario: Row #210
 Scenario: Row #214
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | no        |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | True           |         |
-    | wife_is_pregnant                    | not pregnant   |         |
-    | response_to_complaint               | none           |         |
-    | want_help_to_agree                  | True           |         |
-    | domestic_violence                   | False          |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | no               |         | 
+    | minor_children                      | True             |         | 
+    | children_of_the_marriage            | True             |         | 
+    | wife_is_pregnant                    | not pregnant     |         | 
+    | response_to_complaint               | none             |         | 
+    | want_help_to_agree                  | True             |         | 
+    | domestic_violence                   | False            |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -563,16 +554,16 @@ Scenario: Row #214
 Scenario: Row #217
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | False          |         |
-    | wife_is_pregnant                    | not pregnant   |         |
-    | response_to_complaint               | none           |         |
-    | want_help_to_agree                  | True           |         |
-    | domestic_violence                   | False          |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | True           |         | 
+    | children_of_the_marriage            | False          |         | 
+    | wife_is_pregnant                    | not pregnant   |         | 
+    | response_to_complaint               | none           |         | 
+    | want_help_to_agree                  | True           |         | 
+    | domestic_violence                   | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -599,17 +590,17 @@ Scenario: Row #217
 Scenario: Row #222
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | yes     |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | True           |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | none           |         |
-    | want_help_to_agree                  | False          |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | yes              |         | 
+    | minor_children                      | True             |         | 
+    | children_of_the_marriage            | True             |         | 
+    | wife_is_pregnant                    | not husband      |         | 
+    | response_to_complaint               | none             |         | 
+    | want_help_to_agree                  | False            |         | 
+    | domestic_violence                   | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -640,16 +631,16 @@ Scenario: Row #222
 Scenario: Row #228
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | None           |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | none           |         |
-    | want_help_to_agree                  | False          |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | True           |         | 
+    | children_of_the_marriage            | None           |         | 
+    | wife_is_pregnant                    | not husband    |         | 
+    | response_to_complaint               | none           |         | 
+    | want_help_to_agree                  | False          |         | 
+    | domestic_violence                   | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -679,17 +670,17 @@ Scenario: Row #228
 Scenario: Row #234
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | no      |
-    | minor_children                      | True           |         |
-    | children_of_the_marriage            | False          |         |
-    | wife_is_pregnant                    | not husband    |         |
-    | response_to_complaint               | none           |         |
-    | want_help_to_agree                  | False          |         |
-    | domestic_violence                   | False          |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | no               |         | 
+    | minor_children                      | True             |         | 
+    | children_of_the_marriage            | False            |         | 
+    | wife_is_pregnant                    | not husband      |         | 
+    | response_to_complaint               | none             |         | 
+    | want_help_to_agree                  | False            |         | 
+    | domestic_violence                   | False            |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -713,15 +704,15 @@ Scenario: Row #234
 Scenario: Row #242
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | divorce        |         |
-    | minor_children                      | False          |         |
-    | wife_is_pregnant                    | husband        |         |
-    | response_to_complaint               | none           |         |
-    | want_help_to_agree                  | True           |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value          | trigger | 
+    | user_need                           | answer divorce |         | 
+    | type_of_response['ak divorce case'] | True           |         | 
+    | case_type                           | divorce        |         | 
+    | minor_children                      | False          |         | 
+    | wife_is_pregnant                    | husband        |         | 
+    | response_to_complaint               | none           |         | 
+    | want_help_to_agree                  | True           |         | 
+    | domestic_violence                   | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -745,7 +736,7 @@ Scenario: Row #242
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
     And I should see the phrase "Step 8: Abuse or domestic violence resources and reaching an agreement"
-    
+
     And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about dividing marital property and debt for a variety of reasons."
     And I should see the phrase "The law presumes that a parent with a \"history of domestic violence\" not get custody or unsupervised visitation unless he or she meets certain requirements."
     And I should see the phrase "If you think your spouse should not have any contact with your children you will need to convince the judge that it is in the children's best interest."
@@ -760,16 +751,16 @@ Scenario: Row #242
 Scenario: Row #244
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                                 | value          | trigger |
-    | user_need                           | answer divorce |         |
-    | type_of_response['ak divorce case'] | True           |         |
-    | case_type                           | legal separation        |         |
-    | want_legal_separation               | unsure  |
-    | minor_children                      | False          |         |
-    | wife_is_pregnant                    | not pregnant   |         |
-    | response_to_complaint               | none           |         |
-    | want_help_to_agree                  | False          |         |
-    | domestic_violence                   | True           |         |
+    | var                                 | value            | trigger | 
+    | user_need                           | answer divorce   |         | 
+    | type_of_response['ak divorce case'] | True             |         | 
+    | case_type                           | legal separation |         | 
+    | want_legal_separation               | unsure           |         | 
+    | minor_children                      | False            |         | 
+    | wife_is_pregnant                    | not pregnant     |         | 
+    | response_to_complaint               | none             |         | 
+    | want_help_to_agree                  | False            |         | 
+    | domestic_violence                   | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -787,3 +778,4 @@ Scenario: Row #244
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+
