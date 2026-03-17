@@ -18,7 +18,7 @@ Scenario: Row #167
     | wife_is_pregnant                    | husband        |         | 
     | response_to_complaint               | agree          |         | 
     | domestic_violence                   | True           |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Review your options when you agree with what your spouse is asking"
@@ -57,7 +57,7 @@ Scenario: Row #169
     | wife_is_pregnant                    | not pregnant     |         | 
     | response_to_complaint               | agree            |         | 
     | domestic_violence                   | True             |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Review your options when you agree with what your spouse is asking"
@@ -97,7 +97,7 @@ Scenario: Row #172
     | wife_is_pregnant                    | not pregnant   |         | 
     | response_to_complaint               | agree          |         | 
     | domestic_violence                   | True           |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Review your options when you agree with what your spouse is asking"
@@ -137,7 +137,7 @@ Scenario: Row #173
     | wife_is_pregnant                    | husband          |         | 
     | response_to_complaint               | agree            |         | 
     | domestic_violence                   | True             |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Review your options when you agree with what your spouse is asking"
@@ -176,7 +176,7 @@ Scenario: Row #177
     | wife_is_pregnant                    | not husband    |         | 
     | response_to_complaint               | agree          |         | 
     | domestic_violence                   | False          |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Review your options when you agree with what your spouse is asking"
@@ -210,7 +210,7 @@ Scenario: Row #180
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | agree            |         | 
     | domestic_violence                   | False            |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Review your options when you agree with what your spouse is asking"
@@ -278,7 +278,7 @@ Scenario: Row #186
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | some             |         | 
     | domestic_violence                   | True             |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Review your options when you agree with some of what your spouse is asking"
@@ -361,7 +361,7 @@ Scenario: Row #195
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | some             |         | 
     | domestic_violence                   | False            |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Review your options when you agree with some of what your spouse is asking"
@@ -432,7 +432,7 @@ Scenario: Row #205
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | True             |         | 
     | domestic_violence                   | True             |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Decide if you want to try to reach an agreement with your spouse"
@@ -527,7 +527,7 @@ Scenario: Row #214
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | True             |         | 
     | domestic_violence                   | False            |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Decide if you want to try to reach an agreement with your spouse"
@@ -564,7 +564,7 @@ Scenario: Row #217
     | response_to_complaint               | none           |         | 
     | want_help_to_agree                  | True           |         | 
     | domestic_violence                   | False          |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Decide if you want to try to reach an agreement with your spouse"
@@ -601,7 +601,7 @@ Scenario: Row #222
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | False            |         | 
     | domestic_violence                   | True             |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn more about the differences between legal separation and divorce"
@@ -681,7 +681,7 @@ Scenario: Row #234
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | False            |         | 
     | domestic_violence                   | False            |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 8 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Fill out the forms to answer the complaint and respond within 20 days"
@@ -736,7 +736,6 @@ Scenario: Row #242
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
     And I should see the phrase "Step 8: Abuse or domestic violence resources and reaching an agreement"
-
     And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about dividing marital property and debt for a variety of reasons."
     And I should see the phrase "The law presumes that a parent with a \"history of domestic violence\" not get custody or unsupervised visitation unless he or she meets certain requirements."
     And I should see the phrase "If you think your spouse should not have any contact with your children you will need to convince the judge that it is in the children's best interest."
@@ -761,7 +760,7 @@ Scenario: Row #244
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | False            |         | 
     | domestic_violence                   | True             |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Fill out the forms to answer the complaint and respond within 20 days"
