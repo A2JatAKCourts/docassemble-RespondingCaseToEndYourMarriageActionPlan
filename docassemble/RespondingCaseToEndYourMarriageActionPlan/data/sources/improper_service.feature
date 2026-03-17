@@ -1,6 +1,6 @@
 @service
 Feature: User paths
-# 2026-02-26
+# 2026-03-17
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -13,10 +13,12 @@ Scenario: Row #3
     | user_need                            | answer divorce |         | 
     | type_of_response['improper service'] | True           |         | 
     | case_type                            | divorce        |         | 
+    | military                             | True           |         |
     | minor_children                       | True           |         | 
 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
+    And I should see the phrase "Military protections"
     And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
     And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
@@ -44,6 +46,7 @@ Scenario: Row #4
     | type_of_response['improper service'] | True           |         | 
     | case_type                            | legal separation        |         | 
     | want_legal_separation                | yes                  |         | 
+    | military                             | False          |         |
     | minor_children                       | False          |         | 
     | wife_is_pregnant                     | husband        |         | 
 
@@ -76,11 +79,13 @@ Scenario: Row #5
     | user_need                            | answer divorce |         | 
     | type_of_response['improper service'] | True           |         | 
     | case_type                            | divorce        |         | 
+    | military                             | True           |         |
     | minor_children                       | False          |         | 
     | wife_is_pregnant                     | not pregnant   |         | 
 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
+    And I should see the phrase "Military protections"
     And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
     And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
@@ -106,6 +111,7 @@ Scenario: Row #6
     | type_of_response['improper service'] | True           |         | 
     | case_type                            | legal separation        |         | 
     | want_legal_separation                | no                  |         | 
+    | military                             | False          |         |
     | minor_children                       | False          |         | 
     | wife_is_pregnant                     | not pregnant   |         | 
 
