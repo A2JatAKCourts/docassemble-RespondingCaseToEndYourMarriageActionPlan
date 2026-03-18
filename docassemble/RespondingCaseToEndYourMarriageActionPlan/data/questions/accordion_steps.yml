@@ -1,5 +1,5 @@
 comment: |
-    2026-03-17
+    2026-03-18
     2026-03-10 moving children of the marriage and wife is pregnant closer to beginning of interview if ak divorce case is combined with anything else
     2025-06-04 until we get the docassemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64f
 ---
@@ -1502,7 +1502,7 @@ content: |
   </ul>
 ---
 comment: |
-  last updated 2026-03-09
+  last updated 2026-03-18
   2026-02-18 heading to reflect no agreement, no help wanted and no kids, not pregnant
   2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
   compare this step with AKA2J domestic_violence_step  headings and content.
@@ -1539,11 +1539,7 @@ content: |
   % endif 
   dividing marital property and debt for a variety of reasons.
   
-  Sometimes, domestic violence does not make either spouse uncomfortable or afraid to ask for what they want in the 
-  % if minor_children:
-  Parenting Plan or  
-  % endif 
-  property & debt division.
+  Sometimes, domestic violence does not make either spouse uncomfortable or afraid to ask for what they want in the ${ "Parenting Plan or " if minor_children else "" }property & debt division.
   
   If the domestic violence does make a spouse uncomfortable or afraid, provisions are used to make the process of trying to reach an agreement feel safer (having a support person present, having a mediator or a trusted third person help with discussions, not meeting in-person, meeting in different rooms, or talking about an agreement through email, text or telephone).
   
