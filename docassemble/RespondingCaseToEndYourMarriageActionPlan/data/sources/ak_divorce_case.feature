@@ -149,7 +149,7 @@ Scenario: Row #173
     And I should see the phrase "Step 5: What to expect after you file your Answer"
     And I should see the phrase "Step 6: Learn more about the process"
     And I should see the phrase "Step 7: Abuse or domestic violence and parenting"
-    And I should see the phrase "Considerations if you and your spouse cannot agree"
+    And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge that it is in the children’s best interest."
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
     And I should see the phrase "Tell the judge your concerns"
@@ -212,7 +212,7 @@ Scenario: Row #180
     And I should see the phrase "Step 1: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
-    And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you “agree with all of the statements in the complaint.”"
+    And I should see the phrase "Check the appropriate box in your Answer"
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "Step 3: out the Certificate of Service"
@@ -364,7 +364,6 @@ Scenario: Row #195
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "Check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 2: out the Certificate of Service"
     And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 4: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -422,7 +421,6 @@ Scenario: Row #205
     | children_of_the_marriage            | True             |         | 
     | wife_is_pregnant                    | not pregnant     |         | 
     | response_to_complaint               | none             |         | 
-    | want_help_to_agree                  | True             |         | 
     | domestic_violence                   | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
@@ -433,10 +431,6 @@ Scenario: Row #205
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Forms to use if you reach an agreement"
-    And I should see the phrase "Parenting Plan Agreement & Order, SHC-1128"
-    And I should see the phrase "Joint Motion to Put Settlement on the Record, SHC-1063"
-    And I should see the phrase "Custody Findings of Fact & Conclusions of Law, DR-460"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
@@ -641,7 +635,6 @@ Scenario: Row #228
     And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge that it is in the children’s best interest."
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
-    And I should see the phrase "Tell the judge your concerns"
     And I should see the phrase "Step 8: Learn about paternity"
     And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot

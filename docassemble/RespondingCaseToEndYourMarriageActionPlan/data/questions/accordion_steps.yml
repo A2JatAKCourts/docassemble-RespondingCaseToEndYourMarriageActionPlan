@@ -847,11 +847,11 @@ subject: |
   Step ${ answer_idx }:
   % if type_of_response['wrong state'] and type_of_response.all_false('default') and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce'): 
   Fill out the forms to respond
-    % if not(type_of_response.any_true('improper service', 'default') and not proper_service):
-      in 20 days
-    % endif
+  % if not(type_of_response.any_true('improper service', 'default') and not proper_service):
+    in 20 days
+  % endif
    and ask to dismiss if you think Alaska is the wrong state
-  % else:  
+  % else:
   % if type_of_response.all_true('improper service', exclusive = True) \
     or (type_of_response['improper service'] and not proper_service and \
     ((type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'))) \
@@ -1081,11 +1081,11 @@ content: |
   % endif
 
   % if (user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True))):
-  % if (case_type in('custody','divorce') or (case_type == 'legal separation' and want_legal_separation == 'yes')) and response_to_complaint in('agree', 'some'):
-  <div class="step-subheading">Forms to use if you and the other parent write out your agreement</div>
-  If you want to work with the other parent to write out the agreement and both sign it, use:
-  % endif
-  % if (case_type in('custody', 'divorce') or (case_type == 'legal separation' and want_legal_separation == 'yes')) and response_to_complaint == 'none' and want_help_to_agree:
+  % if (case_type in('custody','divorce') or (case_type == 'legal separation' and want_legal_separation == 'yes')):
+  % if response_to_complaint in('agree', 'some'):
+  <div class="step-subheading">Forms to use if you and ${ other_party_in_case } write out your agreement</div>
+  If you want to work with ${ other_party_in_case } to write out the agreement and both sign it, use:
+  % elif response_to_complaint == 'none' and want_help_to_agree:
   Forms to use if you reach an agreement
   % endif
   % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
@@ -1093,13 +1093,14 @@ content: |
   **Parenting Plan Agreement & Order, SHC-1128** [Word](https://courts.alaska.gov/shc/family/docs/shc-1128.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1128n.pdf)<br>
   Do **not** sign the Order section.
   % endif
-  
+
   **Joint Motion to Put Settlement on the Record, SHC-1063** [Word](https://courts.alaska.gov/shc/family/docs/shc-1063.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1063n.pdf)
   % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
   
   **Custody Findings of Fact & Conclusions of Law, DR-460** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-460.pdf)]
   
   **Custody Judgment, DR-465** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-465.pdf)]
+  % endif
   % endif
   % endif
 ---
