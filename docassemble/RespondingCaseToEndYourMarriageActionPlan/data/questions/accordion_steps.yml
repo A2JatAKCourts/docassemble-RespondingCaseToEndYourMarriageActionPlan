@@ -1,5 +1,5 @@
 comment: |
-    2026-03-18
+    2026-03-19
     2026-03-10 moving children of the marriage and wife is pregnant closer to beginning of interview if ak divorce case is combined with anything else
     2025-06-04 until we get the docassemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64f
 ---
@@ -923,14 +923,14 @@ content: |
   % if (user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True))):
   % if (case_type == 'custody' or case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')) and response_to_complaint == 'agree':
     * If you agree with what ${ other_party_in_case } asked for in their complaint, check the box in this section that says you "agree with all of the statements in the complaint."
-  % elif (case_type == 'custody' or case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes') and response_to_complaint == 'some'):
+  % elif (case_type == 'custody' or case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')) and response_to_complaint == 'some':
     * If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with.
-    % else:
+  % else:
     * Check the appropriate box in your Answer.
       * If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with.
       * If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about.
-    % endif
-    % endif
+  % endif
+  % endif
 
   
   **B. Affirmative Defenses**<br>
@@ -1185,6 +1185,7 @@ content: |
   % endif
 ---
 comment: |
+  2026-03-19 deleted case_type from condition for step heading
   2026-02-19 add in surrounding conditions for response to complaint if case_type == 'legal separation'
   2026-02-12
   Abbey emailed in response to question - Yes court also grants legal separation if only one spouse wants it.
@@ -1201,7 +1202,7 @@ subject: |
   Options if ${other_party_in_case} wants to talk about a Parenting Plan and starting a custody case
   % endif
 
-  % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes'))):
+  % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True))):
   % if response_to_complaint == 'agree':
   Review your options when you agree with what ${other_party_in_case} is asking
   % elif response_to_complaint == 'some':
