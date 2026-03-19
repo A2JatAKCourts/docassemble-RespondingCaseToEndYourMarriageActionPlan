@@ -152,7 +152,6 @@ Scenario: Row #173
     And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge that it is in the children’s best interest."
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
-    And I should see the phrase "Tell the judge your concerns"
     And I should see the phrase "Step 8: Learn about paternity"
     And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot
@@ -436,7 +435,7 @@ Scenario: Row #205
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
-    And I should see the phrase "Step 8: Abuse or domestic violence resources and reaching an agreement"
+    And I should see the phrase "Step 8: Abuse or domestic violence resources and parenting"
     And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about a Parenting Plan and dividing marital property and debt for a variety of reasons."
     And I should see the phrase "Your Parenting Plan agreement may be limited if there is domestic violence"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
