@@ -425,7 +425,7 @@ Scenario: Row #23
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
     And I should see the phrase "After you are served, you have 20 days to file a response."
-    And I should see the phrase "If ${ other_party_in_case } thinks they served you correctly, they may ask the court for a default judgment if you do not file an response in 20 days.
+    And I should see the phrase "If your spouse thinks they served you correctly, they may ask the court for a default judgment if you do not file an response in 20 days.
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: File a motion to dismiss your Alaska case"
     And I should see the phrase "If the case in the other state is over and the other court issued final orders, you can file a Motion to Dismiss your Alaska case."
@@ -934,7 +934,7 @@ Scenario: Row #289
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
     And I should see the phrase "After you are served, you have 20 days to file a response."
-    And I should see the phrase "If ${ other_party_in_case } thinks they served you correctly, they may ask the court for a default judgment if you do not file an response in 20 days.
+    And I should see the phrase "If your spouse thinks they served you correctly, they may ask the court for a default judgment if you do not file an response in 20 days."
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: File a motion to dismiss your Alaska case"
     And I should see the phrase "If the case in the other state is over and the other court issued final orders, you can file a Motion to Dismiss your Alaska case."
