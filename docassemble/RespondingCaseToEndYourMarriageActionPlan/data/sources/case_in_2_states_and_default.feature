@@ -5,7 +5,6 @@ Feature: User paths
 Background: 
   Given the maximum seconds for each Step is 90
 
-
 @row94
 Scenario: Row #94
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
@@ -895,7 +894,7 @@ Scenario: Row #281
     | minor_children                       | False             |         | 
     | wife_is_pregnant                     | husband           |         | 
     | proper_service                       | False             |         | 
-    | domestic_violence                    | True           |         | 
+    | domestic_violence                    | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -966,10 +965,10 @@ Scenario: Row #281
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint" 
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 11: Abuse or domestic violence resources and reaching an agreement"
-    And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about a Parenting Plan and dividing marital property and debt for a variety of reasons."
+    And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
+    And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
+    And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge"
-    And I should see the phrase "Considerations if you and your spouse cannot agree"
     And I should see the phrase "If you think you or your children’s health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
@@ -1089,13 +1088,12 @@ Scenario: Row #283
     | children_of_the_marriage             | False             |         | 
     | wife_is_pregnant                     | not pregnant      |         | 
     | proper_service                       | True              |         | 
-    | domestic_violence                    | False             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
     And I should see the phrase "When deciding which court should hear a legal separation case, both courts will look at which court has the authority, called “jurisdiction,” over the issues in your case."
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called “jurisdiction,” to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called “jurisdiction,” to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
     And I should see the phrase "The court's power to grant a legal separation is based on residency"
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
     And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
