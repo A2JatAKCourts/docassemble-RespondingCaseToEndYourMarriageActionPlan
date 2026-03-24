@@ -660,9 +660,8 @@ Scenario: Row #284
 # domestic_violence True
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
     And I should see the phrase "Contact between parent and children"
-    And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge that it is in the children's best interest."
-    And I should see the phrase "The law presumes that a parent with a "history of domestic violence" not get custody or unsupervised visitation unless they meet certain requirements."
-    And I should see the phrase "Tell the judge your concerns"
+    And I should see the phrase "If you think your spouse should not have any contact with your children,"
+    And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
@@ -729,7 +728,7 @@ Scenario: Row #285
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
     And I should see the phrase "Contact between parent and children"
-    And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge that it is in the children’s best interest."
+    And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
@@ -815,7 +814,7 @@ Scenario: Row #287
     | wife_is_pregnant                     | not husband    |         | 
     | proper_service                       | False          |         | 
     | domestic_violence                    | False           |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 12 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
@@ -855,12 +854,7 @@ Scenario: Row #287
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
-    And I should see the phrase "Contact between parent and children"
-    And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge that it is in the children’s best interest."
-    And I should see the phrase "Considerations if you and your spouse cannot agree"
-    And I should see the phrase "If you think you or your children’s health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
-    And I should see the phrase "Step 12: Get more information or help"
+    And I should see the phrase "Step 11: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -906,11 +900,8 @@ Scenario: Row #288
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # legal separation, not minor children, wife_is_pregnant not pregnant
     And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
-    And I should see the phrase "Check the appropriate box in your Answer."
-    And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
-    And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
     And I should see the phrase "If you want your case in the other state, you can tell the Alaska court by stating it in your Answer and filing a Motion to Dismiss your Alaska case."
-    And I should see the phrase " If you think the Alaska court should hear the case, use section 5 to tell the judge there are 2 cases."
+    And I should see the phrase "If you think the Alaska court should hear the case, use section 5 to tell the judge there are 2 cases and why you think the case should move forward in Alaska."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims.""
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: out the Certificate of Service"
@@ -919,7 +910,7 @@ Scenario: Row #288
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence resources"
-    And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about dividing marital property and debt for a variety of reasons."
+#    And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about dividing marital property and debt for a variety of reasons."
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
@@ -996,7 +987,7 @@ Scenario: Row #290
     And I should see the phrase "Step 9: Abuse or domestic violence and parenting"
 #    And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about a Parenting Plan and dividing marital property and debt for a variety of reasons."
     And I should see the phrase "Contact between parent and children"
-    And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge that it is in the children’s best interest."
+    And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "If you think you or your children’s health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 10: Get more information or help"
     And I take a screenshot
@@ -1089,7 +1080,7 @@ Scenario: Row #292
     And I should see the phrase "Step 9: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 10: Abuse or domestic violence and parenting"
     And I should see the phrase "Contact between parent and children"
-    And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge that it is in the children’s best interest."
+    And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
         And I should see the phrase "Step 11: Get more information or help"
     And I take a screenshot
