@@ -1,6 +1,6 @@
 @ak_divorce_case
 Feature: User paths
-# 2026-03-19
+# 2026-03-23
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -65,7 +65,7 @@ Scenario: Row #169
     And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you “agree with all of the statements in the complaint.”"
-    And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you “agree with all of the statements in the complaint.”"
+    And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims.""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
@@ -739,6 +739,7 @@ Scenario: Row #244
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
