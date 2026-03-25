@@ -356,12 +356,12 @@ subquestion: |
   it may affect whether you are comfortable trying to reach an agreement with your spouse about the issues in your case. 
   % endif
   % if type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True):
-  % if ((case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and not want_help_to_agree)):
+  % if ((case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure'))):
   it may affect your case${'.' if not minor_children and wife_is_pregnant == 'not pregnant' else ''}
   % if (minor_children or wife_is_pregnant in ('husband', 'not husband')):
-  % if ((case_type == 'divorce' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and want_help_to_agree)):
+  % if ((case_type == 'divorce' and response_to_complaint == 'none' and want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and want_help_to_agree)):
   and what you can agree to in your Parenting Plan.
-  % elif ((case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure') and not want_help_to_agree)):
+  % elif ((case_type == 'divorce' and response_to_complaint in ('agree', 'some')) or (case_type == 'divorce' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation == 'yes' and response_to_complaint == 'none' and not want_help_to_agree) or (case_type == 'legal separation' and want_legal_separation in ('no', 'unsure'))):
   and the Parenting Plan.
   % endif # want_help_to_agree
   % endif # minor_children
@@ -375,7 +375,7 @@ fields:
 under: |
   % if minor_children or not minor_children and wife_is_pregnant in('husband', 'not husband'):
   #### <i class="fa-regular fa-lightbulb"></i> Learn more ####
-  % if type_of_response.all_false() or (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (case_type == 'legal separation' and want_legal_separation == 'yes') or (case_type == 'legal separation' and want_legal_separation in('no', 'unsure') and want_help_to_agree):
+  % if type_of_response.all_false() or (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))) or (case_type == 'legal separation' and want_legal_separation in('yes', 'unsure')):
   Sometimes a person in a relationship with domestic violence feels pressured to agree to things they do not want.
   % endif
   The law presumes that a parent with a "history of domestic violence" may not get custody and unsupervised visitation without completing some court-approved treatment.

@@ -1,6 +1,6 @@
 @wrong_state
 Feature: user paths
-# 2026-03-11
+# 2026-03-24
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -979,7 +979,7 @@ Scenario: Row #256
     | minor_children                      | True             |         | 
     | children_of_the_marriage            | True             |         | 
     | proper_service                      | True             |         | 
-    And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
@@ -1002,8 +1002,7 @@ Scenario: Row #256
     And I should see the phrase "Step 6: If you are asking to set aside the default, fill out the Certificate of Service"
     And I should see the phrase "Step 7: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "Step 8: What to expect after you file your documents"
-    And I should see the phrase "Step 9: Learn about paternity"
-    And I should see the phrase "Step 10: Get more information or help"
+    And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -1172,7 +1171,7 @@ Scenario: Row #266
     | wife_is_pregnant                     | not husband    |         | 
     | proper_service                       | False          |         | 
     | domestic_violence                    | True           |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 13 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
@@ -1209,8 +1208,7 @@ Scenario: Row #266
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
-    And I should see the phrase "Step 12: Learn about paternity"
-    And I should see the phrase "Step 13: Get more information or help"
+    And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -1283,7 +1281,7 @@ Scenario: Row #278
     | wife_is_pregnant                     | not husband    |         | 
     | proper_service                       | False          |         | 
     | domestic_violence                    | False          |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 12 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
@@ -1314,8 +1312,7 @@ Scenario: Row #278
     And I should see the phrase "Step 8: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 11: Learn about paternity"
-    And I should see the phrase "Step 12: Get more information or help"
+    And I should see the phrase "Step 11: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
