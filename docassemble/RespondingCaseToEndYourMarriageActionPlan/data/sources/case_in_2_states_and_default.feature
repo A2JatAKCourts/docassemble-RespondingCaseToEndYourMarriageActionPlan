@@ -1,6 +1,6 @@
 @case_in_2_states_and_default
 Feature: User paths
-# 2026-03-24-25
+# 2026-03-25
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -129,7 +129,7 @@ Scenario: Row #100
 # stage application filed
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
-    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
     And I should see the phrase "Step 3: Options if your spouse asked for default judgment when you have cases in 2 states"
 # default, application filed, proper_service False
@@ -289,7 +289,7 @@ Scenario: Row #107
 # stage hearing scheduled
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
-    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
     And I should see the phrase "Military protections"
     And I should see the phrase "If the Servicemembers Civil Relief Act does not apply to your case to stop the default judgment, you have other options."
@@ -631,7 +631,7 @@ Scenario: Row #136
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about default judgment"
     And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
-    And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
     And I should see the phrase "You can (1) ask the judge to set aside the default judgment or (2) do nothing."
     And I should see the phrase "It can be complicated to have custody orders from 2 different state courts."
@@ -925,7 +925,7 @@ Scenario: Row #281
 # stage hearing scheduled
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
-    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
     And I should see the phrase "Military protections"
     And I should see the phrase "If the Servicemembers Civil Relief Act does not apply to your case to stop the default judgment, you have other options."
@@ -1022,7 +1022,7 @@ Scenario: Row #282
 # stage application filed
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
-    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
     And I should see the phrase "Step 3: Options if your spouse asked for default judgment when you have cases in 2 states"
 # default, application filed, proper_service False
@@ -1186,7 +1186,7 @@ Scenario: Row #284
 
 
 @row285
-Scenario: Row #284default
+Scenario: Row #285
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
     | var                                  | value            | trigger | 
