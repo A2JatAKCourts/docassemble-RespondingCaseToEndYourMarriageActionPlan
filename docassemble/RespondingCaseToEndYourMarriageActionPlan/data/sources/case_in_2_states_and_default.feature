@@ -1095,7 +1095,8 @@ Scenario: Row #283
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called “jurisdiction,” to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
     And I should see the phrase "The court's power to grant a legal separation is based on residency"
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+# getting rid of apostrophes and quotes in assertion below
+    And I should see the phrase "power to divide property and debt and enter a Parenting Plan or custody order is based on"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Learn about default judgment"
 # proper_service True
