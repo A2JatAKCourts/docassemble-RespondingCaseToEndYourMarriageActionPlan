@@ -424,14 +424,14 @@ Scenario: Row #23
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
+    And I should see the phrase "Your spouse started a divorce case by filing documents with the court."
     And I should see the phrase "After you are served, you have 20 days to file a response."
-    And I should see the phrase "If your spouse thinks they served you correctly, they may ask the court for a default judgment if you do not file a response in 20 days.
+    And I should see the phrase "Default judgment"
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: File a motion to dismiss your Alaska case"
-    And I should see the phrase "If the case in the other state is over and the other court issued final orders, you can file a Motion to Dismiss your Alaska case."
+    And I should see the phrase "If you do not respond to the Alaska case, the Alaska judge may enter a divorce order."
     And I should see the phrase "File a copy of the final orders from the other state, and any other documents that support your request."
-    And I should see the phrase "If you choose to ask the judge to dismiss your case"
-    And I should see the phrase "Motion (Request) and Affidavit, TF-706"
+    And I should see the phrase "If you choose to ask the judge to dismiss your case, use Motion (Request) and Affidavit, TF-706"
     And I should see the phrase "Tell the judge why you think the court does not have jurisdiction and any other reason you think the case should be dismissed."
     And I should see the phrase "Step 3: out the Certificate of Service"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
@@ -937,7 +937,7 @@ Scenario: Row #289
     And I should see the phrase "If your spouse thinks they served you correctly, they may ask the court for a default judgment if you do not file a response in 20 days."
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: File a motion to dismiss your Alaska case"
-    And I should see the phrase "If the case in the other state is over and the other court issued final orders, you can file a Motion to Dismiss your Alaska case."
+    And I should see the phrase "If you do not respond to the Alaska case, the Alaska judge may enter a divorce order."
     And I should see the phrase "File a copy of the final orders from the other state, and any other documents that support your request."
     And I should see the phrase "If you choose to ask the judge to dismiss your case"
     And I should see the phrase "Motion (Request) and Affidavit, TF-706"

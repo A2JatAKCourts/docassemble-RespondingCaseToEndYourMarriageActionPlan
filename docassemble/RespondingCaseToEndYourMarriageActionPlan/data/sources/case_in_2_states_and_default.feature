@@ -5,6 +5,7 @@ Feature: User paths
 Background: 
   Given the maximum seconds for each Step is 90
 
+
 @row94
 Scenario: Row #94
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
@@ -1085,8 +1086,6 @@ Scenario: Row #283
     | stage_of_default                     | hearing scheduled |         | 
     | military                             | False             |         | 
     | minor_children                       | True              |         | 
-    | children_of_the_marriage             | False             |         | 
-    | wife_is_pregnant                     | not pregnant      |         | 
     | proper_service                       | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
@@ -1096,7 +1095,7 @@ Scenario: Row #283
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called “jurisdiction,” to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
     And I should see the phrase "The court's power to grant a legal separation is based on residency"
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Learn about default judgment"
 # proper_service True
@@ -1105,7 +1104,7 @@ Scenario: Row #283
     And I should see the phrase "If you do not file an Answer within 20 days of receiving the Complaint, your spouse may ask the court for a default judgment."
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
-    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
     And I should see the phrase "Step 3: Options if your spouse asked for default judgment when you have cases in 2 states"
 # default, hearing scheduled, proper_service True
@@ -1117,11 +1116,11 @@ Scenario: Row #283
     And I should see the phrase "Step 5: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # proper_service True
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
-# legal sep, no children, not pregnant
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+# legal sep, minor_children True
+    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "If you want your case in the other state, you can tell the Alaska court by stating it in your Answer and filing a Motion to Dismiss your Alaska case."
 # want_legal_separation unsure
-    And I should see the phrase "I do NOT agree to a legal separation because I want the marriage to end in a divorce"
+    And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
 # counterclaims
     And I should see the phrase "If you think the Alaska court should hear the case, use section 5 to tell the judge there are 2 cases and why you think the case should move forward in Alaska."
 # request for relief
@@ -1133,7 +1132,7 @@ Scenario: Row #283
     And I should see the phrase "If you do not have a copy of the filed documents, you can ask your spouse or get a copy from your file at the courthouse."
 # wife_is_pregnant 'not pregnant', proper_service True - no list items
     And I should see the phrase "You could end up with 2 different orders from 2 different states."
-    And I should see the phrase "to tell the Alaska judge about the other case."
+    And I should see the phrase "To prevent this, file a Motion to Dismiss to tell the Alaska judge: (1) about the other case, and (2) your children have not lived in Alaska for the last 6 months."
     And I should see the phrase "Tell the judge in the other state about the Alaska case."
     And I should see the phrase "it is important to file your motion as soon as possible to prevent the judge from entering a default judgment order."
     And I should see the phrase "Step 7: out the Certificate of Service"
@@ -1147,8 +1146,8 @@ Scenario: Row #283
     And I download "responding_ending_marriage_action_plan.docx"
 
 
-@row284 
-Scenario: Row #284
+@row284default
+Scenario: Row #284default
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
     | var                                  | value            | trigger | 
