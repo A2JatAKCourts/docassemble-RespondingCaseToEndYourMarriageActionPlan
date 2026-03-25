@@ -1,6 +1,6 @@
 @case_in_2_states_and_default
 Feature: User paths
-# 2026-03-24
+# 2026-03-25
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -58,7 +58,6 @@ Scenario: Row #94
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
 # legal sep, minor_children True
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
-
     And I should see the phrase "If you want your case in the other state, you can tell the Alaska court by stating it in your Answer and filing a Motion to Dismiss your Alaska case."
 # want_legal_separation no
     And I should see the phrase "I do NOT agree to a legal separation because I want the marriage to end in a divorce"
@@ -130,7 +129,7 @@ Scenario: Row #100
 # stage application filed
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
-    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
     And I should see the phrase "Step 3: Options if your spouse asked for default judgment when you have cases in 2 states"
 # default, application filed, proper_service False
@@ -290,7 +289,7 @@ Scenario: Row #107
 # stage hearing scheduled
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
-    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
     And I should see the phrase "Military protections"
     And I should see the phrase "If the Servicemembers Civil Relief Act does not apply to your case to stop the default judgment, you have other options."
@@ -372,6 +371,9 @@ Scenario: Row #111
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "Step 6: What to expect after you file your documents"
     And I should see the phrase "Step 7: Get more information or help"
+    And I take a screenshot
+    And I download "responding_ending_marriage_action_plan.pdf"
+    And I download "responding_ending_marriage_action_plan.docx"
 
 @row114
 Scenario: Row #114
@@ -403,6 +405,9 @@ Scenario: Row #114
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "Step 6: What to expect after you file your documents"
     And I should see the phrase "Step 7: Get more information or help"
+    And I take a screenshot
+    And I download "responding_ending_marriage_action_plan.pdf"
+    And I download "responding_ending_marriage_action_plan.docx"
 
 @row118
 Scenario: Row #118
@@ -626,7 +631,7 @@ Scenario: Row #136
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about default judgment"
     And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
-    And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
     And I should see the phrase "You can (1) ask the judge to set aside the default judgment or (2) do nothing."
     And I should see the phrase "It can be complicated to have custody orders from 2 different state courts."
@@ -920,7 +925,7 @@ Scenario: Row #281
 # stage hearing scheduled
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
-    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
     And I should see the phrase "Military protections"
     And I should see the phrase "If the Servicemembers Civil Relief Act does not apply to your case to stop the default judgment, you have other options."
@@ -976,8 +981,6 @@ Scenario: Row #281
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
 
-
-
 @row282
 Scenario: Row #282
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
@@ -1019,7 +1022,7 @@ Scenario: Row #282
 # stage application filed
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
-    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "The judge may end your case without hearing from you and enter a default judgment order and other orders like a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
     And I should see the phrase "Step 3: Options if your spouse asked for default judgment when you have cases in 2 states"
 # default, application filed, proper_service False
@@ -1146,9 +1149,44 @@ Scenario: Row #283
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
 
+@row284
+Scenario: Row #284
+  Given I start the interview at "responding_ending_marriage_action_plan.yml"
+    And I get to the question id "final screen" with this data:
+    | var                                  | value            | trigger | 
+    | user_need                            | answer divorce   |         | 
+    | type_of_response['ak divorce case']  | True             |         | 
+    | type_of_response['case in 2 states'] | True             |         | 
+    | type_of_response['default']          | True             |         | 
+    | case_type                            | divorce          |         | 
+    | stage_of_other_case                  | still going      |         | 
+    | stage_of_default                     | judgment entered |         | 
+    | military                             | True             |         | 
+    | minor_children                       | False            |         | 
+    | wife_is_pregnant                     | not pregnant     |         | 
+    | proper_service                       | True             |         | 
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 7 steps"
+    And I tap the "#akc_expand_all" element and stay on the same page
+    And I wait 0.5 seconds
+    And I should see the phrase "Step 1: Learn about default judgment"
+# proper_service True
+    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
+    And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "If you have final orders in your Alaska case and an open case in another state, your situation is complicated."
+    And I should see the phrase "Military protections"
+    And I should see the phrase "Step 2: Learn about the Motion to Set Aside Judgment or Order"
+    And I should see the phrase "Step 3: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 4: If you are asking to set aside the default, fill out the Certificate of Service"
+    And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: What to expect after you file your documents"
+    And I should see the phrase "Step 7: Get more information or help"
+    And I take a screenshot
+    And I download "responding_ending_marriage_action_plan.pdf"
+    And I download "responding_ending_marriage_action_plan.docx"
 
-@row284default
-Scenario: Row #284default
+
+@row285
+Scenario: Row #285
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
     | var                                  | value            | trigger | 
@@ -1179,3 +1217,161 @@ Scenario: Row #284default
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "Step 6: What to expect after you file your documents"
     And I should see the phrase "Step 7: Get more information or help"
+    And I take a screenshot
+    And I download "responding_ending_marriage_action_plan.pdf"
+    And I download "responding_ending_marriage_action_plan.docx"
+
+@row286
+Scenario: Row #286 #same as row 118
+  Given I start the interview at "responding_ending_marriage_action_plan.yml"
+    And I get to the question id "final screen" with this data:
+    | var                                  | value             | trigger | 
+    | user_need                            | answer divorce    |         | 
+    | type_of_response['ak divorce case']  | True              |         | 
+    | type_of_response['case in 2 states'] | True              |         | 
+    | type_of_response['default']          | True              |         | 
+    | stage_of_other_case                  | ended with order  |         | 
+    | case_type                            | divorce           |         | 
+    | stage_of_default                     | application filed |         | 
+    | military                             | True              |         | 
+    | minor_children                       | True              |         | 
+    | proper_service                       | True              |         | 
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 6 steps"
+    And I tap the "#akc_expand_all" element and stay on the same page
+    And I wait 0.5 seconds
+    And I should see the phrase "Step 1: Learn about default judgment"
+    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
+    And I should see the phrase "There are 3 steps to get a default judgment:"
+    And I should see the phrase "Military protections"
+    And I should see the phrase "Step 2: File a motion to dismiss your Alaska case"
+    And I should see the phrase "File a copy of the final orders from the other state, and any other documents that support your request."
+    And I should see the phrase "It is best to file a Motion to Dismiss your Alaska case to tell the Alaska judge about the order from the other state."
+    And I should see the phrase "Step 3: out the Certificate of Service"
+    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 5: What to expect after you file your documents"
+    And I should see the phrase "Step 6: Get more information or help"
+    And I take a screenshot
+    And I download "responding_ending_marriage_action_plan.pdf"
+    And I download "responding_ending_marriage_action_plan.docx"
+
+@row287
+Scenario: Row #287 #same as row 134
+  Given I start the interview at "responding_ending_marriage_action_plan.yml"
+    And I get to the question id "final screen" with this data:
+    | var                                  | value            | trigger | 
+    | user_need                            | answer divorce   |         | 
+    | type_of_response['ak divorce case']  | True             |         | 
+    | type_of_response['case in 2 states'] | True             |         | 
+    | type_of_response['default']          | True             |         | 
+    | case_type                            | divorce          |         | 
+    | stage_of_other_case                  | ended with order |         | 
+    | stage_of_default                     | judgment entered |         | 
+    | military                             | False            |         | 
+    | minor_children                       | True             |         | 
+    | proper_service                       | True             |         | 
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
+    And I tap the "#akc_expand_all" element and stay on the same page
+    And I wait 0.5 seconds
+    And I should see the phrase "Step 1: Learn about default judgment"
+    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
+    And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
+    And I should see the phrase "Step 2: Options when the judge entered a default judgment"
+    And I should see the phrase "You can (1) ask the judge to set aside the default judgment or (2) do nothing."
+    And I should see the phrase "It can be complicated to have custody orders from 2 different state courts."
+    And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
+    And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 5: If you are asking to set aside the default, fill out the Certificate of Service"
+    And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 7: What to expect after you file your documents"
+    And I should see the phrase "Step 8: Get more information or help"
+    And I take a screenshot
+    And I download "responding_ending_marriage_action_plan.pdf"
+    And I download "responding_ending_marriage_action_plan.docx"
+
+@row288
+Scenario: Row #288 
+  Given I start the interview at "responding_ending_marriage_action_plan.yml"
+    And I get to the question id "final screen" with this data:
+    | var                                  | value               | trigger | 
+    | user_need                            | answer divorce      |         | 
+    | type_of_response['ak divorce case']  | True              |         | 
+    | type_of_response['case in 2 states'] | True                |         | 
+    | type_of_response['default']          | True                |         | 
+    | case_type                            | legal separation    |         | 
+    | stage_of_other_case                  | ended with no order |         | 
+    | want_legal_separation                | yes                 |         | 
+    | stage_of_default                     | hearing scheduled   |         | 
+    | military                             | True                |         | 
+    | minor_children                       | False               |         | 
+    | wife_is_pregnant                     | not pregnant        |         | 
+    | proper_service                       | False               |         | 
+    | domestic_violence                    | True                |         | 
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
+    And I tap the "#akc_expand_all" element and stay on the same page
+    And I wait 0.5 seconds
+    And I should see the phrase "Step 1: You can move forward with your Alaska case"
+    And I should see the phrase "If the case in the other state is over, but did not end your marriage, you can move forward with the Alaska case."
+    And I should see the phrase "Step 2: Learn about proper service and default judgment"
+    And I should see the phrase "Your spouse started a legal separation case by filing documents with the court."
+    And I should see the phrase "After you are served, you have 20 days to file an Answer."
+    And I should see the phrase "Default judgment"
+    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court’s CourtView webpage."
+    And I should see the phrase "There are 3 steps to get a default judgment:"
+    And I should see the phrase "Military protections"
+    And I should see the phrase "If the Servicemembers Civil Relief Act does not apply to your case to stop the default judgment, you have other options."
+    And I should see the phrase "Step 3: Options if your spouse asked for a default judgment and did not properly serve you"
+    And I should see the phrase "If your spouse asked for a default judgment, it means they told the court they served you correctly."
+    And I should see the phrase "You can (1) move forward with the case, or (2) tell the judge you were not served the correct way and ask to dismiss the case, or (3) do nothing"
+    And I should see the phrase "Option 2. Tell the judge you were not served the correct way and ask to dismiss the case"
+    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
+    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "You can add here that you were not served correctly."
+    And I should see the phrase "Step 5: Or, tell the judge you were not served the correct way and ask to dismiss the case"
+    And I should see the phrase "Step 6: out the Certificate of Service"
+    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 9: What to expect after you file your documents"
+    And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
+    And I should see the phrase "Step 11: Abuse or domestic violence resources"
+    And I should see the phrase "Step 12: Get more information or help"
+    And I take a screenshot
+    And I download "responding_ending_marriage_action_plan.pdf"
+    And I download "responding_ending_marriage_action_plan.docx"
+
+@row289
+Scenario: Row #289 #same as row 165
+  Given I start the interview at "responding_ending_marriage_action_plan.yml"
+    And I get to the question id "final screen" with this data:
+    | var                                  | value               | trigger | 
+    | user_need                            | answer divorce      |         | 
+    | type_of_response['ak divorce case']  | True                |         | 
+    | type_of_response['case in 2 states'] | True                |         | 
+    | type_of_response['default']          | True                |         | 
+    | case_type                            | divorce             |         | 
+    | stage_of_other_case                  | ended with no order |         | 
+    | stage_of_default                     | judgment entered    |         | 
+    | military                             | False               |         | 
+    | minor_children                       | False               |         | 
+    | wife_is_pregnant                     | not pregnant        |         | 
+    | proper_service                       | False               |         | 
+    | domestic_violence                    | True                |         | 
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
+    And I tap the "#akc_expand_all" element and stay on the same page
+    And I wait 0.5 seconds
+    And I should see the phrase "Step 1: Learn about proper service and default judgment"
+    And I should see the phrase "Your spouse started a divorce case by filing documents with the court."
+    And I should see the phrase "Default judgment"
+    And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt."
+    And I should see the phrase "Step 2: Options when the judge entered a default judgment"
+    And I should see the phrase "You can (1) tell the judge you were not served the correct way and ask to set aside the default judgment or (2) do nothing."
+    And I should see the phrase "If you are okay with the judge’s orders you do not need to do anything."
+    And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
+    And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 5: If you are asking to set aside the default, fill out the Certificate of Service"
+    And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 7: What to expect after you file your documents"
+    And I should see the phrase "Step 8: Get more information or help"
+    And I take a screenshot
+    And I download "responding_ending_marriage_action_plan.pdf"
+    And I download "responding_ending_marriage_action_plan.docx"
