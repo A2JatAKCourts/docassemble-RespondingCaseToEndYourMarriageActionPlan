@@ -1,6 +1,6 @@
 @ak_divorce_case
 Feature: User paths
-# 2026-03-23
+# 2026-03-31
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -18,6 +18,7 @@ Scenario: Row #167
     | wife_is_pregnant                    | husband        |         | 
     | response_to_complaint               | agree          |         | 
     | domestic_violence                   | True           |         | 
+    | other_party_exempt                  | none           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -27,8 +28,13 @@ Scenario: Row #167
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you “agree with all of the statements in the complaint.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -57,6 +63,7 @@ Scenario: Row #169
     | wife_is_pregnant                    | not pregnant     |         | 
     | response_to_complaint               | agree            |         | 
     | domestic_violence                   | True             |         | 
+    | other_party_exempt                  | no             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -67,8 +74,13 @@ Scenario: Row #169
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you “agree with all of the statements in the complaint.”"
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims.""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -96,6 +108,8 @@ Scenario: Row #172
     | wife_is_pregnant                    | not pregnant   |         | 
     | response_to_complaint               | agree          |         | 
     | domestic_violence                   | True           |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -105,8 +119,13 @@ Scenario: Row #172
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you “agree with all of the statements in the complaint.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -135,6 +154,8 @@ Scenario: Row #173
     | wife_is_pregnant                    | husband          |         | 
     | response_to_complaint               | agree            |         | 
     | domestic_violence                   | True             |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -143,8 +164,13 @@ Scenario: Row #173
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "Check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 2: out the Certificate of Service"
-    And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 2: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 3: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 4: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 5: What to expect after you file your Answer"
     And I should see the phrase "Step 6: Learn more about the process"
@@ -171,6 +197,8 @@ Scenario: Row #177
     | wife_is_pregnant                    | not husband    |         | 
     | response_to_complaint               | agree          |         | 
     | domestic_violence                   | False          |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | None           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -180,8 +208,13 @@ Scenario: Row #177
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you “agree with all of the statements in the complaint.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -205,6 +238,7 @@ Scenario: Row #180
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | agree            |         | 
     | domestic_violence                   | False            |         | 
+    | other_party_exempt                  | none           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -214,8 +248,13 @@ Scenario: Row #180
     And I should see the phrase "Check the appropriate box in your Answer"
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -238,6 +277,7 @@ Scenario: Row #183
     | wife_is_pregnant                    | not husband    |         | 
     | response_to_complaint               | agree          |         | 
     | domestic_violence                   | False          |         | 
+    | other_party_exempt                  | no             |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -247,8 +287,13 @@ Scenario: Row #183
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you “agree with all of the statements in the complaint.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -272,6 +317,8 @@ Scenario: Row #186
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | some             |         | 
     | domestic_violence                   | True             |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -282,8 +329,13 @@ Scenario: Row #186
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims.""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -313,6 +365,8 @@ Scenario: Row #193
     | wife_is_pregnant                    | not pregnant   |         | 
     | response_to_complaint               | some           |         | 
     | domestic_violence                   | True           |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -322,8 +376,13 @@ Scenario: Row #193
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -354,6 +413,8 @@ Scenario: Row #195
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | some             |         | 
     | domestic_violence                   | False            |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | None           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 8 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -363,8 +424,13 @@ Scenario: Row #195
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "Check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 2: out the Certificate of Service"
-    And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 2: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 3: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 4: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 5: What to expect after you file your Answer"
     And I should see the phrase "Step 6: Learn more about the process"
@@ -387,6 +453,7 @@ Scenario: Row #201
     | wife_is_pregnant                    | not husband    |         | 
     | response_to_complaint               | some           |         | 
     | domestic_violence                   | False          |         | 
+    | other_party_exempt                  | none           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -396,8 +463,13 @@ Scenario: Row #201
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -421,6 +493,7 @@ Scenario: Row #205
     | wife_is_pregnant                    | not pregnant     |         | 
     | response_to_complaint               | none             |         | 
     | domestic_violence                   | True             |         | 
+    | other_party_exempt                  | no             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -430,8 +503,13 @@ Scenario: Row #205
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -462,6 +540,8 @@ Scenario: Row #210
     | response_to_complaint               | none           |         | 
     | want_help_to_agree                  | True           |         | 
     | domestic_violence                   | True           |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -474,8 +554,13 @@ Scenario: Row #210
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, “I have no counterclaims.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -507,6 +592,8 @@ Scenario: Row #214
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | True             |         | 
     | domestic_violence                   | False            |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 8 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -517,8 +604,13 @@ Scenario: Row #214
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
     And I should see the phrase "Check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 2: out the Certificate of Service"
-    And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 2: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 3: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 4: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 5: What to expect after you file your Answer"
     And I should see the phrase "Step 6: Learn more about the process"
@@ -542,6 +634,8 @@ Scenario: Row #217
     | response_to_complaint               | none           |         | 
     | want_help_to_agree                  | True           |         | 
     | domestic_violence                   | False          |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | None           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -554,8 +648,13 @@ Scenario: Row #217
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, “I have no counterclaims.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -579,6 +678,7 @@ Scenario: Row #222
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | False            |         | 
     | domestic_violence                   | True             |         | 
+    | other_party_exempt                  | none           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -588,8 +688,13 @@ Scenario: Row #222
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 2: out the Certificate of Service"
-    And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 2: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 3: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 4: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 5: What to expect after you file your Answer"
     And I should see the phrase "Step 6: Learn more about the process"
@@ -617,6 +722,7 @@ Scenario: Row #228
     | response_to_complaint               | none           |         | 
     | want_help_to_agree                  | False          |         | 
     | domestic_violence                   | True           |         | 
+    | other_party_exempt                  | no             |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -625,8 +731,13 @@ Scenario: Row #228
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 2: out the Certificate of Service"
-    And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 2: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 3: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
     And I should see the phrase "Step 4: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 5: What to expect after you file your Answer"
     And I should see the phrase "Step 6: Learn more about the process"
@@ -655,6 +766,8 @@ Scenario: Row #234
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | False            |         | 
     | domestic_violence                   | False            |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 8 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -664,8 +777,13 @@ Scenario: Row #234
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
     And I should see the phrase "Check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 2: out the Certificate of Service"
-    And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 2: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 3: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
     And I should see the phrase "Step 4: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 5: What to expect after you file your Answer"
     And I should see the phrase "Step 6: Learn more about the process"
@@ -688,6 +806,8 @@ Scenario: Row #242
     | response_to_complaint               | none           |         | 
     | want_help_to_agree                  | True           |         | 
     | domestic_violence                   | True           |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -705,8 +825,13 @@ Scenario: Row #242
     And I should see the phrase "Parenting Plan Agreement & Order, SHC-1128"
     And I should see the phrase "Joint Motion to Put Settlement on the Record, SHC-1063"
     And I should see the phrase "Custody Findings of Fact & Conclusions of Law, DR-460"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -734,6 +859,8 @@ Scenario: Row #244
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | False            |         | 
     | domestic_violence                   | True             |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | None           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -744,8 +871,13 @@ Scenario: Row #244
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File and serve your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 5: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
