@@ -160,7 +160,6 @@ Scenario: Row #9
     And I should see the phrase "Step 4: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 5: File your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
-    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 6: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -267,10 +266,15 @@ Scenario: Row #30
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150 [Fill in PDF]"
     And I should see the phrase "Step 3: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
-    And I should see the phrase "Step 5: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
-    And I should see the phrase "Step 6: What to expect after you file your documents"
-    And I should see the phrase "Step 7: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 8: Get more information or help"
+    And I should see the phrase "Step 5: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
+    And I should see the phrase "Step 6: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 7: What to expect after you file your documents"
+    And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
+    And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -288,7 +292,7 @@ Scenario: Row #31
     | minor_children                  | False            |         | 
     | wife_is_pregnant                | not pregnant     |         | 
     | other_party_exempt              | none             |         | 
-    And I should see the phrase "Your Action Plan for responding in your legal separation case in 8 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
@@ -310,10 +314,11 @@ Scenario: Row #31
     And I should see the phrase "Check the box telling the court "I do NOT agree to a legal separation because I want the marriage to end in a divorce.""
     And I should see the phrase "Step 3: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
-    And I should see the phrase "Step 5: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
-    And I should see the phrase "Step 6: What to expect after you file your documents"
-    And I should see the phrase "Step 7: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 8: Get more information or help"
+    And I should see the phrase "Step 5: Serve your spouse"
+    And I should see the phrase "Step 6: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 7: What to expect after you file your documents"
+    And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
+    And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -332,7 +337,7 @@ Scenario: Row #33
     | wife_is_pregnant                | husband          |         | 
     | other_party_exempt              | yes              |         | 
     | other_party_enter_email         | True             |         | 
-    And I should see the phrase "Your Action Plan for responding in your legal separation case in 8 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
@@ -360,10 +365,11 @@ Scenario: Row #33
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Step 3: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
-    And I should see the phrase "Step 5: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
-    And I should see the phrase "Step 6: What to expect after you file your documents"
-    And I should see the phrase "Step 7: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 8: Get more information or help"
+    And I should see the phrase "Step 5: Serve your spouse"
+    And I should see the phrase "Step 6: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 7: What to expect after you file your documents"
+    And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
+    And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -381,7 +387,7 @@ Scenario: Row #36
     | wife_is_pregnant                | not pregnant   |         | 
     | other_party_exempt              | yes            |         | 
     | other_party_enter_email         | False          |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
@@ -403,10 +409,11 @@ Scenario: Row #36
     And I should see the phrase "I make the counterclaims below. If I asked the court to dismiss the case in section B (Affirmative Defenses), and the court does not dismiss the case, I do not waive my claim about the court’s lack of jurisdiction."
     And I should see the phrase "Step 3: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
-    And I should see the phrase "Step 5: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
-    And I should see the phrase "Step 6: What to expect after you file your documents"
-    And I should see the phrase "Step 7: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 8: Get more information or help"
+    And I should see the phrase "Step 5: Serve your spouse"
+    And I should see the phrase "Step 6: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 7: What to expect after you file your documents"
+    And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
+    And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -466,7 +473,6 @@ Scenario: Row #70
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
-    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -852,7 +858,7 @@ Scenario: Row #251
     | domestic_violence                   | False          |         | 
     | other_party_exempt                  | yes            |         | 
     | other_party_enter_email             | None           |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
@@ -877,11 +883,12 @@ Scenario: Row #251
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Step 3: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
-    And I should see the phrase "Step 5: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
-    And I should see the phrase "Step 6: What to expect after you file your documents"
-    And I should see the phrase "Step 7: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 8: Learn about paternity"
-    And I should see the phrase "Step 9: Get more information or help"
+    And I should see the phrase "Step 5: Serve your spouse"
+    And I should see the phrase "Step 6: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 7: What to expect after you file your documents"
+    And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
+    And I should see the phrase "Step 9: Learn about paternity"
+    And I should see the phrase "Step 10: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -923,10 +930,10 @@ Scenario: Row #252
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Step 3: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
-    And I should see the phrase "Step 5: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
-    And I should see the phrase "Step 6: What to expect after you file your documents"
-    And I should see the phrase "Step 7: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 8: Abuse or domestic violence and parenting"
+    And I should see the phrase "Step 5: Serve your spouse"
+    And I should see the phrase "Step 6: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 7: What to expect after you file your documents"
+    And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 9: Learn about paternity"
     And I should see the phrase "Step 10: Get more information or help"
     And I take a screenshot
@@ -953,7 +960,7 @@ Scenario: Row #254
     | domestic_violence                   | True              |         | 
     | other_party_exempt                  | yes               |         | 
     | other_party_enter_email             | True              |         | 
-    And I should see the phrase "Your Action Plan for responding in your legal separation case in 13 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
@@ -996,8 +1003,7 @@ Scenario: Row #254
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
-    And I should see the phrase "Step 12: Learn about paternity"
-    And I should see the phrase "Step 13: Get more information or help"
+    And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -1137,7 +1143,7 @@ Scenario: Row #257
     | proper_service                      | True              |         | 
     | domestic_violence                   | False             |         | 
     | other_party_exempt                  | no                |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
@@ -1162,10 +1168,11 @@ Scenario: Row #257
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "Step 7: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
-    And I should see the phrase "Step 8: What to expect after you file your documents"
-    And I should see the phrase "Step 9: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 10: Get more information or help"
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "Step 8: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 9: What to expect after you file your documents"
+    And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
+    And I should see the phrase "Step 11: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -1368,7 +1375,7 @@ Scenario: Row #273
     | proper_service                       | True             |         | 
     | domestic_violence                    | True             |         | 
     | other_party_exempt                   | none             |         | 
-    And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
@@ -1395,11 +1402,13 @@ Scenario: Row #273
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
-    And I should see the phrase "Step 7: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
-    And I should see the phrase "Step 8: What to expect after you file your documents"
-    And I should see the phrase "Step 9: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 10: Abuse or domestic violence resources"
-    And I should see the phrase "Step 11: Get more information or help"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "Step 8: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 9: What to expect after you file your documents"
+    And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
+    And I should see the phrase "Step 11: Abuse or domestic violence resources"
+    And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -1479,7 +1488,7 @@ Scenario: Row #279
     | proper_service                       | True             |         | 
     | domestic_violence                    | True             |         | 
     | other_party_exempt                   | none             |         | 
-    And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
@@ -1505,9 +1514,15 @@ Scenario: Row #279
     And I should see the phrase "Step 5: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 6: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
     And I should see the phrase "Step 7: What to expect after you file your documents"
-    And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 9: Abuse or domestic violence resources"
-    And I should see the phrase "Step 10: Get more information or help"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 8: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
+    And I should see the phrase "Step 9: If your case is moving forward in Alaska, learn more about the process"
+    And I should see the phrase "Step 10: Abuse or domestic violence resources"
+    And I should see the phrase "Step 11: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
