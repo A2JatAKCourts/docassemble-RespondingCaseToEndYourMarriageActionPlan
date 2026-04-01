@@ -691,7 +691,7 @@ content: |
   % endif
 ---
 comment: |
-  2026-02-23
+  2026-04-01
 template: default_options_step
 subject: |
   Step ${ default_options_idx }: Options 
@@ -762,7 +762,7 @@ content: |
   You should decide quickly. The longer you wait, the harder it is to set aside the court's order.
 
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-      You may want to [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm). 
+  You may want to [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm). 
   % else:
   % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
     If something changes substantially, and you want to ask to change the judge's custody Parenting Plan or child support order, read [Modifying Child Custody or Child Support Order](https://courts.alaska.gov/shc/family/shcmodify.htm) on the court's website.
