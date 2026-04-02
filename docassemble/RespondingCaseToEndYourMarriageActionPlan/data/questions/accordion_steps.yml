@@ -1,5 +1,5 @@
 comment: |
-    2026-03-25
+    2026-04-02 
     2026-03-10 moving children of the marriage and wife is pregnant closer to beginning of interview if ak divorce case is combined with anything else
     2025-06-04 until we get the docassemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64f
 ---
@@ -184,7 +184,7 @@ code: |
       proper_service
       #   military
       add_unique_step((proper_service_step, "proper_service_idx"), step_list)
-    if type_of_response['improper service'] and not proper_service:
+    if type_of_response['improper service'] and not proper_service and type_of_response.all_false('default'):
       add_unique_step((decide_after_improper_service_step, "decide_after_improper_service_idx"), step_list)
     if not (type_of_response['default'] and stage_of_default == 'judgment entered'):
       if case_type == 'legal separation':
@@ -212,7 +212,7 @@ code: |
       # if type_of_response['default']:
       #   military
       add_unique_step((proper_service_step, "proper_service_idx"), step_list)
-    if stage_of_other_case == 'ended with no order'and type_of_response['improper service'] and not proper_service:
+    if stage_of_other_case == 'ended with no order'and type_of_response['improper service'] and not proper_service and type_of_response.all_false('default'):
         add_unique_step((decide_after_improper_service_step, "decide_after_improper_service_idx"), step_list)
     if stage_of_other_case == 'still going' and not (type_of_response['default'] and stage_of_default == 'judgment entered'):
       add_unique_step((case_in_2_states_step, "case_in_2_states_idx"), step_list)
@@ -269,8 +269,10 @@ code: |
 
   if type_of_response.any_true():
     add_unique_image({'image': service_cert_image, 'text': "Certificate of Service"}, images_list)
-    add_unique_step((cert_of_service_step, "cert_of_service_idx"), step_list)
-    add_unique_step((answer_file_and_serve_step, "answer_file_and_serve_idx"), step_list)
+    # add_unique_step((cert_of_service_step, "cert_of_service_idx"), step_list)
+    # add_unique_step((answer_file_and_serve_step, "answer_file_and_serve_idx"), step_list)
+    add_unique_step((truefiling_file_and_serve_step, "truefiling_file_and_serve_idx"), step_list)
+    add_unique_step((truefiling_serve_step, "truefiling_serve_idx"), step_list)
 
     if not ((type_of_response['default'] and stage_of_default == 'judgment entered') or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response.all_true('wrong state', 'default') and user_need == 'answer custody' and not jurisdiction)):
       add_unique_step((read_drpo_step, "read_drpo_idx"), step_list)
@@ -299,7 +301,7 @@ code: |
     # add_unique_step((parent_agreements_step, "parent_agreements_idx"), step_list)
     if agreement_documents:
       add_unique_step((uncontested_custody_forms_step, "uncontested_custody_forms_idx"), step_list)
-      add_unique_step((file_complaint_step, "file_complaint_idx"), step_list)
+      add_unique_step((truefiling_file_and_serve_step, "truefiling_file_and_serve_idx"), step_list)
       add_unique_step((read_drpo_step, "read_drpo_idx"), step_list)
       add_unique_step((expect_after_answer_step, "expect_after_answer_idx"), step_list)
     if domestic_violence:
@@ -689,7 +691,7 @@ content: |
   % endif
 ---
 comment: |
-  2026-02-23
+  2026-04-01
 template: default_options_step
 subject: |
   Step ${ default_options_idx }: Options 
@@ -760,7 +762,7 @@ content: |
   You should decide quickly. The longer you wait, the harder it is to set aside the court's order.
 
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-      You may want to [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm). 
+  You may want to [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm). 
   % else:
   % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
     If something changes substantially, and you want to ask to change the judge's custody Parenting Plan or child support order, read [Modifying Child Custody or Child Support Order](https://courts.alaska.gov/shc/family/shcmodify.htm) on the court's website.
@@ -890,7 +892,7 @@ content: |
   % endif 
 
   1.	File an **Answer** and other required forms with the court to tell the judge what you want to happen in your case.
-  2.	Give a copy of the forms to ${ other_party_in_case }. See Step ${ answer_file_and_serve_idx }.
+  2.	Give a copy of the forms to ${ other_party_in_case }. See Step ${ truefiling_serve_idx }.
   
   % if type_of_response['wrong state'] and (user_need == 'answer custody' and not jurisdiction):
   If you think Alaska is not the "home state," you can ask the court to dismiss your case:
@@ -1520,7 +1522,7 @@ content: |
   </ul>
 ---
 comment: |
-  last updated 2026-03-18
+  last updated 2026-04-02 switch the order of respond to complaint to be inside children or no children in 2nd half of template.
   2026-02-18 heading to reflect no agreement, no help wanted and no kids, not pregnant
   2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
   compare this step with AKA2J domestic_violence_step  headings and content.
@@ -1545,12 +1547,22 @@ content: |
   
   The dynamics in a relationship with domestic violence may also cause people to feel pressured to agree to something they do not want. If this is your situation, these resources may help:
   
-    * [Find a domestic violence program in your area](https://andvsa.org/communitys-programs) to learn about the services they offer (counseling, financial assistance, housing and safe shelter, resources for children, and help with court).
+    * [Find a domestic violence program in your area](https://andvsa.org/communitys-programs) to learn about the services they offer, like counseling, financial assistance, housing and safe shelter, resources for children, and help with court).
     * You can get information about asking the court for a protective order by answering more questions. See the Court Guide Action Plan: [Protective Orders](https://docassemble.akcourts.gov/start/ProtectiveOrders).
     * See if you qualify for [legal assistance through your local domestic violence program](https://www.andvsa.org/for-survivors/) or [Alaska Legal Services Corporation](https://www.alsc-law.org/apply-for-services).
   
-  % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))):
-  % if user_need == 'answer divorce':
+  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
+  
+  % if user_need == 'answer custody':
+  However, some parents in a relationship that includes domestic violence are comfortable reaching an agreement about a Parenting Plan for a variety of reasons.
+    
+  Sometimes, domestic violence does not make either parent uncomfortable or afraid to ask for what they want in the Parenting Plan.
+  
+  If the domestic violence does make a parent uncomfortable or afraid, provisions are used to make the process of trying to reach an agreement feel safer (having a support person present, having a mediator or a trusted third person help with discussions, not meeting in-person, meeting in different rooms, or talking about an agreement through email, text or telephone).
+    
+  Sometimes, one parent's main goal is to finish the case and be done in a safe manner so they are willing to give up some things in the agreement that they may be entitled to under the law.
+
+  % elif user_need == 'answer divorce':
   However, some people in a marriage with domestic violence are comfortable reaching an agreement about 
   % if minor_children or (not minor_children and wife_is_pregnant in('husband','not husband')):
   a Parenting Plan and 
@@ -1564,55 +1576,36 @@ content: |
   Sometimes, one spouse's main goal is to finish the case and be done in a safe manner so they are willing to give up some things in the agreement that they may be entitled to under the law.
   % endif 
   
-  % if user_need == 'answer custody':
-  However, some parents in a relationship that includes domestic violence are comfortable reaching an agreement about a Parenting Plan for a variety of reasons.
-    
-  Sometimes, domestic violence does not make either parent uncomfortable or afraid to ask for what they want in the Parenting Plan.
-  
-  If the domestic violence does make a parent uncomfortable or afraid, provisions are used to make the process of trying to reach an agreement feel safer (having a support person present, having a mediator or a trusted third person help with discussions, not meeting in-person, meeting in different rooms, or talking about an agreement through email, text or telephone).
-    
-  Sometimes, one parent's main goal is to finish the case and be done in a safe manner so they are willing to give up some things in the agreement that they may be entitled to under the law.
-  % endif 
-  
   You can decide if you are comfortable trying to reach an agreement with ${ other_party_in_case } based on the facts and circumstances of your case.
+  % endif 
   % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children or (not minor_children and wife_is_pregnant in('husband','not husband'))):
+  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
   If you want to try to reach an agreement about the Parenting Plan, your options may be limited if there has been domestic violence.
-  % endif
+
   <div class='step-subheading'>Your Parenting Plan agreement may be limited if there is domestic violence</div>
   % else:
-  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children or (not minor_children and wife_is_pregnant in('husband','not husband'))):
   <div class='step-subheading'>How domestic violence affects custody</div>
   % endif
-  % endif
-  
-  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children or (not minor_children and wife_is_pregnant in('husband','not husband'))):  
+
   The law presumes that a parent with a "history of domestic violence" not get custody or unsupervised visitation unless they meet certain requirements. These may include completing a batterer's intervention or substance abuse treatment program.
   
-  
   A "history of domestic violence" is defined by the law as either one incident of domestic violence that caused serious physical injury, or more than one incident. The parent's domestic violence behavior needs to fit under one of the domestic violence crimes in the law. There does not have to be a protective order or criminal case for the court to find a parent has a history of domestic violence. The court can find domestic violence based on one parent's testimony.
-  % endif
   
   % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))):
-  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children or (not minor_children and wife_is_pregnant in('husband','not husband'))):
   <div class='step-subheading'>Considerations if you and ${ other_party_in_case } cannot agree</div>
-  % endif
   % else:
-  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children or (not minor_children and wife_is_pregnant in('husband','not husband'))):  
   <div class='step-subheading'>Contact between parent and children</div>
-  % endif 
-  % endif 
-  
-  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children or (not minor_children and wife_is_pregnant in('husband','not husband'))):
+  % endif
+
   If you think ${ other_party_in_case } should not have any contact with your children, you need to convince the judge that it is in the children's best interest. 
   
   Generally, it is unusual for a judge in a divorce or custody case to decide that a parent cannot see their children. Research shows it is important for children to have a relationship with both parents, if it can happen in a safe manner. 
   
   If the judge finds the domestic violence presumption applies, the judge will usually permit supervised contact between the parent and the children while the parent is completing a batterer's intervention or substance abuse treatment program. After the parent finishes the program and any other requirements the judge ordered, the judge may lift the supervision restriction and allow a different parenting schedule.
   
-  % if (((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))):
+  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
   <div class="step-subheading">Tell the judge your concerns</div>
   % endif 
-  
   The judge will only know about your domestic violence concerns if you state them in the documents you file and when you talk in court. If you have concerns for the children's safety when in the care of ${ other_party_in_case }, or for yourself when interacting with ${ other_party_in_case }, describe them to the judge. If the judge is going to allow ${ other_party_in_case } to have parenting time (visitation) with the children, you can suggest ways to address your concerns. Some options include:
   
     * no drugs or alcohol prior to or during the visits,

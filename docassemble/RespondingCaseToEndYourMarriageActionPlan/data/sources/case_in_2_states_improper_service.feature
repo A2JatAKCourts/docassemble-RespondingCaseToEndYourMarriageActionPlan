@@ -1,6 +1,6 @@
 @case_in_2_states_service
 Feature: User paths
-# 2026-03-24
+# 2026-04-01
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -18,6 +18,7 @@ Scenario: Row #15
     | military                             | True           |         | 
     | minor_children                       | True           |         | 
     | proper_service                       | True           |         | 
+    | other_party_exempt                  | none           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -50,8 +51,13 @@ Scenario: Row #15
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -75,6 +81,7 @@ Scenario: Row #16
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | husband          |         | 
     | proper_service                       | True             |         | 
+    | other_party_exempt                  | no             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -109,8 +116,13 @@ Scenario: Row #16
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -134,6 +146,8 @@ Scenario: Row #17
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | husband          |         | 
     | proper_service                       | False            |         | 
+    | have_complaint                       | True            |         | 
+    | other_party_exempt                  | none           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -171,8 +185,13 @@ Scenario: Row #17
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -197,6 +216,8 @@ Scenario: Row #18
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | not husband      |         | 
     | proper_service                       | True             |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -233,8 +254,13 @@ Scenario: Row #18
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
     And I should see the phrase "Step 6: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 7: out the Certificate of Service"
-    And I should see the phrase "Step 8: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 8: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
     And I should see the phrase "Step 9: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -257,6 +283,7 @@ Scenario: Row #19
     | minor_children                       | False          |         | 
     | wife_is_pregnant                     | not husband    |         | 
     | proper_service                       | False          |         | 
+    | have_complaint                       | False           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -292,8 +319,15 @@ Scenario: Row #19
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
+    And I should see the phrase "If they are not using TrueFiling:"
+    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -317,6 +351,8 @@ Scenario: Row #20
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | not pregnant     |         | 
     | proper_service                       | True             |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -343,8 +379,13 @@ Scenario: Row #20
     And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
     And I should see the phrase "If you want your case in the other state, you can tell the Alaska court by stating it in your Answer and filing a Motion to Dismiss your Alaska case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -368,6 +409,8 @@ Scenario: Row #21
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | not pregnant     |         | 
     | proper_service                       | False            |         | 
+    | have_complaint                       | True            |         | 
+    | other_party_exempt                  | no             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -398,8 +441,13 @@ Scenario: Row #21
     And I should see the phrase "I do NOT agree to a legal separation because I want the marriage to end in a divorce"
     And I should see the phrase "If you want your case in the other state, you can tell the Alaska court by stating it in your Answer and filing a Motion to Dismiss your Alaska case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -420,6 +468,7 @@ Scenario: Row #23
     | stage_of_other_case                  | ended with order |         | 
     | proper_service                       | False            |         | 
     | military                             | True             |         | 
+    | have_complaint                       | False           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 6 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -433,8 +482,15 @@ Scenario: Row #23
     And I should see the phrase "File a copy of the final orders from the other state, and any other documents that support your request."
     And I should see the phrase "If you choose to ask the judge to dismiss your case, use Motion (Request) and Affidavit, TF-706"
     And I should see the phrase "Tell the judge why you think the court does not have jurisdiction and any other reason you think the case should be dismissed."
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
+    And I should see the phrase "If they are not using TrueFiling:"
+    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 5: What to expect after you file your documents"
     And I should see the phrase "Step 6: Get more information or help"
     And I take a screenshot
@@ -455,6 +511,8 @@ Scenario: Row #26
     | military                             | False               |         | 
     | minor_children                       | False               |         | 
     | wife_is_pregnant                     | husband             |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | None           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -468,8 +526,13 @@ Scenario: Row #26
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 4: out the Certificate of Service"
-    And I should see the phrase "Step 5: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 5: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 6: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
@@ -493,6 +556,9 @@ Scenario: Row #27
     | military                             | False               |         | 
     | minor_children                       | False               |         | 
     | wife_is_pregnant                     | husband             |         | 
+    | have_complaint                       | True            |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -510,8 +576,13 @@ Scenario: Row #27
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "I do NOT agree to a legal separation because I want the marriage to end in a divorce"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 5: If you decide to move forward, fill out the Certificate of Service"
-    And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 5: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 6: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
     And I should see the phrase "Step 7: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 8: What to expect after you file your Answer"
     And I should see the phrase "Step 9: If your case is moving forward in Alaska, learn more about the process"
@@ -535,6 +606,7 @@ Scenario: Row #29
     | military                             | False               |         | 
     | minor_children                       | False               |         | 
     | wife_is_pregnant                     | not husband         |         | 
+    | have_complaint                       | False           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -553,8 +625,15 @@ Scenario: Row #29
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 6: If you decide to move forward, fill out the Certificate of Service"
-    And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
+    And I should see the phrase "If they are not using TrueFiling:"
+    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your Answer"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -578,6 +657,9 @@ Scenario: Row #31
     | military                             | False               |         | 
     | minor_children                       | False               |         | 
     | wife_is_pregnant                     | not pregnant        |         | 
+    | have_complaint                       | True            |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | False          |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -594,8 +676,13 @@ Scenario: Row #31
     And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
-    And I should see the phrase "Step 6: If you decide to move forward, fill out the Certificate of Service"
-    And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your Answer"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -619,6 +706,7 @@ Scenario: Row #290
     | minor_children                       | True           |         | 
     | proper_service                       | True           |         | 
     | domestic_violence                    | True           |         | 
+    | other_party_exempt                  | none           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -652,8 +740,13 @@ Scenario: Row #290
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -684,6 +777,7 @@ Scenario: Row #291
     | wife_is_pregnant                     | husband          |         | 
     | proper_service                       | False            |         | 
     | domestic_violence                    | True             |         | 
+    | have_complaint                       | False           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -721,8 +815,15 @@ Scenario: Row #291
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
+    And I should see the phrase "If they are not using TrueFiling:"
+    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -752,6 +853,7 @@ Scenario: Row #292
     | wife_is_pregnant                     | not husband      |         | 
     | proper_service                       | True             |         | 
     | domestic_violence                    | False            |         | 
+    | other_party_exempt                  | none           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -788,8 +890,13 @@ Scenario: Row #292
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
     And I should see the phrase "Step 6: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 7: out the Certificate of Service"
-    And I should see the phrase "Step 8: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 8: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 9: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -814,6 +921,9 @@ Scenario: Row #293
     | wife_is_pregnant                     | not husband    |         | 
     | proper_service                       | False          |         | 
     | domestic_violence                    | False           |         | 
+    | have_complaint                       | True            |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | None           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -849,8 +959,13 @@ Scenario: Row #293
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -876,6 +991,7 @@ Scenario: Row #294
     | wife_is_pregnant                     | not pregnant     |         | 
     | proper_service                       | True             |         | 
     | domestic_violence                    | True             |         | 
+    | other_party_exempt                  | no             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -904,8 +1020,13 @@ Scenario: Row #294
     And I should see the phrase "If you think the Alaska court should hear the case, use section 5 to tell the judge there are 2 cases and why you think the case should move forward in Alaska."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims.""
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
-    And I should see the phrase "Step 6: out the Certificate of Service"
-    And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -929,6 +1050,7 @@ Scenario: Row #295
     | stage_of_other_case                  | ended with order |         | 
     | proper_service                       | False            |         | 
     | military                             | True             |         | 
+    | have_complaint                       | False           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 6 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -942,8 +1064,15 @@ Scenario: Row #295
     And I should see the phrase "If you choose to ask the judge to dismiss your case"
     And I should see the phrase "Motion (Request) and Affidavit, TF-706"
     And I should see the phrase "Tell the judge why you think the court does not have jurisdiction and any other reason you think the case should be dismissed."
-    And I should see the phrase "Step 3: out the Certificate of Service"
-    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 4: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
+    And I should see the phrase "If they are not using TrueFiling:"
+    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 5: What to expect after you file your documents"
     And I should see the phrase "Step 6: Get more information or help"
     And I take a screenshot
@@ -966,6 +1095,8 @@ Scenario: Row #296
     | minor_children                       | False               |         | 
     | wife_is_pregnant                     | husband             |         | 
     | domestic_violence                    | True                |         | 
+    | other_party_exempt                  | yes            |         | 
+    | other_party_enter_email             | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -979,8 +1110,13 @@ Scenario: Row #296
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 4: out the Certificate of Service"
-    And I should see the phrase "Step 5: File your documents with the court and serve your spouse"
+    And I should see the phrase "Step 4: File your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 5: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
     And I should see the phrase "Step 6: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
@@ -1012,6 +1148,8 @@ Scenario: Row #297
     | minor_children                       | False               |         | 
     | wife_is_pregnant                     | not pregnant        |         | 
     | domestic_violence                    | True                |         | 
+    | have_complaint                       | True            |         | 
+    | other_party_exempt                  | none           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1028,8 +1166,13 @@ Scenario: Row #297
     And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
-    And I should see the phrase "Step 6: If you decide to move forward, fill out the Certificate of Service"
-    And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your Answer"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -1056,6 +1199,7 @@ Scenario: Row #298
     | minor_children                       | False               |         | 
     | wife_is_pregnant                     | husband             |         | 
     | domestic_violence                    | True                |         | 
+    | have_complaint                       | False           |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1073,8 +1217,15 @@ Scenario: Row #298
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "I do NOT agree to a legal separation because I want the marriage to end in a divorce"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 5: If you decide to move forward, fill out the Certificate of Service"
-    And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 5: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 6: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
+    And I should see the phrase "If they are not using TrueFiling:"
+    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 7: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 8: What to expect after you file your Answer"
     And I should see the phrase "Step 9: If your case is moving forward in Alaska, learn more about the process"
@@ -1082,7 +1233,7 @@ Scenario: Row #298
     And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
-        And I should see the phrase "Step 11: Get more information or help"
+    And I should see the phrase "Step 11: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -1105,6 +1256,8 @@ Scenario: Row #299
     | minor_children                       | False               |         | 
     | wife_is_pregnant                     | not husband         |         | 
     | domestic_violence                    | False                |         | 
+    | have_complaint                       | True            |         | 
+    | other_party_exempt                  | no             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1123,8 +1276,13 @@ Scenario: Row #299
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
-    And I should see the phrase "Step 6: If you decide to move forward, fill out the Certificate of Service"
-    And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
+    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "Step 7: Serve your spouse"
+    And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
+    And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
+    And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
+    And I should see the phrase "Use TrueFiling to serve your spouse."
     And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your Answer"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
