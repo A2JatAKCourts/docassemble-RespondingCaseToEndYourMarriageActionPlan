@@ -1,6 +1,6 @@
 @wrong_state
 Feature: user paths
-# 2026-03-31
+# 2026-04-02
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -240,7 +240,7 @@ Scenario: Row #30
     | military                        | False          |         | 
     | minor_children                  | True           |         | 
     | other_party_exempt              | no             |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
@@ -908,7 +908,7 @@ Scenario: Row #252
     | children_of_the_marriage            | True             |         | 
     | domestic_violence                   | True             |         | 
     | other_party_exempt                  | no               |         | 
-    And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
@@ -934,8 +934,9 @@ Scenario: Row #252
     And I should see the phrase "Step 6: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
     And I should see the phrase "Step 7: What to expect after you file your documents"
     And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
-    And I should see the phrase "Step 9: Learn about paternity"
-    And I should see the phrase "Step 10: Get more information or help"
+    And I should see the phrase "Step 9: Abuse or domestic violence and parenting"
+    And I should see the phrase "Step 10: Learn about paternity"
+    And I should see the phrase "Step 11: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -993,7 +994,6 @@ Scenario: Row #254
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
-    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -1512,14 +1512,14 @@ Scenario: Row #279
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Step 4: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 5: File your documents with the court and serve your spouse"
-    And I should see the phrase "Step 6: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
-    And I should see the phrase "Step 7: What to expect after you file your documents"
+    And I should see the phrase "Step 6: Serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
-    And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Use TrueFiling to serve your spouse."
+    And I should see the phrase "Step 7: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 8: What to expect after you file your documents"
     And I should see the phrase "Step 9: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 10: Abuse or domestic violence resources"
     And I should see the phrase "Step 11: Get more information or help"
