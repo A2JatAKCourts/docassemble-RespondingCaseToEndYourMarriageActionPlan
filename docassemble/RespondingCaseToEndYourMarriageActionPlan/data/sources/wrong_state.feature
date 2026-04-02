@@ -1517,7 +1517,7 @@ Scenario: Row #279
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Use TrueFiling to serve your spouse."
+    And I should see the phrase "Look at their complaint to see if they checked they were exempt."
     And I should see the phrase "Step 7: Read the "Domestic Relations Procedural Order" or Standing Order that was with the Complaint"
     And I should see the phrase "Step 8: What to expect after you file your documents"
     And I should see the phrase "Step 9: If your case is moving forward in Alaska, learn more about the process"
