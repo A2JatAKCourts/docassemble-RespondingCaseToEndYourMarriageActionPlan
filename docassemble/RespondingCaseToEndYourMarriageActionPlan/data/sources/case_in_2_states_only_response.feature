@@ -1,6 +1,6 @@
 @case_in_2_states_still_going_only_response
 Feature: User paths
-# 2026-03-12
+# 2026-04-03
 
 Background: 
   Given the maximum seconds for each Step is 90

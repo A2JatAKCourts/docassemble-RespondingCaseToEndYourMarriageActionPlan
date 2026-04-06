@@ -1,7 +1,6 @@
 @case_in_2_states_and_default
 Feature: User paths
-# 2026-04-01
-
+# 2026-04-06
 Background: 
   Given the maximum seconds for each Step is 90
 
@@ -1007,6 +1006,7 @@ Scenario: Row #280
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 12: Abuse or domestic violence resources"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "Step 13: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
@@ -1108,9 +1108,10 @@ Scenario: Row #281
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
     And I should see the phrase "Contact between parent and children"
-    And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge"
+    And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "If you think you or your children’s health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
@@ -1208,9 +1209,10 @@ Scenario: Row #282
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
     And I should see the phrase "Contact between parent and children"
-    And I should see the phrase "If you think your spouse should not have any contact with your children, you need to convince the judge"
+    And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "If you think you or your children’s health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 12: Learn about paternity"
     And I should see the phrase "Step 13: Get more information or help"
@@ -1518,6 +1520,7 @@ Scenario: Row #288
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence resources"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
@@ -1539,7 +1542,6 @@ Scenario: Row #289 #same as row 165
     | minor_children                       | False               |         | 
     | wife_is_pregnant                     | not pregnant        |         | 
     | proper_service                       | False               |         | 
-    | domestic_violence                    | True                |         | 
     | have_complaint                       | True                |         | 
     | other_party_exempt                   | no                  |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
