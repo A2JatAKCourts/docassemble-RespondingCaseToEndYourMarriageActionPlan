@@ -1542,12 +1542,18 @@ content: |
   People who have experienced domestic violence can be at greater risk when they start a court case.
   % elif user_need == 'divorce':
   People who have experienced domestic violence can be at greater risk when they separate from their spouse or start a court case to end their marriage.
+  % elif user_need in('answer custody', 'answer divorce'):
+  <span style="color: pink;">People who have experienced domestic violence can be at risk during a court case. - add to features</span>
   % endif
    During this time, safety is very important. 
   
   The dynamics in a relationship with domestic violence may also cause people to feel pressured to agree to something they do not want. If this is your situation, these resources may help:
   
-    * [Find a domestic violence program in your area](https://andvsa.org/communitys-programs) to learn about the services they offer, like counseling, financial assistance, housing and safe shelter, resources for children, and help with court).
+    * [Find a domestic violence program in your area](https://andvsa.org/communitys-programs) to learn about the services they offer, like counseling, financial assistance, housing and safe shelter, 
+  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children):
+  resources for children, 
+  % endif
+  and help with court.
     * You can get information about asking the court for a protective order by answering more questions. See the Court Guide Action Plan: [Protective Orders](https://docassemble.akcourts.gov/start/ProtectiveOrders).
     * See if you qualify for [legal assistance through your local domestic violence program](https://www.andvsa.org/for-survivors/) or [Alaska Legal Services Corporation](https://www.alsc-law.org/apply-for-services).
   
@@ -1584,7 +1590,7 @@ content: |
 
   <div class='step-subheading'>Your Parenting Plan agreement may be limited if there is domestic violence</div>
   % else:
-  <div class='step-subheading'>How domestic violence affects custody</div>
+  <div class='step-subheading'>How domestic violence affects a ${ case_type } case</div>
   % endif
 
   The law presumes that a parent with a "history of domestic violence" not get custody or unsupervised visitation unless they meet certain requirements. These may include completing a batterer's intervention or substance abuse treatment program.
@@ -1599,7 +1605,7 @@ content: |
 
   If you think ${ other_party_in_case } should not have any contact with your children, you need to convince the judge that it is in the children's best interest. 
   
-  Generally, it is unusual for a judge in a divorce or custody case to decide that a parent cannot see their children. Research shows it is important for children to have a relationship with both parents, if it can happen in a safe manner. 
+  Generally, it is unusual for a judge in a ${ case_type } case to decide that a parent cannot see their children. Research shows it is important for children to have a relationship with both parents, if it can happen in a safe manner. 
   
   If the judge finds the domestic violence presumption applies, the judge will usually permit supervised contact between the parent and the children while the parent is completing a batterer's intervention or substance abuse treatment program. After the parent finishes the program and any other requirements the judge ordered, the judge may lift the supervision restriction and allow a different parenting schedule.
   

@@ -752,6 +752,7 @@ Scenario: Row #290
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
 # domestic_violence True
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
@@ -828,6 +829,7 @@ Scenario: Row #291
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
@@ -1031,6 +1033,7 @@ Scenario: Row #294
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence resources"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
 #    And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about dividing marital property and debt for a variety of reasons."
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
@@ -1121,6 +1124,7 @@ Scenario: Row #296
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 9: Abuse or domestic violence and parenting"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
 #    And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about a Parenting Plan and dividing marital property and debt for a variety of reasons."
     And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
@@ -1177,6 +1181,7 @@ Scenario: Row #297
     And I should see the phrase "Step 9: What to expect after you file your Answer"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence resources"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
@@ -1230,6 +1235,7 @@ Scenario: Row #298
     And I should see the phrase "Step 8: What to expect after you file your Answer"
     And I should see the phrase "Step 9: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 10: Abuse or domestic violence and parenting"
+    And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
