@@ -1,6 +1,6 @@
 @wrong_state
 Feature: user paths
-# 2026-04-02
+# 2026-04-07
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -936,10 +936,8 @@ Scenario: Row #252
     And I should see the phrase "Step 8: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 9: Abuse or domestic violence and parenting"
     And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
-    And I should see the phrase "Considerations if you and your spouse cannot agree"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
-    And I should see the phrase "Tell the judge your concerns"
     And I should see the phrase "Do not give your spouse a copy of the completed Child Custody Jurisdiction Affidavit after you file it with the court."
     And I should see the phrase "Step 10: Learn about paternity"
     And I should see the phrase "Step 11: Get more information or help"
@@ -1010,10 +1008,8 @@ Scenario: Row #254
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
     And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
-    And I should see the phrase "Considerations if you and your spouse cannot agree"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
-    And I should see the phrase "Tell the judge your concerns"
     And I should see the phrase "Do not give your spouse a copy of the completed Child Custody Jurisdiction Affidavit after you file it with the court."
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot

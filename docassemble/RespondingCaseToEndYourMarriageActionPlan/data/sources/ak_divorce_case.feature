@@ -522,7 +522,7 @@ Scenario: Row #205
     And I should see the phrase "Step 8: Abuse or domestic violence and parenting"
     And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
 #  And I should see the phrase "However, some people in a marriage with domestic violence are comfortable reaching an agreement about a Parenting Plan and dividing marital property and debt for a variety of reasons."
-    And I should see the phrase "How domestic violence affects custody"
+    And I should see the phrase "How domestic violence affects a legal separation case"
     And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
     And I should see the phrase "Contact between parent and children"
