@@ -9,9 +9,9 @@ include:
   - docassemble.AKA2JBranding:aka2j_motion_response_templates.yml    
   - docassemble.AKA2JBranding:aka2j_mod_cust_div_templates.yml
   - accordion_steps.yml
-  - truefiling.yml
+  # - truefiling.yml
   # - testing_domestic_violence.yml
-  # - docassemble.AKA2JBranding:truefiling.yml
+  - docassemble.AKA2JBranding:truefiling.yml
   # - divorce_answer_step.yml
   # - answer_divorce_jurisdiction_residency_step.yml
   # - dismiss_divorce_step.yml
@@ -665,9 +665,9 @@ attachment:
   update references: True
   variable name: responding_ending_marriage_action_plan_attachment[i]
   skip undefined: True
-  docx template file: dummy.docx
+  # docx template file: dummy.docx
   # docx template file: stripped_dummy.docx
-  # docx template file: responding_ending_marriage_action_plan.docx
+  docx template file: responding_ending_marriage_action_plan.docx
   tagged pdf: True
 ---
 attachment:
@@ -676,7 +676,7 @@ attachment:
   update references: True
   variable name: docx_responding_ending_marriage_action_plan_attachment
   skip undefined: True
-  docx template file: dummy.docx
+  # docx template file: dummy.docx
   # docx template file: stripped_dummy.docx
-  # docx template file: responding_ending_marriage_action_plan.docx
+  docx template file: responding_ending_marriage_action_plan.docx
   tagged pdf: True
