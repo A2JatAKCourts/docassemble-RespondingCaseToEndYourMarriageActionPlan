@@ -687,7 +687,7 @@ content: |
   % endif  
 ---
 comment: |
-  2026-04-01
+  2026-04-14
 template: default_options_step
 subject: |
   Step ${ default_options_idx }: Options 
@@ -716,9 +716,9 @@ content: |
   It can be complicated to have ${ "custody" if user_need == 'answer custody' else "court" }} orders from 2 different state courts. You may want to ${ "tell the judge you were not served properly and and ask" if not proper_service else "ask the judge" } to set aside the default judgment.
   % else: # not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') but still (type_of_response['default'] and stage_of_default == 'judgment entered')
   % if not proper_service:
-    If you were not served the correct way, you can tell the judge and ask the judge to set aside the judgment.
+  If you were not served the correct way, you can tell the judge and ask the judge to set aside the judgment.
   % endif
-  If you {{ "decide" if proper_service else "want" }} to ask the judge to set aside the default judgment, fill out and file the paperwork as soon as you can.
+  If you ${ "decide" if proper_service else "want" } to ask the judge to set aside the default judgment, fill out and file the paperwork as soon as you can.
   % endif
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
   Fill out and file the paperwork as soon as you can.
@@ -728,11 +728,11 @@ content: |
   <div class="step-subheading">Option 2. Do nothing</div>
 
   % if not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
-    If you are okay with the judge's orders you do not need to do anything. 
+  If you are okay with the judge's orders you do not need to do anything. 
   % endif
   Be sure you know exactly what the judge ordered. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court’s website. 
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-    If the Alaska order is different from the {{ "custody" if user_need == 'answer custody' else "court" }} order in the other state, it can be very complicated. It may be best to tell the judge about the other order and try to set aside the Alaska order. 
+  If the Alaska order is different from the ${ "custody" if user_need == 'answer custody' else "court" } order in the other state, it can be very complicated. It may be best to tell the judge about the other order and try to set aside the Alaska order. 
   % endif # type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'
   
   You should decide quickly. The longer you wait, the harder it is to set aside the court's order.
@@ -741,7 +741,7 @@ content: |
   You may want to [talk to a lawyer](https://ak-courts.info/findlawyer). 
   % else:
   % if user_need == 'answer custody' or (user_need == 'answer divorce' and minor_children):
-    If something changes substantially, and you want to ask to change the judge's custody, Parenting Plan or child support order, read [Modifying Child Custody or Child Support Order](https://ak-courts.info/mtm) on the court's website.
+  If something changes substantially, and you want to ask to change the judge's custody, Parenting Plan or child support order, read [Modifying Child Custody or Child Support Order](https://ak-courts.info/mtm) on the court's website.
   % endif
   % endif
   % elif type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled'):
@@ -772,23 +772,15 @@ content: |
   % if user_need == 'answer custody':
   get a custody, Parenting Plan and child support order. Or
   % elif user_need == 'answer divorce':
-  end your marriage ${ ' and get a custody, Parenting Plan, and child support order' if minor_children  or wife_is_pregnant in('husband', 'not husband') else '' }. Or
+  end your marriage${ ' and get a custody, Parenting Plan, and child support order.' if minor_children or wife_is_pregnant in('husband', 'not husband') else '.' } Or
   % endif
     * You do not want to risk a default judgment.
 
   If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court's website.
-  % if stage_of_default == 'application filed' and proper_service:
-    And because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late. See ${ answer_step.subject }.
-  % endif
-  % if stage_of_default == 'hearing scheduled':
-  
-    Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late. See ${ answer_step.subject }.
-  % endif
   % if not proper_service:
     <div class="step-subheading">Option 2. Tell the judge you were not served the correct way and ask to dismiss the case</div>
     If you think you were not served the correct way and you want the court to dismiss the case, you can fill out and file a **Motion to Dismiss** that tells the court why you think you were not served properly. See Step ${ dismiss_idx }
-
-    If ${ other_party_in_case } serves you properly in the future, the court may decide not to dismiss your case. Read Step ${ answer_idx } to learn about filing an Answer.
+  
     <div class="step-subheading">Option 3. Do nothing</div>
   % else:
     <div class="step-subheading">Option 2. Do nothing</div>
@@ -1386,7 +1378,7 @@ content: |
   % endif
   % if (type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled') and not proper_service) or type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
   <div class='step-subheading'>File and serve with TrueFiling</div>
-  If you are using TrueFiling, you can file your motion with the court and send a copy of all your documents to {{ other_party_in_case }} through TrueFiling.
+  If you are using TrueFiling, you can file your motion with the court and send a copy of all your documents to ${ other_party_in_case } through TrueFiling.
   <div class='step-subheading'>If you are not using Truefiling</div>
   1.	Make 2 copies of all your documents.
   2.	Mail or hand deliver the original to the court where the complaint was filed.

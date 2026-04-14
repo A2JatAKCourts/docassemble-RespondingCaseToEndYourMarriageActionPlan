@@ -1,6 +1,6 @@
 @default
 Feature: User paths
-# 2026-04-01
+# 2026-04-14
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -122,7 +122,7 @@ Scenario: Row #62
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
 # And I tap the "#ZGVmYXVsdF9vcHRpb25zX3N0ZXA .al_toggle" element and stay on the same page
-    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
+    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
@@ -160,7 +160,6 @@ Scenario: Row #63
 # And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
 # And I tap the "#ZGVmYXVsdF9vcHRpb25zX3N0ZXA .al_toggle" element and stay on the same page
-    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
@@ -198,7 +197,7 @@ Scenario: Row #66
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
 # And I tap the "#ZGVmYXVsdF9vcHRpb25zX3N0ZXA .al_toggle" element and stay on the same page
-    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
+    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
