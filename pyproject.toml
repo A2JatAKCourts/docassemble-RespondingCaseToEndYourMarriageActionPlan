@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "docassemble.RespondingCaseToEndYourMarriageActionPlan"
-version = "26.04.14"
+version = "26.04.15"
 description = "A docassemble extension."
 readme = "README.md"
 authors = [
@@ -14,7 +14,7 @@ authors = [
 ]
 dependencies = [
     "docassemble.AKA2JBranding @ git+https://github.com/A2JatAKCourts/docassemble-AKA2JBranding.git@main",
-    "docassemble.AssemblyLine>=4.4.0",
+    "docassemble.AssemblyLine>=4.5.0",
 ]
 
 [project.urls]

@@ -1513,7 +1513,7 @@ content: |
   % elif user_need == 'divorce':
   People who have experienced domestic violence can be at greater risk when they separate from their spouse or start a court case to end their marriage.
   % elif user_need in('answer custody', 'answer divorce'):
-  People who have experienced domestic violence can be at risk during a court case
+  People who have experienced domestic violence can be at risk during a court case.
   % endif
    During this time, safety is very important. 
   
@@ -1555,7 +1555,7 @@ content: |
   You can decide if you are comfortable trying to reach an agreement with ${ other_party_in_case } based on the facts and circumstances of your case.
   % endif 
   % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children or (not minor_children and wife_is_pregnant in('husband','not husband'))):
-  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)) or (user_need in ('answer custody', 'answer divorce') and type_of_resonse.all_false()):
+  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)) or (user_need in ('answer custody', 'answer divorce') and type_of_response.all_false()):
   If you want to try to reach an agreement about the Parenting Plan, your options may be limited if there has been domestic violence.
 
   <div class='step-subheading'>Your Parenting Plan agreement may be limited if there is domestic violence</div>
