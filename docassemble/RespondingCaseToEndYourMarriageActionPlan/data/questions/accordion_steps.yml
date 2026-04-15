@@ -1025,7 +1025,7 @@ content: |
       * File it with your Answer.
   % endif
   % if stage_of_default == 'hearing scheduled':
-  Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late.
+  Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late.
   Fill out a **Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858** [[Fill-in PDF](https://public.courts.alaska.gov/web/forms/docs/civ-858.pdf)].
   
     * Explain why you did not reply in 20 days.
