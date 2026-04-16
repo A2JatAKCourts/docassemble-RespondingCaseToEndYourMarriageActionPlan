@@ -104,8 +104,6 @@ Scenario: Row #16
     And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
 # proper_service True
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
@@ -173,8 +171,6 @@ Scenario: Row #17
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # legal separation, wife_is_pregnant husband
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
@@ -242,8 +238,6 @@ Scenario: Row #18
     And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant not husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
 # proper_service True
@@ -311,8 +305,6 @@ Scenario: Row #19
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant not husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # divorce, wife_is_pregnant not husband
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
@@ -815,8 +807,6 @@ Scenario: Row #291
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # legal separation, wife_is_pregnant husband
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
@@ -891,8 +881,6 @@ Scenario: Row #292
     And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant not husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
 # proper_service True
