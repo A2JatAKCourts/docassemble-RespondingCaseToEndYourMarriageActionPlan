@@ -596,6 +596,7 @@ content: |
   If neither you nor ${ other_party_in_case } files anything, the court will close your case.
 ---
 comment: |
+  2026-04-16 adding bitly links
   2026-04-10 updated ABA resources - no longer offer consumer guide, but do offer free legal answers in 41 states.
   2026-02-14 formatted
 template: case_in_2_states_step
@@ -640,7 +641,7 @@ content: |
   % endif
 
   % if type_of_response.any_true('improper service', 'default') and not proper_service:
-    If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://courts.alaska.gov/trialcourts/index.htm#recs) on the court's website. If you are not sure you want to respond, you should [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm).
+    If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court's website. If you are not sure you want to respond, you should [talk to a lawyer](https://ak-courts.info/findlawyer).
   % endif
   
   % if stage_of_other_case == 'still going':
@@ -687,7 +688,7 @@ content: |
   % endif  
 ---
 comment: |
-  2026-04-14
+  2026-04-16 - typo
 template: default_options_step
 subject: |
   Step ${ default_options_idx }: Options 
@@ -713,7 +714,7 @@ content: |
   <div class="step-subheading">Option 1. Ask to Set Aside the Default Judgment</div>
 
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-  It can be complicated to have ${ "custody" if user_need == 'answer custody' else "court" }} orders from 2 different state courts. You may want to ${ "tell the judge you were not served properly and and ask" if not proper_service else "ask the judge" } to set aside the default judgment.
+  It can be complicated to have ${ "custody" if user_need == 'answer custody' else "court" } orders from 2 different state courts. You may want to ${ "tell the judge you were not served properly and and ask" if not proper_service else "ask the judge" } to set aside the default judgment.
   % else: # not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') but still (type_of_response['default'] and stage_of_default == 'judgment entered')
   % if not proper_service:
   If you were not served the correct way, you can tell the judge and ask the judge to set aside the judgment.
@@ -821,6 +822,7 @@ content: |
     * If you decide you do not want a legal separation, check the box telling the court “I do not agree to a legal separation because I want the marriage to end in a divorce” in the “Counterclaims” section of your Answer (pages 2-3).
 ---
 comment: |
+  2026-04-14 removing no longer required forms, findings of fact and custody judgment
   2026-03-17 fine tuning as I write tests
   2026-02-26 deleted 'continue to request for relief' in counterclaims section of legal separation - a whole lot more stuff to answer before moving on to request for relief.
   2026-02-23 fixing conditions so answer forms appear in divorce even if type_of_response is not ['ak divorce case']
@@ -1081,12 +1083,7 @@ content: |
   % endif
 
   **Joint Motion to Put Settlement on the Record, SHC-1063** [Word](https://courts.alaska.gov/shc/family/docs/shc-1063.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1063n.pdf)
-  % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
   
-  **Custody Findings of Fact & Conclusions of Law, DR-460** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-460.pdf)]
-  
-  **Custody Judgment, DR-465** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-465.pdf)]
-  % endif
   % endif
   % endif
 ---

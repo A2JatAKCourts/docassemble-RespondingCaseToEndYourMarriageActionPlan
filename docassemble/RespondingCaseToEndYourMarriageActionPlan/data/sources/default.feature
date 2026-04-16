@@ -1,6 +1,6 @@
 @default
 Feature: User paths
-# 2026-04-14
+# 2026-04-16
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -49,6 +49,7 @@ Scenario: Row #46
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row61
 Scenario: Row #61
@@ -100,6 +101,7 @@ Scenario: Row #61
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row62
 Scenario: Row #62
@@ -137,6 +139,7 @@ Scenario: Row #62
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row63
 Scenario: Row #63
@@ -174,6 +177,7 @@ Scenario: Row #63
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row66
 Scenario: Row #66
@@ -212,4 +216,5 @@ Scenario: Row #66
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 

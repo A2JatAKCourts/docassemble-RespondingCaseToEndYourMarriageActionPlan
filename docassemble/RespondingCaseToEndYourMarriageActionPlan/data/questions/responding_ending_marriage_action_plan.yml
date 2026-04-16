@@ -1,5 +1,6 @@
 Comment: |
- 2026-04-08
+ 2026-04-16 
+ comment out features block w noredasterisk
 
 ---
 include:
@@ -58,10 +59,10 @@ objects:
   - users: ALPeopleList
   - type_of_response: DADict.using(auto_gather=False)
 ---
-features:
-  css: 
-    - NoRedAsterisk.css
-# sections:
+#features:
+#  css: 
+#    - NoRedAsterisk.css
+## sections:
 #   - review_responding_ending_marriage_action_plan: Review your answers
 ---
 #################### Interview order #####################
@@ -667,7 +668,7 @@ attachment:
   skip undefined: True
   # docx template file: dummy.docx
   docx template file: responding_ending_marriage_action_plan.docx
-  # docx template file: stripped_dummy5.docx
+  # docx template file: stripped_dummy6.docx
   tagged pdf: True
 ---
 attachment:
@@ -678,5 +679,5 @@ attachment:
   skip undefined: True
   # docx template file: dummy.docx
   docx template file: responding_ending_marriage_action_plan.docx
-  # docx template file: stripped_dummy5.docx
+  # docx template file: stripped_dummy6.docx
   tagged pdf: True
