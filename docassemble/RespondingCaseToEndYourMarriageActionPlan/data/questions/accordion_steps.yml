@@ -222,7 +222,7 @@ code: |
     if case_type == 'legal separation' and want_legal_separation in('no', 'unsure'):
       if want_legal_separation == 'unsure':
         add_unique_step((divorce_legal_separation_diff_step, "divorce_legal_separation_diff_idx"), step_list) 
-  
+    add_unique_step((answer_step, "answer_idx"), step_list)
 
   if type_of_response.any_true() and not (type_of_response.all_true('stay married', exclusive = True)):
     add_unique_image({'image': service_cert_image, 'text': "Certificate of Service"}, images_list)
@@ -770,6 +770,7 @@ content: |
     * If you decide you do not want a legal separation, check the box telling the court “I do not agree to a legal separation because I want the marriage to end in a divorce” in the “Counterclaims” section of your Answer (pages 2-3).
 ---
 comment: |
+  2026-04-17 format subject, replace the Joint Motion to Put Settlement on the Record, SHC-1063  with Request to Put Agreement on the Record, DR-264
   2026-04-14 removing no longer required forms, findings of fact and custody judgment
   2026-03-17 fine tuning as I write tests
   2026-02-26 deleted 'continue to request for relief' in counterclaims section of legal separation - a whole lot more stuff to answer before moving on to request for relief.
@@ -784,25 +785,25 @@ subject: |
   % if type_of_response['wrong state'] and type_of_response.all_false('default') and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce'): 
   Fill out the forms to respond
   % if not(type_of_response.any_true('improper service', 'default') and not proper_service):
-    in 20 days
+  in 20 days
   % endif
-   and ask to dismiss if you think Alaska is the wrong state
+  and ask to dismiss if you think Alaska is the wrong state
   % else:
   % if type_of_response.all_true('improper service', exclusive = True) \
     or (type_of_response['improper service'] and not proper_service and \
     ((type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'))) \
       or (type_of_response['default'] and stage_of_default in ('application filed', 'hearing scheduled') and ((type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'))) \
       or (type_of_response.all_true('default', exclusive = True) and stage_of_default in('application filed', 'hearing scheduled')):
-    If you decide to move forward, fill
+  If you decide to move forward, fill
   % elif type_of_response['case in 2 states'] and stage_of_other_case == 'still going' and ((type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled')) or type_of_response.all_false('default')):
-    If you decide to move forward in Alaska, fill 
+  If you decide to move forward in Alaska, fill 
   % else:
-    Fill
+  Fill
   % endif
-    out the forms to answer the complaint
-    % if type_of_response.all_true('improper service', exclusive = True) or (not (type_of_response.any_true('improper service', 'default') and not proper_service)):
-    and respond within 20 days
-    % endif
+  out the forms to answer the complaint
+  % if type_of_response.all_true('improper service', exclusive = True) or (not (type_of_response.any_true('improper service', 'default') and not proper_service)):
+  and respond within 20 days
+  % endif
   % endif
 content: |
   % if not(type_of_response.any_true('improper service', 'default') and not proper_service):
