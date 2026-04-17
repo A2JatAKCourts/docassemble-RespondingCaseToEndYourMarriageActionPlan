@@ -1,6 +1,6 @@
 @case_in_2_states_service
 Feature: User paths
-# 2026-04-01
+# 2026-04-16
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -65,6 +65,7 @@ Scenario: Row #15
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row16
 Scenario: Row #16
@@ -103,8 +104,6 @@ Scenario: Row #16
     And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
 # proper_service True
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
@@ -130,6 +129,7 @@ Scenario: Row #16
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row17
 Scenario: Row #17
@@ -171,8 +171,6 @@ Scenario: Row #17
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # legal separation, wife_is_pregnant husband
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
@@ -199,6 +197,7 @@ Scenario: Row #17
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 
 @row18
@@ -239,8 +238,6 @@ Scenario: Row #18
     And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant not husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
 # proper_service True
@@ -268,6 +265,7 @@ Scenario: Row #18
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row19
 Scenario: Row #19
@@ -307,8 +305,6 @@ Scenario: Row #19
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant not husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # divorce, wife_is_pregnant not husband
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
@@ -335,6 +331,7 @@ Scenario: Row #19
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row20
 Scenario: Row #20
@@ -393,6 +390,7 @@ Scenario: Row #20
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row21
 Scenario: Row #21
@@ -455,6 +453,7 @@ Scenario: Row #21
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row23
 Scenario: Row #23
@@ -496,6 +495,7 @@ Scenario: Row #23
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row26
 Scenario: Row #26
@@ -540,6 +540,7 @@ Scenario: Row #26
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row27
 Scenario: Row #27
@@ -590,6 +591,7 @@ Scenario: Row #27
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row29
 Scenario: Row #29
@@ -641,6 +643,7 @@ Scenario: Row #29
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row31
 Scenario: Row #31
@@ -690,6 +693,7 @@ Scenario: Row #31
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row290
 Scenario: Row #290
@@ -760,6 +764,7 @@ Scenario: Row #290
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row291
 Scenario: Row #291
@@ -802,8 +807,6 @@ Scenario: Row #291
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # legal separation, wife_is_pregnant husband
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
@@ -837,6 +840,7 @@ Scenario: Row #291
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row292
 Scenario: Row #292 
@@ -877,8 +881,6 @@ Scenario: Row #292
     And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant not husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
 # proper_service True
@@ -906,6 +908,7 @@ Scenario: Row #292
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row293
 Scenario: Row #293
@@ -975,6 +978,7 @@ Scenario: Row #293
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row294
 Scenario: Row #294
@@ -1039,6 +1043,7 @@ Scenario: Row #294
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row295
 Scenario: Row #295
@@ -1081,6 +1086,7 @@ Scenario: Row #295
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row296
 Scenario: Row #296
@@ -1133,6 +1139,7 @@ Scenario: Row #296
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 
 @row297
@@ -1186,6 +1193,7 @@ Scenario: Row #297
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row298
 Scenario: Row #298
@@ -1243,6 +1251,7 @@ Scenario: Row #298
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 
 @row299
@@ -1296,3 +1305,4 @@ Scenario: Row #299
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds

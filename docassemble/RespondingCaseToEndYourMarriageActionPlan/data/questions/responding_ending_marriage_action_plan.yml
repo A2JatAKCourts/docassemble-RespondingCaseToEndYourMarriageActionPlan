@@ -1,5 +1,6 @@
 Comment: |
- 2026-04-06
+ 2026-04-16 
+ comment out features block w noredasterisk
 
 ---
 include:
@@ -58,10 +59,10 @@ objects:
   - users: ALPeopleList
   - type_of_response: DADict.using(auto_gather=False)
 ---
-features:
-  css: 
-    - NoRedAsterisk.css
-# sections:
+#features:
+#  css: 
+#    - NoRedAsterisk.css
+## sections:
 #   - review_responding_ending_marriage_action_plan: Review your answers
 ---
 #################### Interview order #####################
@@ -130,7 +131,7 @@ fields:
         help: |
           Pick this choice if cases to end your marriage were filed in both Alaska and another state. This choice includes steps if you think Alaska is the wrong state.
       - "My spouse started a case to end our marriage, I did not respond, and I got papers about a 'default judgment.'": default
-      - "My spouse wants to end the marriage, but I want to stay married.": stay married
+      - "My spouse started a case to end the marriage, but I want to stay married.": stay married
     none of the above: |
       My spouse has not started a case to end our marriage yet, but wants to see if we can end the marriage and agree on all the issues.
   - note: |
@@ -368,7 +369,7 @@ subquestion: |
   % endif # minor_children
   % endif # affect your case
   % else: 
-  there may be additional resources available to you.
+  There may be additional resources available to you.
   % endif # not minor_children and not want_help_to_agree
 fields:
   - no label: domestic_violence
@@ -414,7 +415,13 @@ id: Is wife pregnant
 question: |
   Is wife pregnant?
 subquestion: |
-   If a wife is pregnant when ${ 'a marriage ends' if case_type == 'divorce' else 'a couple legally separates' }, the law considers the husband to be the father. If the husband is the father, the court will decide a Parenting Plan and child support. If the husband is not the father, the court can remove the husband’s rights and responsibilities for that child.
+  If a wife is pregnant when
+  % if type_of_response.all_false() or (type_of_response.any_true() and case_type == 'divorce') :
+  a marriage ends,
+  % else:
+  a couple legally separates,
+  % endif
+  the law considers the husband to be the father. If the husband is the father, the court will decide a Parenting Plan and child support. If the husband is not the father, the court can remove the husband’s rights and responsibilities for that child.
 fields:
   - no label: wife_is_pregnant
     datatype: radio
@@ -659,8 +666,10 @@ attachment:
   update references: True
   variable name: responding_ending_marriage_action_plan_attachment[i]
   skip undefined: True
-  # docx template file: stripped_dummy.docx
+  # docx template file: dummy.docx
+  # docx template file: answer_domestic_violence_content.docx
   docx template file: responding_ending_marriage_action_plan.docx
+  # docx template file: stripped_dummy6.docx
   tagged pdf: True
 ---
 attachment:
@@ -669,6 +678,8 @@ attachment:
   update references: True
   variable name: docx_responding_ending_marriage_action_plan_attachment
   skip undefined: True
-  # docx template file: stripped_dummy.docx
+  # docx template file: dummy.docx
+  # docx template file: answer_domestic_violence_content.docx
   docx template file: responding_ending_marriage_action_plan.docx
+  # docx template file: stripped_dummy6.docx
   tagged pdf: True

@@ -1,5 +1,5 @@
 comment: |
-    2026-04-02 
+    2026-04-10
     2026-03-10 moving children of the marriage and wife is pregnant closer to beginning of interview if ak divorce case is combined with anything else
     2025-06-04 until we get the docassemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64f
 ---
@@ -11,7 +11,11 @@ content: |
 generic object: ALDocumentBundle
 template: x.send_email_template
 subject: |
-  Your Action Plan for responding in your child custody case
+  % if type_of_response.any_true():
+  Your Action Plan for responding when your spouse starts a case to end your marriage
+  % else:
+  Your Action Plan for responding when your spouse wants to end your marriage and see if you can agree on all the issues
+  % endif 
 content: |
   Thank you for using the Alaska Court System's Court Guide Action Plan.
 
@@ -31,7 +35,11 @@ question: |
   # <i class="fa-thin fa-list"></i>Your Action Plan is ready!
   % endif
 subquestion: |
-  #### Your Action Plan for responding in your ${ case_type } case in ${ len(step_list) } steps  
+  % if type_of_response.any_true():
+  #### Your Action Plan for responding in your ${ case_type } case in ${ len(step_list) } steps
+  % else:
+   #### Your Action Plan for responding if your spouse has not started a case, but wants to see if you can end your marriage and agree on all the issues
+  % endif
  
   % if get_config("debug", False):
   <button id="akc_expand_all" class="btn other stuff">Expand all</button>
@@ -113,8 +121,8 @@ code: |
   #     if case_type == 'legal separation':
   #       want_legal_separation
 
-  type_of_response
-  case_type
+  if type_of_response.any_true():
+    case_type
   
   if type_of_response['stay married']:
     add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
@@ -124,7 +132,7 @@ code: |
   if type_of_response['default']:
     if stage_of_default == 'judgment entered':
       ask_paternity = False
-  if not((type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response['default'] and stage_of_default == 'judgment entered')):
+  if type_of_response.any_true() and not((type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response['default'] and stage_of_default == 'judgment entered')):
    
   
   # if type_of_response.any_true('ak divorce case', 'improper service', 'wrong state', 'case in 2 states', 'default') and (not((type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response['default'] and stage_of_default == 'judgment entered'))):
@@ -267,7 +275,7 @@ code: |
     add_unique_step((answer_step, "answer_idx"), step_list)
   
 
-  if type_of_response.any_true():
+  if type_of_response.any_true() and not (type_of_response.all_true('stay married', exclusive = True)):
     add_unique_image({'image': service_cert_image, 'text': "Certificate of Service"}, images_list)
     # add_unique_step((cert_of_service_step, "cert_of_service_idx"), step_list)
     # add_unique_step((answer_file_and_serve_step, "answer_file_and_serve_idx"), step_list)
@@ -281,6 +289,9 @@ code: |
 
     if not ((user_need == 'answer custody' and type_of_response.all_true('wrong state', 'default') and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response['default'] and stage_of_default == 'judgment entered') or type_of_response.all_false()):
       add_unique_step((learn_more_about_process_step, "learn_more_about_process_idx"), step_list)
+  
+  if type_of_response.all_true('stay married', exclusive = True):
+    add_unique_step((learn_more_about_process_step, "learn_more_about_process_idx"), step_list)
   
   if ((user_need == 'answer custody' and type_of_response['ak custody case'])or (user_need == 'answer divorce' and type_of_response['ak divorce case'])) and (not ((type_of_response['default'] and stage_of_default == 'judgment entered') or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'))):
     if domestic_violence:
@@ -299,11 +310,11 @@ code: |
     default_info = False
     add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)  
     # add_unique_step((parent_agreements_step, "parent_agreements_idx"), step_list)
-    if agreement_documents:
-      add_unique_step((uncontested_custody_forms_step, "uncontested_custody_forms_idx"), step_list)
-      add_unique_step((truefiling_file_and_serve_step, "truefiling_file_and_serve_idx"), step_list)
-      add_unique_step((read_drpo_step, "read_drpo_idx"), step_list)
-      add_unique_step((expect_after_answer_step, "expect_after_answer_idx"), step_list)
+    # if agreement_documents:
+    #   add_unique_step((uncontested_custody_forms_step, "uncontested_custody_forms_idx"), step_list)
+    #   add_unique_step((truefiling_file_and_serve_step, "truefiling_file_and_serve_idx"), step_list)
+    #   add_unique_step((read_drpo_step, "read_drpo_idx"), step_list)
+    #   add_unique_step((expect_after_answer_step, "expect_after_answer_idx"), step_list)
     if domestic_violence:
       add_unique_step((answer_domestic_violence_step, "answer_domestic_violence_idx"), step_list)
   
@@ -485,7 +496,6 @@ subject: |
   % if type_of_response.all_true('improper service', exclusive = True) or (type_of_response.any_true('improper service', 'default') and not proper_service) or type_of_response['default']:
   default judgment
   % endif
- 
 content: |
   % if (type_of_response['improper service'] and not type_of_response['default']) or (type_of_response['default'] and not proper_service):
   ${ capitalize(other_party_in_case) } started a ${ case_type } case by filing documents with the court. They were supposed to give you a copy of the documents they filed one of these ways:
@@ -586,6 +596,8 @@ content: |
   If neither you nor ${ other_party_in_case } files anything, the court will close your case.
 ---
 comment: |
+  2026-04-16 adding bitly links
+  2026-04-10 updated ABA resources - no longer offer consumer guide, but do offer free legal answers in 41 states.
   2026-02-14 formatted
 template: case_in_2_states_step
 subject: |
@@ -616,7 +628,7 @@ content: |
   % if not type_of_response['default']:
     If you have open ${ case_type } case in 2 states, one state will close its case.
   % endif
-    You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state.
+  You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state.
   % if type_of_response.any_true('improper service', 'default') and not proper_service:
     You can also tell the Alaska judge you were not served correctly.
   % endif
@@ -629,69 +641,54 @@ content: |
   % endif
 
   % if type_of_response.any_true('improper service', 'default') and not proper_service:
-    If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://courts.alaska.gov/trialcourts/index.htm#recs) on the court's website. If you are not sure you want to respond, you should [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm).
+    If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court's website. If you are not sure you want to respond, you should [talk to a lawyer](https://ak-courts.info/findlawyer).
   % endif
-
-
+  
   % if stage_of_other_case == 'still going':
-
   <div class="step-subheading">Option 1: Tell both judges you think your case should be in Alaska</div>
     1.	Fill out and file your Answer form. 
     <br>Tell the Alaska judge what you want to happen in your 
     ${ case_type } case.
-    % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
+    % if user_need == 'answer custody' or (user_need == 'answer divorce' and minor_children):
      Fill out the Counterclaim section with the Parenting Plan you want the judge to order.
     % endif
     Use section 5 to tell the judge:
   
-    * There are 2 cases. And
+      * There are 2 cases. And
   % if (user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce':
-    * Why you think the case should move forward in Alaska. 
-    % if (user_need == 'answer custody' and jurisdiction) or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
-    * Include where your children have lived for the last 6 months. 
-  % elif (user_need == 'answer custody' and not jurisdiction) or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
-  % if user_need == 'answer custody':
-  . And
-  % else: # user_need == 'answer divorce'
-  . Or
+      * Why you think the case should move forward in Alaska. 
   % endif
-    * Why you think the Alaska court should hear the case even though your children have not lived in Alaska the last 6 months.
+  % if (user_need == 'answer custody' and not jurisdiction) or (user_need == 'answer divorce' and minor_children):
+      * ${ "Or, why" if user_need == 'answer divorce' else "Why" } you think the Alaska court should hear the case even though your children have not lived in Alaska the last 6 months.
   % endif 
+  % if (user_need == 'answer custody' and jurisdiction) or (user_need == 'answer divorce' and minor_children):
+      * Include where your children have lived for the last 6 months. 
+  % endif
   % if type_of_response.any_true('improper service', 'default') and not proper_service:
     <br>In the Affirmative Defense section, you can write that you were not properly served. 
   % endif 
-    <br>See Step ${ answer_idx }: If you decide to move forward in Alaska, fill out the forms you need to answer the complaint
-  % if type_of_response.any_true('improper service', 'default') and proper_service:
-   and respond within 20 days
-  % endif 
-  .
   
-    1.	Ask the other state court to close its case. Talk to a lawyer in the other state or try one of these nationwide directories:
+  See ${ answer_step.subject }.
+  
+  
+    2.	Ask the other state court to close its case. Talk to a lawyer in the other state or try one of these nationwide directories:
   
       *	Legal Services Corporation's [Find Legal Aid tool](http://www.lsc.gov/find-legal-aid). Find free legal aid programs in your state for people with low incomes.
-      *	American Bar Association's [Lawyer Referral Directory](http://apps.americanbar.org/legalservices/lris/directory/home.html). Find dependable referrals to local for-fee lawyers if you do not qualify for free legal aid. The ABA also offers a national [Consumers' Guide to Legal Help](https://apps.americanbar.org/legalservices/findlegalhelp/home.cfm).
+      * American Bar Association’s [ABA Free Legal Answers](https://www.abafreelegalanswers.org/)
+      *	The ABA also offers a [Lawyer Referral Directory](http://apps.americanbar.org/legalservices/lris/directory/home.html). Find dependable referrals to local for-fee lawyers if you do not qualify for free legal aid.
   
   <div class="step-subheading">Option 2: Ask the Alaska judge to dismiss your case so you can move forward in the other state</div>
   File a **Motion to Dismiss** in Alaska.
 
-  Explain why you think the other court should hear the case 
-  % if user_need == 'answer custody':
-  % if jurisdiction:
-  , even though your children have lived in Alaska for the last 6 months
-  % else:
-  Include where your children have lived for the last 6 months 
-  % endif
-  .
-  % endif 
+  Explain why you think the other court should hear the case ${", even though your children have lived in Alaska for the last 6 months." if user_need == 'answer custody' and jurisdiction else ""}{". Include where your children have lived for the last 6 months." if not jurisdiction else ""}
   % if type_of_response.any_true('improper service', 'default') and not proper_service:
     You can also tell the judge you were not properly served. 
   % endif
   See Step ${ dismiss_idx}: If you decide to move forward in the other state, file a **Motion to Dismiss** your Alaska case. 
-  % endif
-  % endif
+  % endif  
 ---
 comment: |
-  2026-04-01
+  2026-04-16 - typo
 template: default_options_step
 subject: |
   Step ${ default_options_idx }: Options 
@@ -717,55 +714,35 @@ content: |
   <div class="step-subheading">Option 1. Ask to Set Aside the Default Judgment</div>
 
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-  It can be complicated to have 
-  % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
-  custody 
-  % endif  
-  orders from 2 different state courts. 
-  % if proper_service:
-    You may want to ask the judge to set aside the default judgment. 
-  % else:
-    You may want to tell the judge you were not served properly and ask to set aside the default judgment. 
-  % endif
+  It can be complicated to have ${ "custody" if user_need == 'answer custody' else "court" } orders from 2 different state courts. You may want to ${ "tell the judge you were not served properly and and ask" if not proper_service else "ask the judge" } to set aside the default judgment.
   % else: # not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') but still (type_of_response['default'] and stage_of_default == 'judgment entered')
   % if not proper_service:
-    If you were not served the correct way, you can tell the judge and ask the judge to set aside the judgment.
+  If you were not served the correct way, you can tell the judge and ask the judge to set aside the judgment.
   % endif
-  If you 
-  % if proper_service:
-    decide
-  % else:
-    want
-  % endif
-    to ask the judge to set aside the default judgment, fill out
+  If you ${ "decide" if proper_service else "want" } to ask the judge to set aside the default judgment, fill out and file the paperwork as soon as you can.
   % endif
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-    Fill out 
+  Fill out and file the paperwork as soon as you can.
   % endif
-  and file the paperwork as soon as you can.
   The longer you wait, the harder it is to set the judgment aside.
   Read about asking the judge to set aside the default judgment in steps ${learn_set_aside_idx} and ${fill_set_aside_idx}.
   <div class="step-subheading">Option 2. Do nothing</div>
 
   % if not (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
-    If you are okay with the judge's orders you do not need to do anything. 
+  If you are okay with the judge's orders you do not need to do anything. 
   % endif
-  
+  Be sure you know exactly what the judge ordered. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court’s website. 
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-    If the Alaska order is different from the 
-  % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
-  custody
-  % endif
-  order in the other state, it can be very complicated. It may be best to tell the judge about the other order and try to set aside the Alaska order. 
+  If the Alaska order is different from the ${ "custody" if user_need == 'answer custody' else "court" } order in the other state, it can be very complicated. It may be best to tell the judge about the other order and try to set aside the Alaska order. 
   % endif # type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'
-
+  
   You should decide quickly. The longer you wait, the harder it is to set aside the court's order.
 
   % if type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
-  You may want to [talk to a lawyer](https://courts.alaska.gov/shc/shclawyer.htm). 
+  You may want to [talk to a lawyer](https://ak-courts.info/findlawyer). 
   % else:
-  % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
-    If something changes substantially, and you want to ask to change the judge's custody Parenting Plan or child support order, read [Modifying Child Custody or Child Support Order](https://courts.alaska.gov/shc/family/shcmodify.htm) on the court's website.
+  % if user_need == 'answer custody' or (user_need == 'answer divorce' and minor_children):
+  If something changes substantially, and you want to ask to change the judge's custody, Parenting Plan or child support order, read [Modifying Child Custody or Child Support Order](https://ak-courts.info/mtm) on the court's website.
   % endif
   % endif
   % elif type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled'):
@@ -796,23 +773,15 @@ content: |
   % if user_need == 'answer custody':
   get a custody, Parenting Plan and child support order. Or
   % elif user_need == 'answer divorce':
-  end your marriage${ ' and get a custody, Parenting Plan, and child support order' if minor_children  or wife_is_pregnant in('husband', 'not husband') else '' }. Or
+  end your marriage${ ' and get a custody, Parenting Plan, and child support order.' if minor_children or wife_is_pregnant in('husband', 'not husband') else '.' } Or
   % endif
     * You do not want to risk a default judgment.
 
-  If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://courts.alaska.gov/trialcourts/index.htm#recs) on the court's website.
-  % if stage_of_default == 'application filed' and proper_service:
-    And because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late. See Step ${ answer_idx }: Fill out the forms to respond.
-  % endif
-  % if stage_of_default == 'hearing scheduled':
-  
-    Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late. See Step ${ answer_idx }: Fill out the forms to respond.
-  % endif
+  If you do not have a copy of the filed documents, you can ask ${ other_party_in_case } or get a copy from your file at the courthouse. Read about [getting copies of your court file](https://ak-courts.info/recordsrequest) on the court's website.
   % if not proper_service:
     <div class="step-subheading">Option 2. Tell the judge you were not served the correct way and ask to dismiss the case</div>
     If you think you were not served the correct way and you want the court to dismiss the case, you can fill out and file a **Motion to Dismiss** that tells the court why you think you were not served properly. See Step ${ dismiss_idx }
-
-    If ${ other_party_in_case } serves you properly in the future, the court may decide not to dismiss your case. Read Step ${ answer_idx } to learn about filing an Answer.
+  
     <div class="step-subheading">Option 3. Do nothing</div>
   % else:
     <div class="step-subheading">Option 2. Do nothing</div>
@@ -853,6 +822,7 @@ content: |
     * If you decide you do not want a legal separation, check the box telling the court “I do not agree to a legal separation because I want the marriage to end in a divorce” in the “Counterclaims” section of your Answer (pages 2-3).
 ---
 comment: |
+  2026-04-14 removing no longer required forms, findings of fact and custody judgment
   2026-03-17 fine tuning as I write tests
   2026-02-26 deleted 'continue to request for relief' in counterclaims section of legal separation - a whole lot more stuff to answer before moving on to request for relief.
   2026-02-23 fixing conditions so answer forms appear in divorce even if type_of_response is not ['ak divorce case']
@@ -1057,7 +1027,7 @@ content: |
       * File it with your Answer.
   % endif
   % if stage_of_default == 'hearing scheduled':
-  Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late.
+  Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late.
   Fill out a **Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858** [[Fill-in PDF](https://public.courts.alaska.gov/web/forms/docs/civ-858.pdf)].
   
     * Explain why you did not reply in 20 days.
@@ -1104,7 +1074,7 @@ content: |
   <div class="step-subheading">Forms to use if you and ${ other_party_in_case } write out your agreement</div>
   If you want to work with ${ other_party_in_case } to write out the agreement and both sign it, use:
   % elif response_to_complaint == 'none' and want_help_to_agree:
-  Forms to use if you reach an agreement
+  <div class="step-subheading">Forms to use if you reach an agreement</div>
   % endif
   % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
   
@@ -1113,12 +1083,7 @@ content: |
   % endif
 
   **Joint Motion to Put Settlement on the Record, SHC-1063** [Word](https://courts.alaska.gov/shc/family/docs/shc-1063.doc) | [PDF](https://courts.alaska.gov/shc/family/docs/shc-1063n.pdf)
-  % if user_need == 'answer custody' or (user_need == 'answer divorce' and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
   
-  **Custody Findings of Fact & Conclusions of Law, DR-460** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-460.pdf)]
-  
-  **Custody Judgment, DR-465** [[Fill in PDF](https://public.courts.alaska.gov/web/forms/docs/dr-465.pdf)]
-  % endif
   % endif
   % endif
 ---
@@ -1204,6 +1169,9 @@ content: |
   % endif
 ---
 comment: |
+  2026-04-16 some code is still a little different between docx and this mako step
+  2026-04-08 dont ask for response_to_complaint if type_of_response.all_false()
+  2026-04-07 updated bit for type_of_response['stay married']
   2026-03-19 deleted case_type from condition for step heading
   2026-02-19 add in surrounding conditions for response to complaint if case_type == 'legal separation'
   2026-02-12
@@ -1212,15 +1180,14 @@ comment: |
 template: want_help_to_agree_step
 subject: |
   Step ${ want_help_to_agree_idx }:
-  % if user_need == 'answer divorce' and type_of_response.all_true('stay married', exclusive=True):
-  What you can do when ${other_party_in_case} wants to end the marriage and you do not
+  % if user_need == 'answer divorce' and type_of_response.all_true('stay married', exclusive = True):
+  You cannot stop your spouse from getting a ${ case_type }
   % elif user_need == 'answer divorce' and type_of_response.all_false():
   Options if ${other_party_in_case} wants to talk about ending a marriage
   % endif
   % if user_need == 'answer custody' and type_of_response.all_false():
   Options if ${other_party_in_case} wants to talk about a Parenting Plan and starting a custody case
   % endif
-
   % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True))):
   % if response_to_complaint == 'agree':
   Review your options when you agree with what ${other_party_in_case} is asking
@@ -1230,7 +1197,6 @@ subject: |
   Decide if you want to try to reach an agreement with ${other_party_in_case}. Resources to help you reach an agreement with ${other_party_in_case}  
   % endif
   % endif
-  
 content: |
   % if user_need == 'answer custody' and type_of_response.all_false():
   One parent cannot stop ${ other_party_in_case } from starting a ${ case_type } case to get a court order about the Parenting Plan. If either parent asks, the court will issue a Parenting Plan, custody, and child support order. 
@@ -1240,23 +1206,26 @@ content: |
   % if user_need == 'answer divorce' and (type_of_response.all_false() or type_of_response['stay married']):
   One spouse cannot stop the other spouse from starting a case to end your marriage. 
   
-  If either spouse tells the court the marriage has broken down and cannot be saved, the court will grant ${ case_type }.
-  % if minor_children:
-  The court will also issue a Parenting Plan, custody, and child support order.
-
-  If you do not want the marriage to end, counseling can be helpful. The following resources may be helpful to find a therapist for yourself or marriage counselors for both of you:
-
-  * You can ask friends, family, or community and religious leaders in your area for referrals to trusted therapists for yourself or marriage counselors for both of you.
-  * You can call Alaska 2-1-1 and ask about counseling and mental health services by dialing 2-1-1 or 1-800-478-2221.
-  * You can search for mental health services on [Alaska 2-1-1](https://alaska211.org/).  
-
-  If the marriage is going to end, there are benefits to reaching an agreement.
+  If either spouse tells the court the marriage has broken down and cannot be saved, the court will grant a 
+  % if type_of_response.all_false():
+  divorce or legal separation.
+  % else:
+  ${ case_type }.
   % endif
+  % if type_of_response['stay married']:
+  If you and your spouse have children together and the children are under 18, the court will also issue a Parenting Plan, custody, and child support order.
+  % elif type_of_response.all_false() and minor_children:
+  The court will also issue a Parenting Plan, custody, and child support order.
+  % endif
+  
+  If the marriage is going to end, there are benefits to reaching an agreement.
   % endif 
   
-  You **must file your Answer within 20 days** of getting the Complaint, even if you are trying to work out an agreement with ${other_party_in_case}. 
+  % if (user_need in('answer custody', 'answer divorce') and type_of_response.any_true()) or (user_need == 'answer divorce' and type_of_response['stay married']):
+  You **must respond and file your Answer within 20 days** of getting the Complaint, even if you are trying to work out an agreement with ${other_party_in_case}. 
   
-  If you miss the 20-day deadline, the court may enter a default judgment against you.
+  If you miss the 20-day deadline, the court may enter a default judgment against you. A default judgment is when the judge decides your case without hearing from you.
+  % endif 
   
   % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and type_of_response['ak divorce case']) or (user_need in('answer custody','answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'):
   % if case_type in('custody', 'divorce') or (case_type == 'legal separation' and want_legal_separation == 'yes'):
@@ -1280,11 +1249,12 @@ content: |
   % endif
   % endif
 
-  % if type_of_response.all_false() or ((type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order')) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')) and response_to_complaint == 'none' and want_help_to_agree):
+  % if type_of_response.all_false() or ((type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True) or type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) or type_of_response.all_true('ak divorce case', 'stay married', exclusive = True) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order')) and (case_type in ('custody', 'divorce') or (case_type == 'legal separation' and want_legal_separation == 'yes')) and response_to_complaint == 'none' and want_help_to_agree):
   <div class = "step-subheading">The benefits of reaching an agreement</div>
   If you and ${other_party_in_case} reach an agreement about the issues in the case, you can avoid a trial.
   % endif
 
+  % if not (user_need == 'answer divorce' and type_of_response.all_true('stay married', exclusive = True)):
   **Some benefits are:**
   
   % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and type_of_response['ak divorce case'] and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))) or (type_of_response.all_false() and want_help_to_agree) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'):    
@@ -1294,19 +1264,15 @@ content: |
   % if type_of_response.all_false() and not want_help_to_agree:
     * If you have children together, working out the Parenting Plan instead of fighting is better for the children.
   % endif
-  % if user_need == 'answer custody':
-    * Reaching an agreement may be more cooperative than dealing with the issues in a trial, where each parent presents evidence and makes arguments about what they want the judge to decide.
-  % elif user_need == 'answer divorce':
-    * Reaching an agreement may be more cooperative than dealing with the issues in a trial, where each spouse presents evidence and makes arguments about what they want the judge to decide.
-  % endif
+    * Reaching an agreement may be more cooperative than dealing with the issues in a trial, where each ${ 'parent' if user_need == 'answer custody' else 'spouse' }  presents evidence and makes arguments about what they want the judge to decide.
     * Reaching an agreement outside of court can save time and money, and provide more privacy and confidentiality.
 
   <div class = "step-subheading">Watch a video about reaching an agreement</div>
     Watch a [short video that discusses resolving your case](https://www.youtube.com/watch?v=4EuW9HET3nM&list=PLRS0LlEIQsuTsfO0wSTsSTIvVE5RO8sLc&index=7&t=3s) by reaching agreement with ${ other_party_in_case }.
 
 
-   % if user_need == 'answer custody' or (user_need == 'answer divorce' and type_of_response['ak divorce case'] and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes'))) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'): 
-  % if response_to_complaint == 'agree':
+   % if (user_need == 'answer custody' and type_of_response['ak custody case'] and case_type == 'custody') or (user_need == 'answer divorce' and type_of_response['ak divorce case'] and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes'))) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order') or type_of_response.all_false(): 
+  % if type_of_response.all_false() or (type_of_response.any_true() and response_to_complaint == 'agree'):
   <div class='step-subheading'>Options for working with ${ other_party_in_case } to write out your agreement</div>
   % else:
   <div class='step-subheading'>Options for working with ${ other_party_in_case } to reach an agreement</div>
@@ -1374,8 +1340,8 @@ content: |
    issues themselves.
    The judge does not get involved in making the decisions. Learn more about the Association on [their website](https://www.alaskacollaborative.org).
   
-  % if type_of_response.all_false() and not agreement_documents:
-  <div class ="">What to do if you reach an agreement</div>
+  % if (user_need == 'answer_custody' and type_of_response.all_false() and not agreement_documents) or (user_need == 'answer divorce' and type_of_response.all_false):
+  <div class = "step-subheading">What to do if you reach an agreement</div>
   Use the Court Guide Action Plan: 
   % if user_need == 'answer custody':
   [Starting a Custody Case](https://docassemble.akcourts.gov/start/AskingForChildCustody).
@@ -1383,6 +1349,7 @@ content: |
   [Starting a Case to End Your Marriage](https://docassemble.akcourts.gov/start/DivorceAndSeparation/). 
   % endif
   % endif
+  % endif # not 'stay married'
 ---
 comment: |
   hoping to use as a generic
@@ -1409,7 +1376,7 @@ content: |
   % endif
   % if (type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled') and not proper_service) or type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'):
   <div class='step-subheading'>File and serve with TrueFiling</div>
-  If you are using TrueFiling, you can file your motion with the court and send a copy of all your documents to {{ other_party_in_case }} through TrueFiling.
+  If you are using TrueFiling, you can file your motion with the court and send a copy of all your documents to ${ other_party_in_case } through TrueFiling.
   <div class='step-subheading'>If you are not using Truefiling</div>
   1.	Make 2 copies of all your documents.
   2.	Mail or hand deliver the original to the court where the complaint was filed.
@@ -1522,6 +1489,7 @@ content: |
   </ul>
 ---
 comment: |
+  last updated 2026-04-09 changed conditions so case_type is not asked if type_of_response.all_false()
   last updated 2026-04-02 switch the order of respond to complaint to be inside children or no children in 2nd half of template.
   2026-02-18 heading to reflect no agreement, no help wanted and no kids, not pregnant
   2025-08-25 to take out agreeing with complaint in custody language in any circumstance where akcustody is not the only choice
@@ -1543,7 +1511,7 @@ content: |
   % elif user_need == 'divorce':
   People who have experienced domestic violence can be at greater risk when they separate from their spouse or start a court case to end their marriage.
   % elif user_need in('answer custody', 'answer divorce'):
-  <span style="color: pink;">People who have experienced domestic violence can be at risk during a court case. - add to features</span>
+  People who have experienced domestic violence can be at risk during a court case.
   % endif
    During this time, safety is very important. 
   
@@ -1585,12 +1553,12 @@ content: |
   You can decide if you are comfortable trying to reach an agreement with ${ other_party_in_case } based on the facts and circumstances of your case.
   % endif 
   % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and minor_children or (not minor_children and wife_is_pregnant in('husband','not husband'))):
-  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
+  % if ((user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive=True) or type_of_response.all_true('ak custody case', 'improper service', exclusive=True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive=True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive=True)) and (case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes')))) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)) or (user_need in ('answer custody', 'answer divorce') and type_of_response.all_false()):
   If you want to try to reach an agreement about the Parenting Plan, your options may be limited if there has been domestic violence.
 
   <div class='step-subheading'>Your Parenting Plan agreement may be limited if there is domestic violence</div>
   % else:
-  <div class='step-subheading'>How domestic violence affects a ${ case_type } case</div>
+  <div class='step-subheading'>How domestic violence affects a ${case_type} case</div>
   % endif
 
   The law presumes that a parent with a "history of domestic violence" not get custody or unsupervised visitation unless they meet certain requirements. These may include completing a batterer's intervention or substance abuse treatment program.
@@ -1605,7 +1573,7 @@ content: |
 
   If you think ${ other_party_in_case } should not have any contact with your children, you need to convince the judge that it is in the children's best interest. 
   
-  Generally, it is unusual for a judge in a ${ case_type } case to decide that a parent cannot see their children. Research shows it is important for children to have a relationship with both parents, if it can happen in a safe manner. 
+  Generally, it is unusual for a judge in a ${ "custody" if user_need in('custody', 'answer custody') else "divorce or legal separation" } case to decide that a parent cannot see their children. Research shows it is important for children to have a relationship with both parents, if it can happen in a safe manner. 
   
   If the judge finds the domestic violence presumption applies, the judge will usually permit supervised contact between the parent and the children while the parent is completing a batterer's intervention or substance abuse treatment program. After the parent finishes the program and any other requirements the judge ordered, the judge may lift the supervision restriction and allow a different parenting schedule.
   
@@ -1800,7 +1768,9 @@ content: |
   % endfor
 ---
 comment: |
+  
   Need to update this step in branding package aka2j_templates.yml after this interview passes all tests
+  2026-04-20 delete parent education requirements
   2025-09-22
 template: read_drpo_step
 subject: |
@@ -1821,10 +1791,6 @@ content: |
     * Do not sell or get rid of marital property.
   % endif
     * Do not cancel or change any insurance policy.
-  
-  % if user_need in('custody', 'answer custody') or (user_need in('divorce', 'answer divorce') and (minor_children or (not minor_children and wife_is_pregnant in('husband', 'not husband')))):
-  Also, check with your local court for their [parent education requirements](http://courts.alaska.gov/shc/family/shcparent-ed.htm).
-  % endif
   
   If you want to do something the order forbids, and ${ other_party_in_case } will not agree, file a motion to ask the court for permission.
 

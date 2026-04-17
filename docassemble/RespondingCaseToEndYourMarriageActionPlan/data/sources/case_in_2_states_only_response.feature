@@ -1,6 +1,6 @@
 @case_in_2_states_still_going_only_response
 Feature: User paths
-# 2026-04-06
+# 2026-04-16
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -65,6 +65,7 @@ Scenario: Row #37
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row38
 Scenario: Row #38
@@ -100,8 +101,6 @@ Scenario: Row #38
     And I should see the phrase "If you have open divorce case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 3: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
 # divorce, wife_is_pregnant husband
@@ -127,6 +126,7 @@ Scenario: Row #38
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row39
 Scenario: Row #39
@@ -164,8 +164,6 @@ Scenario: Row #39
     And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
-# wife_is_pregnant not husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 3: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
@@ -195,6 +193,7 @@ Scenario: Row #39
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row40
 Scenario: Row #40
@@ -251,6 +250,7 @@ Scenario: Row #40
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row41
 Scenario: Row #41
@@ -284,6 +284,7 @@ Scenario: Row #41
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row43
 Scenario: Row #43
@@ -323,6 +324,7 @@ Scenario: Row #43
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row45
 Scenario: Row #45
@@ -359,5 +361,6 @@ Scenario: Row #45
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 

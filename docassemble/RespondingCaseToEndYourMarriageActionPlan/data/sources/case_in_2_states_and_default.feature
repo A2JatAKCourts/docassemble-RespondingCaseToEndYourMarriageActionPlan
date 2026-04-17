@@ -1,6 +1,6 @@
 @case_in_2_states_and_default
 Feature: User paths
-# 2026-04-06
+# 2026-04-16
 Background: 
   Given the maximum seconds for each Step is 90
 
@@ -93,6 +93,7 @@ Scenario: Row #94
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row100
 Scenario: Row #100
@@ -145,9 +146,6 @@ Scenario: Row #100
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "The judges will then decide which court has jurisdiction."
-# wife_is_pregnant not husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
-    And I should see the phrase "Include where your children have lived for the last 6 months."
 # proper_service False (affirmative defense)
     And I should see the phrase "In the Affirmative Defense section, you can write that you were not properly served."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
@@ -186,6 +184,7 @@ Scenario: Row #100
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row106
 Scenario: Row #106
@@ -243,7 +242,7 @@ Scenario: Row #106
 # request for relief
     And I should see the phrase "Use the Request for Relief section to ask the judge to move forward with the case in Alaska or dismiss it"
 # stage hearing scheduled
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Step 6: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
 # type_of_response['default'] True
     And I should see the phrase "If you do not have a copy of the filed documents, you can ask your spouse or get a copy from your file at the courthouse."
@@ -266,6 +265,7 @@ Scenario: Row #106
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row107
 Scenario: Row #107
@@ -319,9 +319,6 @@ Scenario: Row #107
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "The judges will then decide which court has jurisdiction."
-# wife_is_pregnant husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
-    And I should see the phrase "Include where your children have lived for the last 6 months."
 # proper_service False (affirmative defense)
     And I should see the phrase "In the Affirmative Defense section, you can write that you were not properly served."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
@@ -336,7 +333,7 @@ Scenario: Row #107
 # request for relief
     And I should see the phrase "Use the Request for Relief section to ask the judge to move forward with the case in Alaska or dismiss it"
 # stage hearing scheduled
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
 # wife_is_pregnant husband
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
@@ -364,6 +361,7 @@ Scenario: Row #107
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row111
 Scenario: Row #111
@@ -406,6 +404,7 @@ Scenario: Row #111
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row114
 Scenario: Row #114
@@ -447,6 +446,7 @@ Scenario: Row #114
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row118
 Scenario: Row #118
@@ -486,6 +486,7 @@ Scenario: Row #118
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row121
 Scenario: Row #121
@@ -528,6 +529,7 @@ Scenario: Row #121
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row128
 Scenario: Row #128
@@ -567,6 +569,7 @@ Scenario: Row #128
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row133
 Scenario: Row #133
@@ -611,6 +614,7 @@ Scenario: Row #133
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row134
 Scenario: Row #134
@@ -635,7 +639,7 @@ Scenario: Row #134
     And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
     And I should see the phrase "You can (1) ask the judge to set aside the default judgment or (2) do nothing."
-    And I should see the phrase "It can be complicated to have custody orders from 2 different state courts."
+    And I should see the phrase "It can be complicated to have court orders from 2 different state courts."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
@@ -650,6 +654,7 @@ Scenario: Row #134
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row135
 Scenario: Row #135
@@ -676,7 +681,7 @@ Scenario: Row #135
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
     And I should see the phrase "You can (1) tell the judge you were not served the correct way and ask to set aside the default judgment or (2) do nothing."
-    And I should see the phrase "It can be complicated to have custody orders from 2 different state courts."
+    And I should see the phrase "It can be complicated to have court orders from 2 different state courts."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
@@ -693,6 +698,7 @@ Scenario: Row #135
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row136
 Scenario: Row #136
@@ -718,7 +724,7 @@ Scenario: Row #136
     And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
     And I should see the phrase "You can (1) ask the judge to set aside the default judgment or (2) do nothing."
-    And I should see the phrase "It can be complicated to have custody orders from 2 different state courts."
+    And I should see the phrase "It can be complicated to have court orders from 2 different state courts."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
@@ -733,6 +739,7 @@ Scenario: Row #136
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row141
 Scenario: Row #141
@@ -762,7 +769,7 @@ Scenario: Row #141
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
     And I should see the phrase "You can (1) tell the judge you were not served the correct way and ask to set aside the default judgment or (2) do nothing."
-    And I should see the phrase "It can be complicated to have orders from 2 different state courts."
+    And I should see the phrase "It can be complicated to have court orders from 2 different state courts."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
@@ -777,6 +784,7 @@ Scenario: Row #141
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row142
 Scenario: Row #142
@@ -827,6 +835,7 @@ Scenario: Row #142
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row157
 Scenario: Row #157
@@ -862,7 +871,7 @@ Scenario: Row #157
     And I should see the phrase "If your spouse asked for a default judgment, it means they told the court they served you correctly."
     And I should see the phrase "You can (1) move forward with the case, or (2) tell the judge you were not served the correct way and ask to dismiss the case, or (3) do nothing"
     And I should see the phrase "Option 2. Tell the judge you were not served the correct way and ask to dismiss the case"
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
     And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
     And I should see the phrase "You can add here that you were not served correctly."
@@ -883,6 +892,7 @@ Scenario: Row #157
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row165
 Scenario: Row #165
@@ -926,6 +936,7 @@ Scenario: Row #165
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row280
 Scenario: Row #280
@@ -986,7 +997,7 @@ Scenario: Row #280
 # request for relief
     And I should see the phrase "Use the Request for Relief section to ask the judge to move forward with the case in Alaska or dismiss it"
 # stage hearing scheduled
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Step 6: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
 # type_of_response['default'] True
     And I should see the phrase "If you do not have a copy of the filed documents, you can ask your spouse or get a copy from your file at the courthouse."
@@ -1011,6 +1022,7 @@ Scenario: Row #280
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row281
 Scenario: Row #281
@@ -1066,9 +1078,6 @@ Scenario: Row #281
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "The judges will then decide which court has jurisdiction."
-# wife_is_pregnant husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
-    And I should see the phrase "Include where your children have lived for the last 6 months."
 # proper_service False (affirmative defense)
     And I should see the phrase "In the Affirmative Defense section, you can write that you were not properly served."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
@@ -1083,7 +1092,7 @@ Scenario: Row #281
 # request for relief
     And I should see the phrase "Use the Request for Relief section to ask the judge to move forward with the case in Alaska or dismiss it"
 # stage hearing scheduled
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
 # wife_is_pregnant husband
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "In paragraph 3 on page 3, tell the judge about the other case."
@@ -1117,6 +1126,7 @@ Scenario: Row #281
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row282
 Scenario: Row #282
@@ -1171,9 +1181,6 @@ Scenario: Row #282
 # proper_service False
     And I should see the phrase "You can also tell the Alaska judge you were not served correctly."
     And I should see the phrase "The judges will then decide which court has jurisdiction."
-# wife_is_pregnant not husband
-    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
-    And I should see the phrase "Include where your children have lived for the last 6 months."
 # proper_service False (affirmative defense)
     And I should see the phrase "In the Affirmative Defense section, you can write that you were not properly served."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
@@ -1219,6 +1226,7 @@ Scenario: Row #282
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row283
 Scenario: Row #283
@@ -1277,7 +1285,7 @@ Scenario: Row #283
 # request for relief
     And I should see the phrase "Use the Request for Relief section to ask the judge to move forward with the case in Alaska or dismiss it"
 # stage hearing scheduled
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Step 6: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
 # type_of_response['default'] True
     And I should see the phrase "If you do not have a copy of the filed documents, you can ask your spouse or get a copy from your file at the courthouse."
@@ -1300,6 +1308,7 @@ Scenario: Row #283
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row284
 Scenario: Row #284
@@ -1341,6 +1350,7 @@ Scenario: Row #284
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row285
 Scenario: Row #285
@@ -1385,6 +1395,7 @@ Scenario: Row #285
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row286
 Scenario: Row #286 #same as row 118
@@ -1425,6 +1436,7 @@ Scenario: Row #286 #same as row 118
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row287
 Scenario: Row #287 #same as row 134
@@ -1451,7 +1463,7 @@ Scenario: Row #287 #same as row 134
     And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt, Parenting Plan, and child support order."
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
     And I should see the phrase "You can (1) ask the judge to set aside the default judgment or (2) do nothing."
-    And I should see the phrase "It can be complicated to have custody orders from 2 different state courts."
+    And I should see the phrase "It can be complicated to have court orders from 2 different state courts."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
@@ -1466,6 +1478,7 @@ Scenario: Row #287 #same as row 134
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row288
 Scenario: Row #288 
@@ -1504,7 +1517,7 @@ Scenario: Row #288
     And I should see the phrase "If your spouse asked for a default judgment, it means they told the court they served you correctly."
     And I should see the phrase "You can (1) move forward with the case, or (2) tell the judge you were not served the correct way and ask to dismiss the case, or (3) do nothing"
     And I should see the phrase "Option 2. Tell the judge you were not served the correct way and ask to dismiss the case"
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
     And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
     And I should see the phrase "You can add here that you were not served correctly."
@@ -1525,6 +1538,7 @@ Scenario: Row #288
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row289
 Scenario: Row #289 #same as row 165
@@ -1568,4 +1582,5 @@ Scenario: Row #289 #same as row 165
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 

@@ -1,6 +1,6 @@
 @wrong_state
 Feature: user paths
-# 2026-04-07
+# 2026-04-16
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -54,6 +54,7 @@ Scenario: Row #7
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row8
 Scenario: Row #8
@@ -115,6 +116,7 @@ Scenario: Row #8
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row9
 Scenario: Row #9
@@ -172,6 +174,7 @@ Scenario: Row #9
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row14
 Scenario: Row #14
@@ -228,6 +231,7 @@ Scenario: Row #14
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row30
 Scenario: Row #30
@@ -278,6 +282,7 @@ Scenario: Row #30
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row31
 Scenario: Row #31
@@ -322,6 +327,7 @@ Scenario: Row #31
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row33
 Scenario: Row #33
@@ -373,6 +379,7 @@ Scenario: Row #33
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row36
 Scenario: Row #36
@@ -417,6 +424,7 @@ Scenario: Row #36
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row70
 Scenario: Row #70
@@ -485,6 +493,7 @@ Scenario: Row #70
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row72
 Scenario: Row #72
@@ -551,6 +560,7 @@ Scenario: Row #72
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row74
 Scenario: Row #74
@@ -613,6 +623,7 @@ Scenario: Row #74
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row78
 Scenario: Row #78
@@ -680,6 +691,7 @@ Scenario: Row #78
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row81
 Scenario: Row #81
@@ -718,7 +730,7 @@ Scenario: Row #81
     And I should see the phrase "You agree with your spouse that there should be a case to end your marriage and get a custody, Parenting Plan, and child support order"
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late. See Step 4: Fill out the forms to respond."
+    And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
@@ -745,6 +757,7 @@ Scenario: Row #81
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row86
 Scenario: Row #86
@@ -778,7 +791,7 @@ Scenario: Row #86
     And I should see the phrase "Step 2: Learn about default judgment"
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options when the judge entered a default judgment"
-    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
+    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 4: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 5: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
@@ -793,6 +806,7 @@ Scenario: Row #86
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row93
 Scenario: Row #93
@@ -842,6 +856,7 @@ Scenario: Row #93
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row251
 Scenario: Row #251
@@ -892,6 +907,7 @@ Scenario: Row #251
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row252
 Scenario: Row #252
@@ -944,6 +960,7 @@ Scenario: Row #252
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row254
 Scenario: Row #254
@@ -1015,6 +1032,7 @@ Scenario: Row #254
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row255
 Scenario: Row #255
@@ -1063,7 +1081,7 @@ Scenario: Row #255
     And I should see the phrase "I make the counterclaims below. If I asked the court to dismiss the case in section B (Affirmative Defenses), and the court does not dismiss the case, I do not waive my claim about the court’s lack of jurisdiction."
     # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "You can add here that you want the court to dismiss your case."
-    And I should see the phrase "Because the clerk signed the entry of default, you will have to ask the judge to accept your Answer even though it is late."
+    And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150 [Fill in PDF]"
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
@@ -1081,6 +1099,7 @@ Scenario: Row #255
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row256
 Scenario: Row #256
@@ -1117,7 +1136,7 @@ Scenario: Row #256
     And I should see the phrase "Step 2: Learn about default judgment"
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options when the judge entered a default judgment"
-    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
+    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 4: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 5: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
@@ -1132,6 +1151,7 @@ Scenario: Row #256
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row257
 Scenario: Row #257
@@ -1184,6 +1204,7 @@ Scenario: Row #257
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row258
 Scenario: Row #258
@@ -1256,6 +1277,7 @@ Scenario: Row #258
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row261
 Scenario: Row #261
@@ -1305,6 +1327,7 @@ Scenario: Row #261
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row266
 Scenario: Row #266
@@ -1374,6 +1397,7 @@ Scenario: Row #266
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row273
 Scenario: Row #273
@@ -1430,6 +1454,7 @@ Scenario: Row #273
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row278
 Scenario: Row #278
@@ -1488,6 +1513,7 @@ Scenario: Row #278
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
 @row279
 Scenario: Row #279
@@ -1545,4 +1571,5 @@ Scenario: Row #279
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
+    And I wait 5 seconds
 
