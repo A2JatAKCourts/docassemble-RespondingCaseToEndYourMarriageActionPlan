@@ -1169,6 +1169,7 @@ content: |
   % endif
 ---
 comment: |
+  2026-04-16 some code is still a little different between docx and this mako step
   2026-04-08 dont ask for response_to_complaint if type_of_response.all_false()
   2026-04-07 updated bit for type_of_response['stay married']
   2026-03-19 deleted case_type from condition for step heading

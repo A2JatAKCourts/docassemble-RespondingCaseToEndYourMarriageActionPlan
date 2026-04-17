@@ -667,6 +667,7 @@ attachment:
   variable name: responding_ending_marriage_action_plan_attachment[i]
   skip undefined: True
   # docx template file: dummy.docx
+  # docx template file: answer_domestic_violence_content.docx
   docx template file: responding_ending_marriage_action_plan.docx
   # docx template file: stripped_dummy6.docx
   tagged pdf: True
@@ -678,6 +679,7 @@ attachment:
   variable name: docx_responding_ending_marriage_action_plan_attachment
   skip undefined: True
   # docx template file: dummy.docx
+  # docx template file: answer_domestic_violence_content.docx
   docx template file: responding_ending_marriage_action_plan.docx
   # docx template file: stripped_dummy6.docx
   tagged pdf: True
