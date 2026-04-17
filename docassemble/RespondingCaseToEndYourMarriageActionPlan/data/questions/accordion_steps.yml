@@ -209,11 +209,6 @@ code: |
     
     
   if type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True):
-    if case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes'):
-      if (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
-        add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
-
-  if type_of_response['ak divorce case']:
     if type_of_response.all_true('ak divorce case', exclusive = True) :
       proper_service = True
     if case_type == 'legal separation' and want_legal_separation == 'unsure':
@@ -221,6 +216,12 @@ code: |
     if minor_children:
       children_of_the_marriage
     wife_is_pregnant
+    if case_type == 'divorce' or (case_type == 'legal separation' and want_legal_separation == 'yes'):
+      if (response_to_complaint in('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree)):
+        add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
+    if case_type == 'legal separation' and want_legal_separation in('no', 'unsure'):
+      if want_legal_separation == 'unsure':
+        add_unique_step((divorce_legal_separation_diff_step, "divorce_legal_separation_diff_idx"), step_list) 
     add_unique_step((answer_step, "answer_idx"), step_list)
 
   if type_of_response.any_true() and not (type_of_response.all_true('stay married', exclusive = True)):
