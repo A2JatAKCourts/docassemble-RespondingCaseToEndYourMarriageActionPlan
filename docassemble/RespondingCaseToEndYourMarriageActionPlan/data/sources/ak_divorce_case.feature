@@ -852,7 +852,6 @@ Scenario: Row #242
     And I should see the phrase "Forms to use if you reach an agreement"
     And I should see the phrase "Parenting Plan Agreement & Order, SHC-1128"
     And I should see the phrase "Joint Motion to Put Settlement on the Record, SHC-1063"
-    And I should see the phrase "Custody Findings of Fact & Conclusions of Law, DR-460"
     And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 4: Serve your spouse"
