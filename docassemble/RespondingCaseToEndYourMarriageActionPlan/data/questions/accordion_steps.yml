@@ -1,5 +1,5 @@
 comment: |
-    2026-04-10
+    2026-04-17
     2026-03-10 moving children of the marriage and wife is pregnant closer to beginning of interview if ak divorce case is combined with anything else
     2025-06-04 until we get the docassemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64f
 ---
@@ -38,7 +38,7 @@ subquestion: |
   % if type_of_response.any_true():
   #### Your Action Plan for responding in your ${ case_type } case in ${ len(step_list) } steps
   % else:
-   #### Your Action Plan for responding if your spouse has not started a case, but wants to see if you can end your marriage and agree on all the issues
+  #### Your Action Plan for responding if your spouse has not started a case, but wants to see if you can end your marriage and agree on all the issues
   % endif
  
   % if get_config("debug", False):
@@ -98,32 +98,13 @@ code: |
   motion_type = 'motion or Answer'
   ask_paternity = True
 
-  
-  # if len(type_of_response.true_values()) > 1:
-  #   add_unique_step((pick_a_step_step, "pick_a_step_idx"), step_list)
-
 
   #### Question order #####
-  
-  # if type_of_response['ak divorce case']:
-  #   case_type
-  #  
-  # if type_of_response['stay married']:
-  #   add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
-  # if type_of_response['wrong state']:
-  #   case_type
-  # if type_of_response['case in 2 states']:
-  #   case_type
-  #   stage_of_other_case
-  # if type_of_response['default']:
-  #   case_type
-  #   if stage_of_default in ('application filed', 'hearing scheduled'):
-  #     if case_type == 'legal separation':
-  #       want_legal_separation
 
   if type_of_response.any_true():
     case_type
-  
+  if type_of_response.all_true('stay married', exclusive = True) and case_type == 'legal separation':
+    want_legal_separation = 'no'
   if type_of_response['stay married']:
     add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
   if type_of_response['case in 2 states']:
@@ -133,10 +114,7 @@ code: |
     if stage_of_default == 'judgment entered':
       ask_paternity = False
   if type_of_response.any_true() and not((type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response['default'] and stage_of_default == 'judgment entered')):
-   
-  
-  # if type_of_response.any_true('ak divorce case', 'improper service', 'wrong state', 'case in 2 states', 'default') and (not((type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response['default'] and stage_of_default == 'judgment entered'))):
-  
+
     if case_type == 'legal separation':
       want_legal_separation
 
@@ -144,25 +122,6 @@ code: |
   if type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')) or type_of_response['default']:
     military
   
-  #   if type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order' and type_of_response['default']) or type_of_response.all_true('default', exclusive = True) or type_of_response.all_true('default', 'improper service') or type_of_response.all_false():    
-  #     if not minor_children:
-  #       wife_is_pregnant
-  #   if ((type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')) and type_of_response.all_false('improper service') and not(type_of_response['default'] and stage_of_default == 'judgment entered')) or (type_of_response['default'] and stage_of_default in ('application filed', 'hearing scheduled'))) and type_of_response['ak divorce case']:
-  #     if minor_children:
-  #       if not children_of_the_marriage:
-  #          wife_is_pregnant
-  #     else:
-  #       wife_is_pregnant
-     
-  # if type_of_response['case in 2 states']:
-  #   if stage_of_other_case == 'still going':
-  #     if not minor_children:
-  #       wife_is_pregnant
-   
-  #   if stage_of_other_case == "ended with no order":
-  #     if not minor_children:
-  #       wife_is_pregnant
-
   if not (type_of_response['default'] and stage_of_default == 'judgment entered'):
     if type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order' and type_of_response['default']) or type_of_response.all_true('default', exclusive = True) or type_of_response.all_true('default', 'improper service') or type_of_response.all_false():
       if not minor_children:
@@ -174,7 +133,6 @@ code: |
           wife_is_pregnant
       else:
         wife_is_pregnant
-
 
   if type_of_response.all_true('improper service', exclusive = True):
     proper_service = False
@@ -211,14 +169,10 @@ code: |
       add_unique_step((fill_set_aside_step, "fill_set_aside_idx"), step_list)
 
   if type_of_response['case in 2 states']:
-    # if stage_of_other_case == 'still going':
-    #   jurisdiction 
     if stage_of_other_case in('still going', 'ended with no order') and not(type_of_response['default'] and stage_of_default == 'judgment entered'):
       add_unique_step((answer_jurisdiction_step, "answer_jurisdiction_idx"), step_list)
     if type_of_response['improper service'] or type_of_response['default']:
       proper_service
-      # if type_of_response['default']:
-      #   military
       add_unique_step((proper_service_step, "proper_service_idx"), step_list)
     if stage_of_other_case == 'ended with no order'and type_of_response['improper service'] and not proper_service and type_of_response.all_false('default'):
         add_unique_step((decide_after_improper_service_step, "decide_after_improper_service_idx"), step_list)
@@ -268,12 +222,7 @@ code: |
     if case_type == 'legal separation' and want_legal_separation in('no', 'unsure'):
       if want_legal_separation == 'unsure':
         add_unique_step((divorce_legal_separation_diff_step, "divorce_legal_separation_diff_idx"), step_list) 
-    #  if want_help_to_agree:
-    #    add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
-    # if case_type == 'legal separation' and want_legal_separation == 'unsure':  
-    #   add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
     add_unique_step((answer_step, "answer_idx"), step_list)
-  
 
   if type_of_response.any_true() and not (type_of_response.all_true('stay married', exclusive = True)):
     add_unique_image({'image': service_cert_image, 'text': "Certificate of Service"}, images_list)
@@ -299,7 +248,6 @@ code: |
   
   #### only ask paternity
   if not((type_of_response['default'] and stage_of_default == 'judgment entered') or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order')):
-  # if ask_paternity:
     if (user_need == 'answer custody' and (type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True))) or (user_need == 'answer divorce' and (type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True)  or (type_of_response['ak divorce case'] and type_of_response.all_false('improper service')))):
       if (user_need == 'answer custody' and paternity) or (user_need == 'answer divorce' and ((minor_children and children_of_the_marriage) or (minor_children and children_of_the_marriage is None) or (minor_children and not children_of_the_marriage and wife_is_pregnant == 'not husband') or (not minor_children and wife_is_pregnant == 'not husband'))):
         add_unique_step((paternity_step, "paternity_idx"), step_list)
@@ -822,6 +770,7 @@ content: |
     * If you decide you do not want a legal separation, check the box telling the court “I do not agree to a legal separation because I want the marriage to end in a divorce” in the “Counterclaims” section of your Answer (pages 2-3).
 ---
 comment: |
+  2026-04-17 format subject, replace the Joint Motion to Put Settlement on the Record, SHC-1063  with Request to Put Agreement on the Record, DR-264
   2026-04-14 removing no longer required forms, findings of fact and custody judgment
   2026-03-17 fine tuning as I write tests
   2026-02-26 deleted 'continue to request for relief' in counterclaims section of legal separation - a whole lot more stuff to answer before moving on to request for relief.
@@ -836,25 +785,25 @@ subject: |
   % if type_of_response['wrong state'] and type_of_response.all_false('default') and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce'): 
   Fill out the forms to respond
   % if not(type_of_response.any_true('improper service', 'default') and not proper_service):
-    in 20 days
+  in 20 days
   % endif
-   and ask to dismiss if you think Alaska is the wrong state
+  and ask to dismiss if you think Alaska is the wrong state
   % else:
   % if type_of_response.all_true('improper service', exclusive = True) \
     or (type_of_response['improper service'] and not proper_service and \
     ((type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'))) \
       or (type_of_response['default'] and stage_of_default in ('application filed', 'hearing scheduled') and ((type_of_response['wrong state'] and ((user_need == 'answer custody' and jurisdiction) or user_need == 'answer divorce')) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'))) \
       or (type_of_response.all_true('default', exclusive = True) and stage_of_default in('application filed', 'hearing scheduled')):
-    If you decide to move forward, fill
+  If you decide to move forward, fill
   % elif type_of_response['case in 2 states'] and stage_of_other_case == 'still going' and ((type_of_response['default'] and stage_of_default in('application filed', 'hearing scheduled')) or type_of_response.all_false('default')):
-    If you decide to move forward in Alaska, fill 
+  If you decide to move forward in Alaska, fill 
   % else:
-    Fill
+  Fill
   % endif
-    out the forms to answer the complaint
-    % if type_of_response.all_true('improper service', exclusive = True) or (not (type_of_response.any_true('improper service', 'default') and not proper_service)):
-    and respond within 20 days
-    % endif
+  out the forms to answer the complaint
+  % if type_of_response.all_true('improper service', exclusive = True) or (not (type_of_response.any_true('improper service', 'default') and not proper_service)):
+  and respond within 20 days
+  % endif
   % endif
 content: |
   % if not(type_of_response.any_true('improper service', 'default') and not proper_service):
