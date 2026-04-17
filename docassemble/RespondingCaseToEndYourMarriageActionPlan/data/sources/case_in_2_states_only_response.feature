@@ -1,6 +1,6 @@
 @case_in_2_states_still_going_only_response
 Feature: User paths
-# 2026-04-16
+# 2026-04-17
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -65,7 +65,7 @@ Scenario: Row #37
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row38
 Scenario: Row #38
@@ -126,7 +126,7 @@ Scenario: Row #38
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row39
 Scenario: Row #39
@@ -193,7 +193,7 @@ Scenario: Row #39
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row40
 Scenario: Row #40
@@ -250,7 +250,7 @@ Scenario: Row #40
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row41
 Scenario: Row #41
@@ -284,7 +284,7 @@ Scenario: Row #41
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row43
 Scenario: Row #43
@@ -324,7 +324,7 @@ Scenario: Row #43
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row45
 Scenario: Row #45
@@ -361,6 +361,6 @@ Scenario: Row #45
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 

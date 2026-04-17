@@ -1,6 +1,6 @@
 @case_in_2_states_and_default
 Feature: User paths
-# 2026-04-16
+# 2026-04-17
 Background: 
   Given the maximum seconds for each Step is 90
 
@@ -93,7 +93,7 @@ Scenario: Row #94
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row100
 Scenario: Row #100
@@ -184,7 +184,7 @@ Scenario: Row #100
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row106
 Scenario: Row #106
@@ -265,7 +265,7 @@ Scenario: Row #106
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row107
 Scenario: Row #107
@@ -361,7 +361,7 @@ Scenario: Row #107
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row111
 Scenario: Row #111
@@ -404,7 +404,7 @@ Scenario: Row #111
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row114
 Scenario: Row #114
@@ -446,7 +446,7 @@ Scenario: Row #114
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row118
 Scenario: Row #118
@@ -486,7 +486,7 @@ Scenario: Row #118
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row121
 Scenario: Row #121
@@ -529,7 +529,7 @@ Scenario: Row #121
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row128
 Scenario: Row #128
@@ -569,7 +569,7 @@ Scenario: Row #128
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row133
 Scenario: Row #133
@@ -614,7 +614,7 @@ Scenario: Row #133
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row134
 Scenario: Row #134
@@ -654,7 +654,7 @@ Scenario: Row #134
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row135
 Scenario: Row #135
@@ -698,7 +698,7 @@ Scenario: Row #135
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row136
 Scenario: Row #136
@@ -739,7 +739,7 @@ Scenario: Row #136
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row141
 Scenario: Row #141
@@ -784,7 +784,7 @@ Scenario: Row #141
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row142
 Scenario: Row #142
@@ -835,7 +835,7 @@ Scenario: Row #142
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row157
 Scenario: Row #157
@@ -892,7 +892,7 @@ Scenario: Row #157
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row165
 Scenario: Row #165
@@ -936,7 +936,7 @@ Scenario: Row #165
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row280
 Scenario: Row #280
@@ -1022,7 +1022,7 @@ Scenario: Row #280
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row281
 Scenario: Row #281
@@ -1126,7 +1126,7 @@ Scenario: Row #281
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row282
 Scenario: Row #282
@@ -1226,7 +1226,7 @@ Scenario: Row #282
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row283
 Scenario: Row #283
@@ -1308,7 +1308,7 @@ Scenario: Row #283
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row284
 Scenario: Row #284
@@ -1350,7 +1350,7 @@ Scenario: Row #284
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row285
 Scenario: Row #285
@@ -1395,7 +1395,7 @@ Scenario: Row #285
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row286
 Scenario: Row #286 #same as row 118
@@ -1436,7 +1436,7 @@ Scenario: Row #286 #same as row 118
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row287
 Scenario: Row #287 #same as row 134
@@ -1478,7 +1478,7 @@ Scenario: Row #287 #same as row 134
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row288
 Scenario: Row #288 
@@ -1538,7 +1538,7 @@ Scenario: Row #288
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
 @row289
 Scenario: Row #289 #same as row 165
@@ -1582,5 +1582,5 @@ Scenario: Row #289 #same as row 165
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
-    And I wait 5 seconds
+    And I wait 2 seconds
 
