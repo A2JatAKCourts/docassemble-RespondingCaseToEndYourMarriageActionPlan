@@ -1,6 +1,6 @@
 @ak_divorce_case
 Feature: User paths
-# 2026-04-17
+# 2026-04-20
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -851,7 +851,7 @@ Scenario: Row #242
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "Forms to use if you reach an agreement"
     And I should see the phrase "Parenting Plan Agreement & Order, SHC-1128"
-    And I should see the phrase "Joint Motion to Put Settlement on the Record, SHC-1063"
+    And I should see the phrase "Request to Put Agreement on the Record, DR-264"
     And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 4: Serve your spouse"
