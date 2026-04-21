@@ -1781,5 +1781,17 @@ content: |
 
   **Wait** for the court's answer before you act. Learn about motions. See [Motions: Requesting an Order from the Court; Opposing a Motion](https://courts.alaska.gov/shc/family/motions.htm).
 
-
+---
+comment: |
+  2026-04-17 first draft - should go into branding package, ultimately
+template: signing_paragraph
+subject: |
+  Signing information for fill out forms steps
+content: |
+  <div class = "example">
+  <p class = "heading">Important - signing your documents</p>
+  </div> 
+   If you fill out your forms on a computer and file them with TrueFiling, you can sign your forms electronically.  Type “/s/ your name” on the signature line. For example, Zoe Lee’s signature would be /s/ Zoe Lee.
+  
+  If you fill out paper copies of the forms, or do not file them with TrueFiling, read Step X, “Sign your documents” before you sign any document.
   
