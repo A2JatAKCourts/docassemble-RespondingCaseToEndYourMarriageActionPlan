@@ -1227,15 +1227,22 @@ content: |
     <li>Decide if you want to try to work with ${other_party_in_case} to write out your agreement.</li>
   % endif
   </ul>
-  
+  <div class = "step-subheading">Review the benefits of reaching an agreement</div>  
+  If you and ${other_party_in_case} agree about the issues in the case, you can avoid a trial.
   % endif # endregion content.response_to_complaint_is_agree_or_some
   % endif # endregion content.case_type
   % endif # endregion content.response_to_complaint_agree_or_some_block
 
   
+  % if type_of_response.all_false() or ((type_of_response.all_true('ak custody case', exclusive = True) or type_of_response.all_true('ak custody case', 'improper service', exclusive = True) or type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) or type_of_response.all_true('ak divorce case', 'stay married', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', exclusive = True) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order')) and (case_type in ('custody', 'divorce') or (case_type == 'legal separation' and want_legal_separation == 'yes')) and response_to_complaint == 'none' and want_help_to_agree):
+  <div class = "step-subheading">The benefits of reaching an agreement</div>
+  If you and ${other_party_in_case} reach an agreement about the issues in the case, you can avoid a trial.
+  % endif
+
+
+  
   % if type_of_response.all_false('wrong state', 'default') and not (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with order')) and not (user_need == 'answer divorce' and (type_of_response.all_true('stay married', exclusive = True) or (type_of_response['stay married'] and response_to_complaint == 'none' and not want_help_to_agree))): # region content.some_benefits_are
-  <div class = "step-subheading">Review the benefits of reaching an agreement</div>  
-  If you and ${other_party_in_case} agree about the issues in the case, you can avoid a trial.
+  
   **Some benefits are:**
 
   
