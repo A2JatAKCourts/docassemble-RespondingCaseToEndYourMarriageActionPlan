@@ -1228,14 +1228,14 @@ content: |
   % endif
   </ul>
   
-  <div class = "step-subheading">Review the benefits of reaching an agreement</div>  
-  If you and ${other_party_in_case} agree about the issues in the case, you can avoid a trial.
   % endif # endregion content.response_to_complaint_is_agree_or_some
   % endif # endregion content.case_type
   % endif # endregion content.response_to_complaint_agree_or_some_block
 
   
   % if type_of_response.all_false('wrong state', 'default') and not (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with order')) and not (user_need == 'answer divorce' and (type_of_response.all_true('stay married', exclusive = True) or (type_of_response['stay married'] and response_to_complaint == 'none' and not want_help_to_agree))): # region content.some_benefits_are
+  <div class = "step-subheading">Review the benefits of reaching an agreement</div>  
+  If you and ${other_party_in_case} agree about the issues in the case, you can avoid a trial.
   **Some benefits are:**
 
   
