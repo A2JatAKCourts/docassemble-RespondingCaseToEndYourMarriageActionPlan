@@ -9,10 +9,9 @@ include:
   - docassemble.AKA2JBranding:aka2j_templates.yml    
   - docassemble.AKA2JBranding:aka2j_motion_response_templates.yml    
   - docassemble.AKA2JBranding:aka2j_mod_cust_div_templates.yml
-  - accordion_steps.yml
-  # - truefiling.yml
-  # - testing_domestic_violence.yml
+  - accordion_steps.yml    
   - docassemble.AKA2JBranding:truefiling.yml
+  # - testing_domestic_violence.yml
   # - divorce_answer_step.yml
   # - answer_divorce_jurisdiction_residency_step.yml
   # - dismiss_divorce_step.yml
@@ -466,7 +465,7 @@ fields:
     choices:
       - Yes.: still going
       - No, it is over and the court in that case ended our marriage.: ended with order
-      - No, the case was closed before it was finished and the court did not end our marriage: ended with no order
+      - No, the case was closed before it was finished and the court did not end our marriage.: ended with no order
 ---
 id: Ongoing
 question: |
