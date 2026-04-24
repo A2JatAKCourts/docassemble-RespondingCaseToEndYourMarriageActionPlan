@@ -1,6 +1,6 @@
 @default
 Feature: User paths
-# 2026-04-17
+# 2026-04-24
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -17,6 +17,8 @@ Scenario: Row #46
     | military                    | True              |         | 
     | minor_children              | True              |         | 
     | proper_service              | True              |         | 
+    | filling_manner              | electronically    |         | 
+    | filing_method               | efiling           |         | 
     | other_party_exempt          | none              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
@@ -42,7 +44,7 @@ Scenario: Row #46
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Look at their complaint to see if they checked they were exempt."
-    And I should see the phrase "Step 6: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
     And I should see the phrase "Step 7: What to expect after you file your documents"
     And I should see the phrase "Step 8: If your case is moving forward, learn more about the process"
     And I should see the phrase "Step 9: Get more information or help"
@@ -94,7 +96,7 @@ Scenario: Row #61
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
     And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
-    And I should see the phrase "Step 8: Read the “Domestic Relations Procedural Order” or Standing Order that was with the Complaint"
+    And I should see the phrase "Step 8: Read the Standing Order that was with the Complaint"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward, learn more about the process"
     And I should see the phrase "Step 11: Get more information or help"
@@ -115,8 +117,10 @@ Scenario: Row #62
     | military                    | True             |         | 
     | proper_service              | True             |         | 
     | minor_children              | True             |         | 
+    | filling_manner              | electronically   |         | 
+    | filing_method               | dunno            |         | 
     | other_party_exempt          | no               |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about default judgment"
@@ -127,15 +131,16 @@ Scenario: Row #62
     And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
-    And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
+    And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
-    And I should see the phrase "Step 6: Serve your spouse"
+    And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Use TrueFiling to serve your spouse."
-    And I should see the phrase "Step 7: What to expect after you file your documents"
-    And I should see the phrase "Step 8: Get more information or help"
+    And I should see the phrase "Step 8: What to expect after you file your documents"
+    And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -154,9 +159,11 @@ Scenario: Row #63
     | proper_service              | True             |         | 
     | minor_children              | False            |         | 
     | wife_is_pregnant            | husband          |         | 
+    | filling_manner              | no               |         | 
+    | filing_method               | efiling          |         | 
     | other_party_exempt          | yes              |         | 
     | other_party_enter_email     | True             |         | 
-    And I should see the phrase "Your Action Plan for responding in your legal separation case in 8 steps"
+    And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about default judgment"
@@ -165,15 +172,16 @@ Scenario: Row #63
 # And I tap the "#ZGVmYXVsdF9vcHRpb25zX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
-    And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
+    And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
-    And I should see the phrase "Step 6: Serve your spouse"
+    And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
-    And I should see the phrase "Step 7: What to expect after you file your documents"
-    And I should see the phrase "Step 8: Get more information or help"
+    And I should see the phrase "Step 8: What to expect after you file your documents"
+    And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
@@ -183,17 +191,19 @@ Scenario: Row #63
 Scenario: Row #66
   Given I start the interview at "responding_ending_marriage_action_plan.yml"
     And I get to the question id "final screen" with this data:
-    | var                         | value            | trigger | 
-    | user_need                   | answer divorce   |         | 
-    | type_of_response['default'] | True             |         | 
-    | case_type                   | divorce          |         | 
-    | stage_of_default            | judgment entered |         | 
-    | military                    | True             |         | 
-    | minor_children              | True             |         | 
-    | proper_service              | False            |         | 
-    | have_complaint              | True             |         | 
-    | other_party_exempt          | no               |         | 
-    And I should see the phrase "Your Action Plan for responding in your divorce case in 8 steps"
+    | var                         | value             | trigger | 
+    | user_need                   | answer divorce    |         | 
+    | type_of_response['default'] | True              |         | 
+    | case_type                   | divorce           |         | 
+    | stage_of_default            | judgment entered  |         | 
+    | military                    | True              |         | 
+    | minor_children              | True              |         | 
+    | proper_service              | False             |         | 
+    | have_complaint              | True              |         | 
+    | filling_manner              | no                |         | 
+    | filing_method               | mail or in person |         | 
+    | other_party_exempt          | no                |         | 
+    And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
@@ -204,15 +214,16 @@ Scenario: Row #66
     And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
-    And I should see the phrase "Step 5: If you are asking to set aside the default, file your documents with the court and serve your spouse"
+    And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
+    And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
-    And I should see the phrase "Step 6: Serve your spouse"
+    And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Use TrueFiling to serve your spouse."
-    And I should see the phrase "Step 7: What to expect after you file your documents"
-    And I should see the phrase "Step 8: Get more information or help"
+    And I should see the phrase "Step 8: What to expect after you file your documents"
+    And I should see the phrase "Step 9: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
     And I download "responding_ending_marriage_action_plan.docx"
