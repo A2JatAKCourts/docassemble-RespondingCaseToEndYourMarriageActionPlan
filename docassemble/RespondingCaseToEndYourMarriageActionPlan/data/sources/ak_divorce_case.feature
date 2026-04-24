@@ -37,7 +37,7 @@ Scenario: Row #167
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Look at their complaint to see if they checked they were exempt."
-    And I should see the phrase "Step 5: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
     And I should see the phrase "Step 8: Abuse or domestic violence and parenting"
@@ -88,7 +88,7 @@ Scenario: Row #169
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Use TrueFiling to serve your spouse."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Abuse or domestic violence and parenting"
@@ -138,7 +138,7 @@ Scenario: Row #172
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Abuse or domestic violence and parenting"
@@ -167,7 +167,7 @@ Scenario: Row #173
     | children_of_the_marriage            | None             |         | 
     | wife_is_pregnant                    | husband          |         | 
     | response_to_complaint               | agree            |         | 
-    | filling_manner                      | no               |         | 
+    | filling_manner                      | paper               |         | 
     | filing_method                       | efiling          |         | 
     | domestic_violence                   | True             |         | 
     | other_party_exempt                  | yes              |         | 
@@ -188,7 +188,7 @@ Scenario: Row #173
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
-    And I should see the phrase "Step 5: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
     And I should see the phrase "Step 8: Abuse or domestic violence and parenting"
@@ -215,7 +215,7 @@ Scenario: Row #177
     | children_of_the_marriage            | True              |         | 
     | wife_is_pregnant                    | not husband       |         | 
     | response_to_complaint               | agree             |         | 
-    | filling_manner                      | no                |         | 
+    | filling_manner                      | paper                |         | 
     | filing_method                       | mail or in person |         | 
     | domestic_violence                   | False             |         | 
     | other_party_exempt                  | yes               |         | 
@@ -237,7 +237,7 @@ Scenario: Row #177
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Look at their complaint to see if they checked they were exempt."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Learn about paternity"
@@ -260,7 +260,7 @@ Scenario: Row #180
     | children_of_the_marriage            | False            |         | 
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | agree            |         | 
-    | filling_manner                      | no               |         | 
+    | filling_manner                      | paper               |         | 
     | filing_method                       | dunno            |         | 
     | domestic_violence                   | False            |         | 
     | other_party_exempt                  | none             |         | 
@@ -281,7 +281,7 @@ Scenario: Row #180
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Look at their complaint to see if they checked they were exempt."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Learn about paternity"
@@ -324,7 +324,7 @@ Scenario: Row #183
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Use TrueFiling to serve your spouse."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Learn about paternity"
@@ -370,7 +370,7 @@ Scenario: Row #186
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Abuse or domestic violence resources and reaching an agreement"
@@ -422,7 +422,7 @@ Scenario: Row #193
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Abuse or domestic violence resources and reaching an agreement"
@@ -474,7 +474,7 @@ Scenario: Row #195
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Look at their complaint to see if they checked they were exempt."
-    And I should see the phrase "Step 4: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 4: Read the Standing Order"
     And I should see the phrase "Step 5: What to expect after you file your Answer"
     And I should see the phrase "Step 6: Learn more about the process"
     And I should see the phrase "Step 7: Learn about paternity"
@@ -517,7 +517,7 @@ Scenario: Row #201
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Look at their complaint to see if they checked they were exempt."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Learn about paternity"
@@ -561,7 +561,7 @@ Scenario: Row #205
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Use TrueFiling to serve your spouse."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Abuse or domestic violence and parenting"
@@ -592,7 +592,7 @@ Scenario: Row #210
     | wife_is_pregnant                    | not husband    |         | 
     | response_to_complaint               | none           |         | 
     | want_help_to_agree                  | True           |         | 
-    | filling_manner                      | no             |         | 
+    | filling_manner                      | paper             |         | 
     | filing_method                       | efiling        |         | 
     | domestic_violence                   | True           |         | 
     | other_party_exempt                  | yes            |         | 
@@ -617,7 +617,7 @@ Scenario: Row #210
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Abuse or domestic violence resources and reaching an agreement"
@@ -649,7 +649,7 @@ Scenario: Row #214
     | wife_is_pregnant                    | not pregnant      |         | 
     | response_to_complaint               | none              |         | 
     | want_help_to_agree                  | True              |         | 
-    | filling_manner                      | no                |         | 
+    | filling_manner                      | paper                |         | 
     | filing_method                       | mail or in person |         | 
     | domestic_violence                   | False             |         | 
     | other_party_exempt                  | yes               |         | 
@@ -672,7 +672,7 @@ Scenario: Row #214
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
-    And I should see the phrase "Step 5: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
     And I should see the phrase "Step 8: Learn about paternity"
@@ -695,7 +695,7 @@ Scenario: Row #217
     | wife_is_pregnant                    | not pregnant   |         | 
     | response_to_complaint               | none           |         | 
     | want_help_to_agree                  | True           |         | 
-    | filling_manner                      | no             |         | 
+    | filling_manner                      | paper             |         | 
     | filing_method                       | dunno          |         | 
     | domestic_violence                   | False          |         | 
     | other_party_exempt                  | yes            |         | 
@@ -720,7 +720,7 @@ Scenario: Row #217
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Look at their complaint to see if they checked they were exempt."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Get more information or help"
@@ -764,7 +764,7 @@ Scenario: Row #222
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Look at their complaint to see if they checked they were exempt."
-    And I should see the phrase "Step 5: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
     And I should see the phrase "Step 8: Abuse or domestic violence and parenting"
@@ -812,7 +812,7 @@ Scenario: Row #228
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Use TrueFiling to serve your spouse."
-    And I should see the phrase "Step 5: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
     And I should see the phrase "Step 8: Abuse or domestic violence and parenting"
@@ -863,7 +863,7 @@ Scenario: Row #234
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Follow the TrueFiling instructions to serve them at their email address."
-    And I should see the phrase "Step 5: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
     And I should see the phrase "Step 8: Learn about paternity"
@@ -913,7 +913,7 @@ Scenario: Row #242
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Because the other person is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
-    And I should see the phrase "Step 5: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
     And I should see the phrase "Step 8: Abuse or domestic violence resources and reaching an agreement"
@@ -964,7 +964,7 @@ Scenario: Row #244
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "Look at their complaint to see if they checked they were exempt."
-    And I should see the phrase "Step 6: Read the Standing Order that was with the Complaint"
+    And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
     And I should see the phrase "Step 9: Abuse or domestic violence resources"
