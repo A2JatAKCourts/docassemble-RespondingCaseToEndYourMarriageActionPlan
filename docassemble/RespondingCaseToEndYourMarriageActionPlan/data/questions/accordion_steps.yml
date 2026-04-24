@@ -104,8 +104,9 @@ code: |
 
   if type_of_response.any_true():
     case_type
-  if type_of_response.all_true('stay married', exclusive = True) and not respond and case_type == 'legal separation':
-    want_legal_separation = 'no'
+  if type_of_response.all_true('stay married', exclusive = True):
+    if not respond and case_type == 'legal separation':
+      want_legal_separation = 'no'
     add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
   if type_of_response['case in 2 states']:
     if stage_of_other_case == 'ended with order':
@@ -224,7 +225,7 @@ code: |
     
     
   if type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) or type_of_response.all_true('ak divorce case', 'stay married', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', exclusive = True) or (type_of_response.all_true('stay married', exclusive = True) and respond):
-    if type_of_response.all_true('ak divorce case', exclusive = True) :
+    if type_of_response.all_true('ak divorce case', exclusive = True)  or (type_of_response.all_true('stay married', exclusive = True) and respond):
       proper_service = True
     if case_type == 'legal separation' and want_legal_separation == 'unsure':
       add_unique_step((divorce_legal_separation_diff_step, "divorce_legal_separation_diff_idx"), step_list)
@@ -239,7 +240,7 @@ code: |
         add_unique_step((divorce_legal_separation_diff_step, "divorce_legal_separation_diff_idx"), step_list) 
     add_unique_step((answer_step, "answer_idx"), step_list)
 
-  if (type_of_response.any_true() and not(type_of_response.all_true('stay married', exclusive = True))):
+  if type_of_response.any_true() and not (type_of_response['stay married'] and not respond):
     add_unique_image({'image': service_cert_image, 'text': "Certificate of Service"}, images_list)
     # add_unique_step((cert_of_service_step, "cert_of_service_idx"), step_list)
     # add_unique_step((answer_file_and_serve_step, "answer_file_and_serve_idx"), step_list)
@@ -1136,7 +1137,7 @@ content: |
   % endif
 ---
 comment: |
-  2026-04-19 adjusting for 'stay married'
+  2026-04-24 adjusting for 'stay married' and added sure you don't want to respond question
   2026-04-16 some code is still a little different between docx and this mako step
   2026-04-08 dont ask for response_to_complaint if type_of_response.all_false()
   2026-04-07 updated bit for type_of_response['stay married']
@@ -1207,18 +1208,20 @@ content: |
   % endif
   % endif # endregion content.answer_custody_or_divorce_any_true_deadline
   
-  % if user_need == 'answer divorce' and ((type_of_response.all_true('ak divorce case', 'stay married', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', exclusive = True)) or (((type_of_response.all_true('ak divorce case', 'stay married', 'case in 2 states', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', 'case in 2 states', exclusive = True) or type_of_response.all_true('case in 2 states', 'stay married', exclusive = True)) and stage_of_other_case == 'ended without order'))): # region content.stay_married_complaint_response_subheadings
+  % if user_need == 'answer divorce' and ((type_of_response.all_true('ak divorce case', 'stay married', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', exclusive = True) or (type_of_response.all_true('stay married', exclusive = True) and respond)) or (((type_of_response.all_true('ak divorce case', 'stay married', 'case in 2 states', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', 'case in 2 states', exclusive = True) or type_of_response.all_true('case in 2 states', 'stay married', exclusive = True)) and stage_of_other_case == 'ended without order'))): # region content.stay_married_complaint_response_subheadings
   % if response_to_complaint == 'agree': # region content.review_options_by_response_to_complaint_2
   <div class = "step-subheading">Review your options when you agree with what ${other_party_in_case} is asking</div>
   % elif response_to_complaint == 'some':
   <div class = "step-subheading">Review your options when you agree with some of what ${other_party_in_case} is asking</div>
   % elif response_to_complaint == 'none' and want_help_to_agree:
   <div class = "step-subheading">Decide if you want to try to reach an agreement with ${other_party_in_case}</div>
+  If you and ${other_party_in_case} reach an agreement about the issues in the case, you can avoid a trial.
+  
   % endif # endregion content.review_options_by_response_to_complaint_2
   % endif # endregion content.stay_married_complaint_response_subheadings
 
 
-  % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and type_of_response.all_false('wrong state', 'default') and not (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with order')) and type_of_response['ak divorce case']) or (user_need in('answer custody','answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'): # region content.response_to_complaint_agree_or_some_block
+  % if (user_need == 'answer custody' and type_of_response['ak custody case']) or (user_need == 'answer divorce' and type_of_response.all_false('wrong state', 'default') and not (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with order')) and (type_of_response['ak divorce case'] or (type_of_response.all_true('stay married', exclusive = True) and respond))) or (user_need in('answer custody','answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with no order'): # region content.response_to_complaint_agree_or_some_block
   % if case_type in('custody', 'divorce') or (case_type == 'legal separation' and want_legal_separation == 'yes'): # region content.case_type
   
   % if response_to_complaint in ('agree', 'some'): # region content.response_to_complaint_is_agree_or_some
@@ -1248,7 +1251,7 @@ content: |
 
 
   
-  % if type_of_response.all_false('wrong state', 'default') and not (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with order')) and not (user_need == 'answer divorce' and (type_of_response.all_true('stay married', exclusive = True) or (type_of_response['stay married'] and response_to_complaint == 'none' and not want_help_to_agree))): # region content.some_benefits_are
+  % if type_of_response.all_false('wrong state', 'default') and not (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with order')) and not (user_need == 'answer divorce' and ((type_of_response.all_true('stay married', exclusive = True) and not respond) or (type_of_response['stay married'] and response_to_complaint == 'none' and not want_help_to_agree))): # region content.some_benefits_are
   
   **Some benefits are:**
 
