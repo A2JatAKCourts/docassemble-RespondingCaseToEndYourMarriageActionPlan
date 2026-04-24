@@ -144,6 +144,7 @@ validation code: |
   if type_of_response['wrong state'] and type_of_response['case in 2 states']:
     validation_error("Pick only 1 of these 2 choices, 'I think the other parent filed in the wrong state', <strong>or</strong> '2 custody cases were filed.' You cannot pick both.")
 ---
+---
 id: Minor children
 question: |
   Do you and ${ other_party_in_case } have any children who are under age 18?
@@ -171,13 +172,18 @@ under: |
 
   The documents you got from ${ other_party_in_case } should include a “Complaint” which says 'divorce' or 'legal separation.
 ---
-id: Counselling info
+id: Get info to answer
 question: |
-  I do not want a divorce
+  Do you want to learn about responding?
 subquestion: |
-  One spouse cannot stop the other spouse from getting a divorce. If either spouse tells the court the marriage has broken down and cannot be saved, the court will grant the divorce. 
+  If either spouse tells the court the marriage has broken down and cannot be saved, the court will grant ${case_type}.
+
+  You **must file your Answer within 20 days** of getting the Complaint, even if you are trying to work out an agreement with your spouse.
+
+  If you miss the 20-day deadline, the court may enter a default judgment against you.  A default judgment is when the judge decides all the issues in your case without hearing from you.
+
 fields:
-  - Do you want information about finding a therapist or a marriage counselor?: counseling
+  - Do you want to answer questions to learn about filing your Answer?: respond
     datatype: yesnoradio
 ---
 id: Military

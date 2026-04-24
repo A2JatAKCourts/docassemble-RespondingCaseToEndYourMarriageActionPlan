@@ -1,5 +1,6 @@
 comment: |
-    2026-04-19
+    2026-04-21 signing forms paragraph and step
+    2026-04-20 added in type_of_response 'stay married'
     2026-03-10 moving children of the marriage and wife is pregnant closer to beginning of interview if ak divorce case is combined with anything else
     2025-06-04 until we get the docassemble interview Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live, use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64f
 ---
@@ -103,7 +104,7 @@ code: |
 
   if type_of_response.any_true():
     case_type
-  if type_of_response.all_true('stay married', exclusive = True) and case_type == 'legal separation':
+  if type_of_response.all_true('stay married', exclusive = True) and not respond and case_type == 'legal separation':
     want_legal_separation = 'no'
     add_unique_step((want_help_to_agree_step, "want_help_to_agree_idx"), step_list)
   if type_of_response['case in 2 states']:
@@ -135,6 +136,10 @@ code: |
           wife_is_pregnant
       else:
         wife_is_pregnant
+  
+  elif type_of_response['default']:
+    if not minor_children:
+      wife_is_pregnant
 
   if type_of_response.all_true('improper service', exclusive = True) or type_of_response.all_true('improper service', 'stay married', exclusive = True):
     proper_service = False
@@ -218,7 +223,7 @@ code: |
       add_unique_step((fill_set_aside_step, "fill_set_aside_idx"), step_list)
     
     
-  if type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) or type_of_response.all_true('ak divorce case', 'stay married', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', exclusive = True):
+  if type_of_response.all_true('ak divorce case', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', exclusive = True) or type_of_response.all_true('ak divorce case', 'stay married', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', exclusive = True) or (type_of_response.all_true('stay married', exclusive = True) and respond):
     if type_of_response.all_true('ak divorce case', exclusive = True) :
       proper_service = True
     if case_type == 'legal separation' and want_legal_separation == 'unsure':
@@ -234,22 +239,24 @@ code: |
         add_unique_step((divorce_legal_separation_diff_step, "divorce_legal_separation_diff_idx"), step_list) 
     add_unique_step((answer_step, "answer_idx"), step_list)
 
-  if type_of_response.any_true() and not (type_of_response.all_true('stay married', exclusive = True)):
+  if (type_of_response.any_true() and not(type_of_response.all_true('stay married', exclusive = True))):
     add_unique_image({'image': service_cert_image, 'text': "Certificate of Service"}, images_list)
     # add_unique_step((cert_of_service_step, "cert_of_service_idx"), step_list)
     # add_unique_step((answer_file_and_serve_step, "answer_file_and_serve_idx"), step_list)
+    if filling_manner in('paper', 'dunno') or filing_method in('mail or in person', 'dunno'):
+      add_unique_step((sign_step, "sign_idx"), step_list)
     add_unique_step((truefiling_file_and_serve_step, "truefiling_file_and_serve_idx"), step_list)
     add_unique_step((truefiling_serve_step, "truefiling_serve_idx"), step_list)
 
     if not ((type_of_response['default'] and stage_of_default == 'judgment entered') or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response.all_true('wrong state', 'default') and user_need == 'answer custody' and not jurisdiction)):
-      add_unique_step((read_drpo_step, "read_drpo_idx"), step_list)
+      add_unique_step((read_standing_order_step, "read_standing_order_idx"), step_list)
   
-    add_unique_step((expect_after_answer_step, "expect_after_answer_idx"), step_list)
+    add_unique_step((expect_after_motion_or_answer_step, "expect_after_motion_or_answer_idx"), step_list)
 
     if not ((user_need == 'answer custody' and type_of_response.all_true('wrong state', 'default') and not jurisdiction) or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order') or (type_of_response['default'] and stage_of_default == 'judgment entered') or type_of_response.all_false()):
       add_unique_step((learn_more_about_process_step, "learn_more_about_process_idx"), step_list)
   
-  if type_of_response.all_true('stay married', exclusive = True):
+  if type_of_response.all_true('stay married', exclusive = True) and not respond:
     add_unique_step((learn_more_about_process_step, "learn_more_about_process_idx"), step_list)
   
   if ((user_need == 'answer custody' and type_of_response['ak custody case'])or (user_need == 'answer divorce' and type_of_response['ak divorce case'])) and (not ((type_of_response['default'] and stage_of_default == 'judgment entered') or (type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order'))):
@@ -271,8 +278,8 @@ code: |
     # if agreement_documents:
     #   add_unique_step((uncontested_custody_forms_step, "uncontested_custody_forms_idx"), step_list)
     #   add_unique_step((truefiling_file_and_serve_step, "truefiling_file_and_serve_idx"), step_list)
-    #   add_unique_step((read_drpo_step, "read_drpo_idx"), step_list)
-    #   add_unique_step((expect_after_answer_step, "expect_after_answer_idx"), step_list)
+    #   add_unique_step((read_standing_order_step, "read_standing_order_idx"), step_list)
+    #   add_unique_step((expect_after_motion_or_answer_step, "expect_after_motion_or_answer_idx"), step_list)
     if domestic_violence:
       add_unique_step((answer_domestic_violence_step, "answer_domestic_violence_idx"), step_list)
   
@@ -591,7 +598,7 @@ content: |
     You can also tell the Alaska judge you were not served correctly.
   % endif
   The judges will then decide which court has jurisdiction.
-  See ${ expect_after_answer_step.subject }.  
+  See ${ expect_after_motion_or_answer_step.subject }.  
   % endif
 
   % if not type_of_response['default']:
@@ -1189,7 +1196,7 @@ content: |
 
   
   % if (user_need in('answer custody', 'answer divorce') and type_of_response.any_true()): # region content.answer_custody_or_divorce_any_true_deadline
-  % if user_need == 'answer divorce' and ((type_of_response.all_true('ak divorce case', 'stay married', exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', exclusive = True) or ((type_of_response.all_true('ak divorce case', 'stay married', 'case in 2 states',  exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', 'case in 2 states',  exclusive = True)) and stage_of_other_case == 'ended with no order')) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))): # region content.answer_divorce_complex_deadline_sentence 
+  % if user_need == 'answer divorce' and ((type_of_response.all_true('ak divorce case', 'stay married', exclusive = True) or (type_of_response.all_true('stay married', exclusive = True) and respond) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', exclusive = True) or ((type_of_response.all_true('ak divorce case', 'stay married', 'case in 2 states',  exclusive = True) or type_of_response.all_true('ak divorce case', 'improper service', 'stay married', 'case in 2 states',  exclusive = True)) and stage_of_other_case == 'ended with no order')) and (response_to_complaint in ('agree', 'some') or (response_to_complaint == 'none' and want_help_to_agree))): # region content.answer_divorce_complex_deadline_sentence 
   You **must respond and file your Answer within 20 days** of getting the Complaint, even if you are trying to work out an agreement with ${other_party_in_case}. 
   % else:
   You **must respond and file your Answer ${"or Motion to Dismiss " if type_of_response['case in 2 states'] and stage_of_other_case == 'still going' else ""}within 20 days** of getting the Complaint.
@@ -1383,18 +1390,19 @@ content: |
   % endif
 ---
 comment: |
+  2026-04-23 go back to combining after motion and answer 
   2025-09-23 updated user_need == 'answer custody' template 
   until we get this docassemble interview 
   Learn about motions: <a href="https://docassemble.akcourts.gov/start/FilingAMotion">Asking for an Order in a Divorce Case When the Issue Can't Wait for the Court's Final Decision (Filing a Motion) GA</a> live,     
   use the link to the court webpage in the list under "Read." See Github branding issue https://github.com/A2JatAKCourts/docassemble-AKA2JBrandingIssues/issues/64
-template: expect_after_answer_step
+template: expect_after_motion_or_answer_step
 subject: |
-  % if (user_need == 'answer custody' and type_of_response.all_true('ak custody case', exclusive = True)) or (user_need == 'answer divorce' and type_of_response.all_true('ak divorce case', exclusive = True)) or (type_of_response['case in 2 states'] and not type_of_response['default'] and stage_of_other_case == 'ended with no order'):
-  Step ${ expect_after_answer_idx }: What to expect after you file your Answer
-  % elif type_of_response.all_false():
-  Step ${ expect_after_answer_idx }: What to expect after you file your Complaint
+  % if user_need in ('answer custody', 'answer divorce') and not (type_of_response['case in 2 states'] and stage_of_other_case in('still going', 'ended with order')) and not (type_of_response['default'] and stage_of_default == 'judgment entered'):
+  Step ${ expect_after_motion_or_answer_idx }: What to expect after you file your Answer
+  % elif user_need == 'answer custody' and type_of_response.all_false():
+  Step ${ expect_after_motion_or_answer_idx }: What to expect after you file your Complaint
   % else:
-  Step ${ expect_after_answer_idx }: What to expect after you file your documents
+  Step ${ expect_after_motion_or_answer_idx }: What to expect after you file your documents
   % endif
 content: |   
   % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'still going':
@@ -1421,11 +1429,10 @@ content: |
   See the court's web page [Dividing Property & Debt](https://courts.alaska.gov/shc/family/property.htm) 
   % endif  
 
-  % else: 
-  
-  % if not type_of_response['default'] and ((type_of_response.all_true('improper service', 'wrong state') and ((user_need == 'answer custody' and not jurisdiction) or user_need == 'answer divorce')) or (type_of_response['case in 2 states'] and stage_of_other_case =='still going')):
+  % else:   
+  % if user_need in('answer custody', 'answer divorce') and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
   If you ask to dismiss the case, ${ other_party_in_case } may file a response or "opposition."
-  % elif not type_of_response['default'] and type_of_response['case in 2 states'] and stage_of_other_case == 'ended with order':
+  % else:
   ${ capitalize(other_party_in_case) } may file a response or "opposition."
   % endif
   
@@ -1791,7 +1798,7 @@ content: |
 ---
 comment: |
   2026-04-17 first draft - should go into branding package, ultimately
-template: signing_paragraph
+template: old_signing_paragraph
 subject: |
   Signing information for fill out forms steps
 content: |
