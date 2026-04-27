@@ -671,7 +671,9 @@ attachment:
   update references: True
   variable name: responding_ending_marriage_action_plan_attachment[i]
   skip undefined: True
+  # docx template: old_default_options_content_uncommented.docx
   # docx template file: dummy.docx
+  # docx template file: responding_ending_marriage_action_plan_build_again.docx
   docx template file: responding_ending_marriage_action_plan.docx
   tagged pdf: True
 ---
@@ -681,6 +683,8 @@ attachment:
   update references: True
   variable name: docx_responding_ending_marriage_action_plan_attachment
   skip undefined: True
+  # docx template: old_default_options_content_uncommented.docx
   # docx template file: dummy.docx
+  # docx template file: responding_ending_marriage_action_plan_build_again.docx
   docx template file: responding_ending_marriage_action_plan.docx
   tagged pdf: True

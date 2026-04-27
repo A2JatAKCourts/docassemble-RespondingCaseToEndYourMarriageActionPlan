@@ -153,7 +153,7 @@ Scenario: Row #6
     | military                             | False            |         | 
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | not pregnant     |         | 
-    | filling_manner                       | no               |         | 
+    | filling_manner                       | paper            |         | 
     | filing_method                        | efiling          |         | 
     | have_complaint                       | True             |         | 
     | other_party_exempt                   | yes              |         | 
