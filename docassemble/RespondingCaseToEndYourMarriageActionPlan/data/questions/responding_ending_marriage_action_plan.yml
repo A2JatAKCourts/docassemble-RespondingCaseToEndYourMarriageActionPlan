@@ -1,4 +1,6 @@
 Comment: |
+ 2026-04-27
+ refactoring children_of_the marriage to husband_not_father
  2026-04-17 
  comment out features block w noredasterisk
 
@@ -7,8 +9,9 @@ include:
   - docassemble.AssemblyLine:assembly_line.yml
   - docassemble.AKA2JBranding:custom_organization.yml  
   - docassemble.AKA2JBranding:aka2j_templates.yml    
-  - docassemble.AKA2JBranding:aka2j_motion_response_templates.yml    
-  - docassemble.AKA2JBranding:aka2j_mod_cust_div_templates.yml
+  - docassemble.AKA2JBranding:aka2j_motion_response_templates.yml   
+  - docassemble.AKA2JBranding:aka2j_mod_cust_div_templates.yml   
+  - docassemble.AKA2JBranding:aka2j_answer_templates.yml
   - accordion_steps.yml    
   - docassemble.AKA2JBranding:truefiling.yml
   # - testing_domestic_violence.yml
@@ -459,7 +462,7 @@ question: |
 subquestion: |
   The law considers a husband to be the father of any children born during a marriage. If the husband is not the father, the court can remove the husband's rights and responsibilities for that child. This is called disestablishing paternity.
 fields:
-  - no label: children_of_the_marriage
+  - no label: husband_not_father
     datatype: yesnomaybe
 ---
 id: Cases in 2 states - still going?

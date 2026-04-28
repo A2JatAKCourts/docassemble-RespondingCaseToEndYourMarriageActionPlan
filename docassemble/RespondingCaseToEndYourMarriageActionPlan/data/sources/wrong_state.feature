@@ -1,6 +1,6 @@
 @wrong_state
 Feature: user paths
-# 2026-04-24
+# 2026-04-28
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -198,7 +198,7 @@ Scenario: Row #14
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | not pregnant     |         | 
     | proper_service                       | False            |         | 
-    | filling_manner                       | paper               |         | 
+    | filling_manner                       | paper            |         | 
     | filing_method                        | efiling          |         | 
     | have_complaint                       | True             |         | 
     | other_party_exempt                   | no               |         | 
@@ -254,7 +254,7 @@ Scenario: Row #30
     | case_type                       | divorce           |         | 
     | military                        | False             |         | 
     | minor_children                  | True              |         | 
-    | filling_manner                  | paper                |         | 
+    | filling_manner                  | paper             |         | 
     | filing_method                   | mail or in person |         | 
     | other_party_exempt              | no                |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
@@ -310,7 +310,7 @@ Scenario: Row #31
     | military                        | True             |         | 
     | minor_children                  | False            |         | 
     | wife_is_pregnant                | not pregnant     |         | 
-    | filling_manner                  | paper               |         | 
+    | filling_manner                  | paper            |         | 
     | filing_method                   | dunno            |         | 
     | other_party_exempt              | none             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
@@ -695,7 +695,7 @@ Scenario: Row #78
     And I should see the phrase "You agree with your spouse that there should be a case to end your marriage and get a custody, Parenting Plan, and child support order."
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
+    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-In PDF]."
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, “I have no counterclaims.”"
     And I should see the phrase "I make the counterclaims below. If I asked the court to dismiss the case in section B (Affirmative Defenses), and the court does not dismiss the case, I do not waive my claim about the court’s lack of jurisdiction."
@@ -743,7 +743,7 @@ Scenario: Row #81
     | minor_children                       | False             |         | 
     | wife_is_pregnant                     | not husband       |         | 
     | proper_service                       | True              |         | 
-    | filling_manner                       | paper                |         | 
+    | filling_manner                       | paper             |         | 
     | filing_method                        | efiling           |         | 
     | other_party_exempt                   | no                |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
@@ -767,7 +767,7 @@ Scenario: Row #81
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
-    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
+    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-In PDF]."
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
     And I should see the phrase "You must use this form because wife is pregnant."
@@ -808,7 +808,7 @@ Scenario: Row #86
     | case_type                            | divorce           |         | 
     | minor_children                       | True              |         | 
     | proper_service                       | True              |         | 
-    | filling_manner                       | paper                |         | 
+    | filling_manner                       | paper             |         | 
     | filing_method                        | mail or in person |         | 
     | military                             | True              |         | 
     | stage_of_default                     | judgment entered  |         | 
@@ -830,9 +830,9 @@ Scenario: Row #86
     And I should see the phrase "Step 2: Learn about default judgment"
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options when the judge entered a default judgment"
-    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
+    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan, or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 4: Learn about the Motion to Set Aside Judgment or Order"
-    And I should see the phrase "Step 5: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 5: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
@@ -863,7 +863,7 @@ Scenario: Row #93
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | not pregnant     |         | 
     | proper_service                       | False            |         | 
-    | filling_manner                       | paper               |         | 
+    | filling_manner                       | paper            |         | 
     | filing_method                        | dunno            |         | 
     | have_complaint                       | True             |         | 
     | other_party_exempt                   | yes              |         | 
@@ -885,7 +885,7 @@ Scenario: Row #93
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options when the judge entered a default judgment"
     And I should see the phrase "Step 4: Learn about the Motion to Set Aside Judgment or Order"
-    And I should see the phrase "Step 5: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 5: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
@@ -967,7 +967,7 @@ Scenario: Row #252
     | want_legal_separation               | yes               |         | 
     | military                            | True              |         | 
     | minor_children                      | True              |         | 
-    | children_of_the_marriage            | True              |         | 
+    | husband_not_father                  | True              |         | 
     | domestic_violence                   | True              |         | 
     | filling_manner                      | dunno             |         | 
     | filing_method                       | mail or in person |         | 
@@ -1026,7 +1026,7 @@ Scenario: Row #254
     | want_legal_separation                | yes               |         | 
     | military                             | False             |         | 
     | minor_children                       | True              |         | 
-    | children_of_the_marriage             | True              |         | 
+    | husband_not_father                   | True              |         | 
     | proper_service                       | True              |         | 
     | filling_manner                       | dunno             |         | 
     | filing_method                        | dunno             |         | 
@@ -1054,7 +1054,7 @@ Scenario: Row #254
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late."
-    And I should see the phrase "Fill out a TF-706 Motion (Request) and Affidavit Fill-in PDF."
+    And I should see the phrase "Fill out a TF-706 Motion (Request) and Affidavit [Fill-In PDF]."
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
 # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
@@ -1136,7 +1136,7 @@ Scenario: Row #255
 # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
-    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
+    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-In PDF]."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150 [Fill in PDF]"
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
@@ -1169,7 +1169,7 @@ Scenario: Row #256
     | stage_of_default                     | judgment entered  |         | 
     | military                             | True              |         | 
     | minor_children                       | True              |         | 
-    | children_of_the_marriage             | True              |         | 
+    | husband_not_father                   | True              |         | 
     | proper_service                       | True              |         | 
     | filling_manner                       | electronically    |         | 
     | filing_method                        | mail or in person |         | 
@@ -1192,9 +1192,9 @@ Scenario: Row #256
     And I should see the phrase "Step 2: Learn about default judgment"
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options when the judge entered a default judgment"
-    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
+    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan, or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 4: Learn about the Motion to Set Aside Judgment or Order"
-    And I should see the phrase "Step 5: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 5: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
@@ -1281,10 +1281,10 @@ Scenario: Row #258
     | want_legal_separation                | yes               |         | 
     | military                             | True              |         | 
     | minor_children                       | True              |         | 
-    | children_of_the_marriage             | False             |         | 
+    | husband_not_father                   | False             |         | 
     | wife_is_pregnant                     | husband           |         | 
     | proper_service                       | False             |         | 
-    | filling_manner                       | paper                |         | 
+    | filling_manner                       | paper             |         | 
     | filing_method                        | efiling           |         | 
     | domestic_violence                    | True              |         | 
     | have_complaint                       | True              |         | 
@@ -1312,7 +1312,7 @@ Scenario: Row #258
     And I should see the phrase "Option 2. Tell the judge you were not served the correct way and ask to dismiss the case"
     And I should see the phrase "Option 3. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
-    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-in PDF]."
+    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill-In PDF]."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, “I have no counterclaims.”"
     And I should see the phrase "If you think Alaska is not the "home state," you can ask the court to dismiss your case:"
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your legal separation case."
@@ -1358,7 +1358,7 @@ Scenario: Row #261
     | minor_children                       | False             |         | 
     | wife_is_pregnant                     | not pregnant      |         | 
     | proper_service                       | False             |         | 
-    | filling_manner                       | paper                |         | 
+    | filling_manner                       | paper             |         | 
     | filing_method                        | mail or in person |         | 
     | have_complaint                       | True              |         | 
     | other_party_exempt                   | yes               |         | 
@@ -1379,7 +1379,7 @@ Scenario: Row #261
     And I should see the phrase "They were supposed to give you a copy of the documents they filed one of these ways"
     And I should see the phrase "Step 3: Options when the judge entered a default judgment"
     And I should see the phrase "Step 4: Learn about the Motion to Set Aside Judgment or Order"
-    And I should see the phrase "Step 5: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 5: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
@@ -1407,10 +1407,10 @@ Scenario: Row #266
     | case_type                            | divorce        |         | 
     | military                             | False          |         | 
     | minor_children                       | True           |         | 
-    | children_of_the_marriage             | False          |         | 
+    | husband_not_father                   | False          |         | 
     | wife_is_pregnant                     | not husband    |         | 
     | proper_service                       | False          |         | 
-    | filling_manner                       | paper             |         | 
+    | filling_manner                       | paper          |         | 
     | filing_method                        | dunno          |         | 
     | domestic_violence                    | True           |         | 
     | have_complaint                       | False          |         | 

@@ -1,6 +1,6 @@
 @ak_divorce_case
 Feature: User paths
-# 2026-04-2024
+# 2026-04-27 refactoring children_of_the_marriage to husband_not_father
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -14,7 +14,7 @@ Scenario: Row #167
     | type_of_response['ak divorce case'] | True           |         | 
     | case_type                           | divorce        |         | 
     | minor_children                      | True           |         | 
-    | children_of_the_marriage            | True           |         | 
+    | husband_not_father                  | True           |         | 
     | wife_is_pregnant                    | husband        |         | 
     | response_to_complaint               | agree          |         | 
     | filling_manner                      | electronically |         | 
@@ -63,7 +63,7 @@ Scenario: Row #169
     | case_type                           | legal separation  |         | 
     | want_legal_separation               | yes               |         | 
     | minor_children                      | True              |         | 
-    | children_of_the_marriage            | True              |         | 
+    | husband_not_father                  | True              |         | 
     | wife_is_pregnant                    | not pregnant      |         | 
     | response_to_complaint               | agree             |         | 
     | filling_manner                      | electronically    |         | 
@@ -113,7 +113,7 @@ Scenario: Row #172
     | type_of_response['ak divorce case'] | True           |         | 
     | case_type                           | divorce        |         | 
     | minor_children                      | True           |         | 
-    | children_of_the_marriage            | False          |         | 
+    | husband_not_father                  | False          |         | 
     | wife_is_pregnant                    | not pregnant   |         | 
     | response_to_complaint               | agree          |         | 
     | filling_manner                      | electronically |         | 
@@ -164,10 +164,10 @@ Scenario: Row #173
     | case_type                           | legal separation |         | 
     | want_legal_separation               | no               |         | 
     | minor_children                      | True             |         | 
-    | children_of_the_marriage            | None             |         | 
+    | husband_not_father                  | None             |         | 
     | wife_is_pregnant                    | husband          |         | 
     | response_to_complaint               | agree            |         | 
-    | filling_manner                      | paper               |         | 
+    | filling_manner                      | paper            |         | 
     | filing_method                       | efiling          |         | 
     | domestic_violence                   | True             |         | 
     | other_party_exempt                  | yes              |         | 
@@ -212,10 +212,10 @@ Scenario: Row #177
     | type_of_response['ak divorce case'] | True              |         | 
     | case_type                           | divorce           |         | 
     | minor_children                      | True              |         | 
-    | children_of_the_marriage            | True              |         | 
+    | husband_not_father                  | True              |         | 
     | wife_is_pregnant                    | not husband       |         | 
     | response_to_complaint               | agree             |         | 
-    | filling_manner                      | paper                |         | 
+    | filling_manner                      | paper             |         | 
     | filing_method                       | mail or in person |         | 
     | domestic_violence                   | False             |         | 
     | other_party_exempt                  | yes               |         | 
@@ -257,10 +257,10 @@ Scenario: Row #180
     | case_type                           | legal separation |         | 
     | want_legal_separation               | unsure           |         | 
     | minor_children                      | True             |         | 
-    | children_of_the_marriage            | False            |         | 
+    | husband_not_father                  | False            |         | 
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | agree            |         | 
-    | filling_manner                      | paper               |         | 
+    | filling_manner                      | paper            |         | 
     | filing_method                       | dunno            |         | 
     | domestic_violence                   | False            |         | 
     | other_party_exempt                  | none             |         | 
@@ -300,7 +300,7 @@ Scenario: Row #183
     | type_of_response['ak divorce case'] | True           |         | 
     | case_type                           | divorce        |         | 
     | minor_children                      | True           |         | 
-    | children_of_the_marriage            | None           |         | 
+    | husband_not_father                  | None           |         | 
     | wife_is_pregnant                    | not husband    |         | 
     | response_to_complaint               | agree          |         | 
     | filling_manner                      | dunno          |         | 
@@ -344,7 +344,7 @@ Scenario: Row #186
     | case_type                           | legal separation  |         | 
     | want_legal_separation               | yes               |         | 
     | minor_children                      | True              |         | 
-    | children_of_the_marriage            | True              |         | 
+    | husband_not_father                  | True              |         | 
     | wife_is_pregnant                    | not husband       |         | 
     | response_to_complaint               | some              |         | 
     | filling_manner                      | dunno             |         | 
@@ -397,7 +397,7 @@ Scenario: Row #193
     | type_of_response['ak divorce case'] | True           |         | 
     | case_type                           | divorce        |         | 
     | minor_children                      | True           |         | 
-    | children_of_the_marriage            | None           |         | 
+    | husband_not_father                  | None           |         | 
     | wife_is_pregnant                    | not pregnant   |         | 
     | response_to_complaint               | some           |         | 
     | filling_manner                      | dunno          |         | 
@@ -450,7 +450,7 @@ Scenario: Row #195
     | case_type                           | legal separation |         | 
     | want_legal_separation               | no               |         | 
     | minor_children                      | True             |         | 
-    | children_of_the_marriage            | True             |         | 
+    | husband_not_father                  | True             |         | 
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | some             |         | 
     | filling_manner                      | electronically   |         | 
@@ -493,7 +493,7 @@ Scenario: Row #201
     | type_of_response['ak divorce case'] | True              |         | 
     | case_type                           | divorce           |         | 
     | minor_children                      | True              |         | 
-    | children_of_the_marriage            | None              |         | 
+    | husband_not_father                  | None              |         | 
     | wife_is_pregnant                    | not husband       |         | 
     | response_to_complaint               | some              |         | 
     | filling_manner                      | electronically    |         | 
@@ -537,7 +537,7 @@ Scenario: Row #205
     | case_type                           | legal separation |         | 
     | want_legal_separation               | unsure           |         | 
     | minor_children                      | True             |         | 
-    | children_of_the_marriage            | True             |         | 
+    | husband_not_father                  | True             |         | 
     | wife_is_pregnant                    | not pregnant     |         | 
     | response_to_complaint               | none             |         | 
     | filling_manner                      | electronically   |         | 
@@ -588,11 +588,11 @@ Scenario: Row #210
     | type_of_response['ak divorce case'] | True           |         | 
     | case_type                           | divorce        |         | 
     | minor_children                      | True           |         | 
-    | children_of_the_marriage            | None           |         | 
+    | husband_not_father                  | None           |         | 
     | wife_is_pregnant                    | not husband    |         | 
     | response_to_complaint               | none           |         | 
     | want_help_to_agree                  | True           |         | 
-    | filling_manner                      | paper             |         | 
+    | filling_manner                      | paper          |         | 
     | filing_method                       | efiling        |         | 
     | domestic_violence                   | True           |         | 
     | other_party_exempt                  | yes            |         | 
@@ -645,11 +645,11 @@ Scenario: Row #214
     | case_type                           | legal separation  |         | 
     | want_legal_separation               | no                |         | 
     | minor_children                      | True              |         | 
-    | children_of_the_marriage            | True              |         | 
+    | husband_not_father                  | True              |         | 
     | wife_is_pregnant                    | not pregnant      |         | 
     | response_to_complaint               | none              |         | 
     | want_help_to_agree                  | True              |         | 
-    | filling_manner                      | paper                |         | 
+    | filling_manner                      | paper             |         | 
     | filing_method                       | mail or in person |         | 
     | domestic_violence                   | False             |         | 
     | other_party_exempt                  | yes               |         | 
@@ -691,11 +691,11 @@ Scenario: Row #217
     | type_of_response['ak divorce case'] | True           |         | 
     | case_type                           | divorce        |         | 
     | minor_children                      | True           |         | 
-    | children_of_the_marriage            | False          |         | 
+    | husband_not_father                  | False          |         | 
     | wife_is_pregnant                    | not pregnant   |         | 
     | response_to_complaint               | none           |         | 
     | want_help_to_agree                  | True           |         | 
-    | filling_manner                      | paper             |         | 
+    | filling_manner                      | paper          |         | 
     | filing_method                       | dunno          |         | 
     | domestic_violence                   | False          |         | 
     | other_party_exempt                  | yes            |         | 
@@ -739,7 +739,7 @@ Scenario: Row #222
     | case_type                           | legal separation |         | 
     | want_legal_separation               | yes              |         | 
     | minor_children                      | True             |         | 
-    | children_of_the_marriage            | True             |         | 
+    | husband_not_father                  | True             |         | 
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | False            |         | 
@@ -788,7 +788,7 @@ Scenario: Row #228
     | type_of_response['ak divorce case'] | True              |         | 
     | case_type                           | divorce           |         | 
     | minor_children                      | True              |         | 
-    | children_of_the_marriage            | None              |         | 
+    | husband_not_father                  | None              |         | 
     | wife_is_pregnant                    | not husband       |         | 
     | response_to_complaint               | none              |         | 
     | want_help_to_agree                  | False             |         | 
@@ -837,7 +837,7 @@ Scenario: Row #234
     | case_type                           | legal separation |         | 
     | want_legal_separation               | no               |         | 
     | minor_children                      | True             |         | 
-    | children_of_the_marriage            | False            |         | 
+    | husband_not_father                  | False            |         | 
     | wife_is_pregnant                    | not husband      |         | 
     | response_to_complaint               | none             |         | 
     | want_help_to_agree                  | False            |         | 
