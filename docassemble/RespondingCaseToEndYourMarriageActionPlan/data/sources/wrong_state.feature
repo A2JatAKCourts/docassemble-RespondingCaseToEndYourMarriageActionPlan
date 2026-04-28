@@ -1,6 +1,6 @@
 @wrong_state
 Feature: user paths
-# 2026-04-24
+# 2026-04-27 refactoring children_of_the_marriage to husband_not_father
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -198,7 +198,7 @@ Scenario: Row #14
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | not pregnant     |         | 
     | proper_service                       | False            |         | 
-    | filling_manner                       | paper               |         | 
+    | filling_manner                       | paper            |         | 
     | filing_method                        | efiling          |         | 
     | have_complaint                       | True             |         | 
     | other_party_exempt                   | no               |         | 
@@ -254,7 +254,7 @@ Scenario: Row #30
     | case_type                       | divorce           |         | 
     | military                        | False             |         | 
     | minor_children                  | True              |         | 
-    | filling_manner                  | paper                |         | 
+    | filling_manner                  | paper             |         | 
     | filing_method                   | mail or in person |         | 
     | other_party_exempt              | no                |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
@@ -310,7 +310,7 @@ Scenario: Row #31
     | military                        | True             |         | 
     | minor_children                  | False            |         | 
     | wife_is_pregnant                | not pregnant     |         | 
-    | filling_manner                  | paper               |         | 
+    | filling_manner                  | paper            |         | 
     | filing_method                   | dunno            |         | 
     | other_party_exempt              | none             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
@@ -743,7 +743,7 @@ Scenario: Row #81
     | minor_children                       | False             |         | 
     | wife_is_pregnant                     | not husband       |         | 
     | proper_service                       | True              |         | 
-    | filling_manner                       | paper                |         | 
+    | filling_manner                       | paper             |         | 
     | filing_method                        | efiling           |         | 
     | other_party_exempt                   | no                |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
@@ -808,7 +808,7 @@ Scenario: Row #86
     | case_type                            | divorce           |         | 
     | minor_children                       | True              |         | 
     | proper_service                       | True              |         | 
-    | filling_manner                       | paper                |         | 
+    | filling_manner                       | paper             |         | 
     | filing_method                        | mail or in person |         | 
     | military                             | True              |         | 
     | stage_of_default                     | judgment entered  |         | 
@@ -830,7 +830,7 @@ Scenario: Row #86
     And I should see the phrase "Step 2: Learn about default judgment"
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options when the judge entered a default judgment"
-    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
+    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan, or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 4: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 5: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
@@ -863,7 +863,7 @@ Scenario: Row #93
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | not pregnant     |         | 
     | proper_service                       | False            |         | 
-    | filling_manner                       | paper               |         | 
+    | filling_manner                       | paper            |         | 
     | filing_method                        | dunno            |         | 
     | have_complaint                       | True             |         | 
     | other_party_exempt                   | yes              |         | 
@@ -967,7 +967,7 @@ Scenario: Row #252
     | want_legal_separation               | yes               |         | 
     | military                            | True              |         | 
     | minor_children                      | True              |         | 
-    | children_of_the_marriage            | True              |         | 
+    | husband_not_father                  | True              |         | 
     | domestic_violence                   | True              |         | 
     | filling_manner                      | dunno             |         | 
     | filing_method                       | mail or in person |         | 
@@ -1026,7 +1026,7 @@ Scenario: Row #254
     | want_legal_separation                | yes               |         | 
     | military                             | False             |         | 
     | minor_children                       | True              |         | 
-    | children_of_the_marriage             | True              |         | 
+    | husband_not_father                   | True              |         | 
     | proper_service                       | True              |         | 
     | filling_manner                       | dunno             |         | 
     | filing_method                        | dunno             |         | 
@@ -1169,7 +1169,7 @@ Scenario: Row #256
     | stage_of_default                     | judgment entered  |         | 
     | military                             | True              |         | 
     | minor_children                       | True              |         | 
-    | children_of_the_marriage             | True              |         | 
+    | husband_not_father                   | True              |         | 
     | proper_service                       | True              |         | 
     | filling_manner                       | electronically    |         | 
     | filing_method                        | mail or in person |         | 
@@ -1192,7 +1192,7 @@ Scenario: Row #256
     And I should see the phrase "Step 2: Learn about default judgment"
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 3: Options when the judge entered a default judgment"
-    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
+    And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan, or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 4: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 5: If you want to ask to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
@@ -1281,10 +1281,10 @@ Scenario: Row #258
     | want_legal_separation                | yes               |         | 
     | military                             | True              |         | 
     | minor_children                       | True              |         | 
-    | children_of_the_marriage             | False             |         | 
+    | husband_not_father                   | False             |         | 
     | wife_is_pregnant                     | husband           |         | 
     | proper_service                       | False             |         | 
-    | filling_manner                       | paper                |         | 
+    | filling_manner                       | paper             |         | 
     | filing_method                        | efiling           |         | 
     | domestic_violence                    | True              |         | 
     | have_complaint                       | True              |         | 
@@ -1358,7 +1358,7 @@ Scenario: Row #261
     | minor_children                       | False             |         | 
     | wife_is_pregnant                     | not pregnant      |         | 
     | proper_service                       | False             |         | 
-    | filling_manner                       | paper                |         | 
+    | filling_manner                       | paper             |         | 
     | filing_method                        | mail or in person |         | 
     | have_complaint                       | True              |         | 
     | other_party_exempt                   | yes               |         | 
@@ -1407,10 +1407,10 @@ Scenario: Row #266
     | case_type                            | divorce        |         | 
     | military                             | False          |         | 
     | minor_children                       | True           |         | 
-    | children_of_the_marriage             | False          |         | 
+    | husband_not_father                   | False          |         | 
     | wife_is_pregnant                     | not husband    |         | 
     | proper_service                       | False          |         | 
-    | filling_manner                       | paper             |         | 
+    | filling_manner                       | paper          |         | 
     | filing_method                        | dunno          |         | 
     | domestic_violence                    | True           |         | 
     | have_complaint                       | False          |         | 
