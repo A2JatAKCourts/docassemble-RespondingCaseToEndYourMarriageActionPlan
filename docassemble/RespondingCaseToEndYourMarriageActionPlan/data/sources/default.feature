@@ -1,6 +1,6 @@
 @default
 Feature: User paths
-# 2026-04-27
+# 2026-04-28
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -133,7 +133,7 @@ Scenario: Row #62
 # And I tap the "#ZGVmYXVsdF9vcHRpb25zX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan, or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
-    And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 4: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
@@ -174,7 +174,7 @@ Scenario: Row #63
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
 # And I tap the "#ZGVmYXVsdF9vcHRpb25zX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
-    And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 4: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
@@ -216,7 +216,7 @@ Scenario: Row #66
 # And I tap the "#ZGVmYXVsdF9vcHRpb25zX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "If something changes substantially, and you want to ask to change the judge’s custody, Parenting Plan, or child support order, read Modifying Child Custody or Child Support Order on the court’s website."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
-    And I should see the phrase "Step 4: If you want to ask to set aside the default, fill out the forms"
+    And I should see the phrase "Step 4: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
