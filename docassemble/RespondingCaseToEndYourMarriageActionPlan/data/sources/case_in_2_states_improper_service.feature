@@ -39,7 +39,7 @@ Scenario: Row #15
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open divorce case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open divorce case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
 # minor_children True
@@ -105,7 +105,7 @@ Scenario: Row #16
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
@@ -244,7 +244,7 @@ Scenario: Row #18
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
@@ -381,7 +381,7 @@ Scenario: Row #20
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
@@ -765,7 +765,7 @@ Scenario: Row #290
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open divorce case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open divorce case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
 # minor_children True
@@ -919,7 +919,7 @@ Scenario: Row #292
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
