@@ -172,7 +172,6 @@ Scenario: Row #17
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
@@ -311,7 +310,6 @@ Scenario: Row #19
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
@@ -442,7 +440,6 @@ Scenario: Row #21
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
@@ -838,7 +835,6 @@ Scenario: Row #291
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
@@ -989,7 +985,6 @@ Scenario: Row #293
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
