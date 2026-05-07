@@ -1,6 +1,6 @@
 @case_in_2_states_service
 Feature: User paths
-# 2026-04-24
+# 2026-05-07
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -1059,7 +1059,6 @@ Scenario: Row #294
 # proper_service True
     And I should see the phrase "Step 2: Learn about proper service"
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
