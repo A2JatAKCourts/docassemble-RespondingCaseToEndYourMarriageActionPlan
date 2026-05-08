@@ -83,7 +83,7 @@ Scenario: Row #8
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -149,7 +149,7 @@ Scenario: Row #9
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -211,7 +211,7 @@ Scenario: Row #14
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
@@ -266,7 +266,7 @@ Scenario: Row #30
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -322,7 +322,7 @@ Scenario: Row #31
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
@@ -371,7 +371,7 @@ Scenario: Row #33
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -425,7 +425,7 @@ Scenario: Row #36
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
@@ -476,7 +476,7 @@ Scenario: Row #70
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -550,7 +550,7 @@ Scenario: Row #72
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -619,7 +619,7 @@ Scenario: Row #74
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
@@ -683,7 +683,7 @@ Scenario: Row #78
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -695,7 +695,7 @@ Scenario: Row #78
     And I should see the phrase "You agree with your spouse that there should be a case to end your marriage and get a custody, Parenting Plan, and child support order."
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill in PDF]."
+    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill in PDF]"
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, “I have no counterclaims.”"
     And I should see the phrase "I make the counterclaims below. If I asked the court to dismiss the case in section B (Affirmative Defenses), and the court does not dismiss the case, I do not waive my claim about the court’s lack of jurisdiction."
@@ -755,7 +755,7 @@ Scenario: Row #81
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -767,7 +767,7 @@ Scenario: Row #81
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
-    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill in PDF]."
+    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill in PDF]"
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
     And I should see the phrase "You must use this form because wife is pregnant."
@@ -822,7 +822,7 @@ Scenario: Row #86
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -877,7 +877,7 @@ Scenario: Row #93
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
@@ -927,7 +927,7 @@ Scenario: Row #251
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
@@ -981,7 +981,7 @@ Scenario: Row #252
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -1042,7 +1042,7 @@ Scenario: Row #254
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -1054,7 +1054,7 @@ Scenario: Row #254
     And I should see the phrase "Option 2. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late."
-    And I should see the phrase "Fill out a TF-706 Motion (Request) and Affidavit [Fill in PDF]."
+    And I should see the phrase "Fill out a TF-706 Motion (Request) and Affidavit [Fill in PDF]"
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
 # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
@@ -1116,7 +1116,7 @@ Scenario: Row #255
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -1136,7 +1136,7 @@ Scenario: Row #255
 # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
-    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill in PDF]."
+    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill in PDF]"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150 [Fill in PDF]"
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
@@ -1184,7 +1184,7 @@ Scenario: Row #256
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -1239,7 +1239,7 @@ Scenario: Row #257
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "Step 2: Learn about default judgment"
@@ -1299,7 +1299,7 @@ Scenario: Row #258
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -1312,7 +1312,7 @@ Scenario: Row #258
     And I should see the phrase "Option 2. Tell the judge you were not served the correct way and ask to dismiss the case"
     And I should see the phrase "Option 3. Do nothing"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
-    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill in PDF]."
+    And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill in PDF]"
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, “I have no counterclaims.”"
     And I should see the phrase "If you think Alaska is not the "home state," you can ask the court to dismiss your case:"
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your legal separation case."
@@ -1372,7 +1372,7 @@ Scenario: Row #261
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
@@ -1424,7 +1424,7 @@ Scenario: Row #266
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -1497,7 +1497,7 @@ Scenario: Row #273
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
@@ -1556,7 +1556,7 @@ Scenario: Row #278
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
@@ -1619,7 +1619,7 @@ Scenario: Row #279
     And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called jurisdiction"
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called “jurisdiction,”"
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
