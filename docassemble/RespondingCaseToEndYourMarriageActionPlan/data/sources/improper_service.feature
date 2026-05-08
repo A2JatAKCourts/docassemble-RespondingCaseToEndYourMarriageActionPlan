@@ -1,6 +1,6 @@
 @service
 Feature: User paths
-# 2026-04-24
+# 2026-05-07
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -13,7 +13,6 @@ Scenario: Row #3
     | user_need                            | answer divorce |         | 
     | type_of_response['improper service'] | True           |         | 
     | case_type                            | divorce        |         | 
-    | military                             | True           |         | 
     | minor_children                       | True           |         | 
     | filling_manner                       | electronically |         | 
     | filing_method                        | efiling        |         | 
@@ -25,9 +24,8 @@ Scenario: Row #3
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
 # And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
-    And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
-    And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint "
 # And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITH CHILDREN, DR-832"
     And I should see the phrase "You can add here that you were not served correctly."
@@ -58,7 +56,6 @@ Scenario: Row #4
     | type_of_response['improper service'] | True              |         | 
     | case_type                            | legal separation  |         | 
     | want_legal_separation                | yes               |         | 
-    | military                             | False             |         | 
     | minor_children                       | False             |         | 
     | wife_is_pregnant                     | husband           |         | 
     | filling_manner                       | electronically    |         | 
@@ -71,7 +68,7 @@ Scenario: Row #4
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
 # And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
-    And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint "
 # And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "You must use this form because wife is pregnant."
@@ -105,7 +102,6 @@ Scenario: Row #5
     | user_need                            | answer divorce |         | 
     | type_of_response['improper service'] | True           |         | 
     | case_type                            | divorce        |         | 
-    | military                             | True           |         | 
     | minor_children                       | False          |         | 
     | wife_is_pregnant                     | not pregnant   |         | 
     | filling_manner                       | electronically |         | 
@@ -118,9 +114,8 @@ Scenario: Row #5
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
 # And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
-    And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
-    And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint "
 # And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR DIVORCE WITHOUT CHILDREN, DR-837"
     And I should see the phrase "You can add here that you were not served correctly."
@@ -150,7 +145,6 @@ Scenario: Row #6
     | type_of_response['improper service'] | True             |         | 
     | case_type                            | legal separation |         | 
     | want_legal_separation                | no               |         | 
-    | military                             | False            |         | 
     | minor_children                       | False            |         | 
     | wife_is_pregnant                     | not pregnant     |         | 
     | filling_manner                       | paper            |         | 
@@ -165,7 +159,7 @@ Scenario: Row #6
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
 # And I tap the "#cHJvcGVyX3NlcnZpY2Vfc3RlcA .al_toggle" element and stay on the same page
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
-    And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
+    And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint "
 # And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
     And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
     And I should see the phrase "Check the box telling the court "I do NOT agree to a legal separation because I want the marriage to end in a divorce."

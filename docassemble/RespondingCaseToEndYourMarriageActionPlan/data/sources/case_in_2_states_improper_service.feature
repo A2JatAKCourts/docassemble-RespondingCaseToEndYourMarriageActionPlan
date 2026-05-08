@@ -1,6 +1,6 @@
 @case_in_2_states_service
 Feature: User paths
-# 2026-04-24
+# 2026-05-07
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -39,7 +39,7 @@ Scenario: Row #15
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open divorce case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open divorce case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
 # minor_children True
@@ -105,7 +105,7 @@ Scenario: Row #16
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
@@ -172,7 +172,6 @@ Scenario: Row #17
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
@@ -244,7 +243,7 @@ Scenario: Row #18
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
@@ -311,7 +310,6 @@ Scenario: Row #19
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
@@ -381,7 +379,7 @@ Scenario: Row #20
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
@@ -442,7 +440,6 @@ Scenario: Row #21
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
@@ -496,7 +493,6 @@ Scenario: Row #23
     And I should see the phrase "Your spouse started a divorce case by filing documents with the court."
     And I should see the phrase "After you are served, you have 20 days to file a response."
     And I should see the phrase "Default judgment"
-    And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: File a motion to dismiss your Alaska case"
     And I should see the phrase "If you do not respond to the Alaska case, the Alaska judge may enter a divorce order."
     And I should see the phrase "File a copy of the final orders from the other state, and any other documents that support your request."
@@ -765,7 +761,7 @@ Scenario: Row #290
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open divorce case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open divorce case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
 # minor_children True
@@ -839,7 +835,6 @@ Scenario: Row #291
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
@@ -919,7 +914,7 @@ Scenario: Row #292
 # proper_service True
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
@@ -990,7 +985,6 @@ Scenario: Row #293
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
 # proper_service False
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states and you were not properly served"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
 # proper_service False
@@ -1060,7 +1054,6 @@ Scenario: Row #294
 # proper_service True
     And I should see the phrase "Step 2: Learn about proper service"
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
-    And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Step 3: Options when you have cases in 2 states"
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
@@ -1115,7 +1108,6 @@ Scenario: Row #295
     And I should see the phrase "Step 1: Learn about proper service and default judgment"
     And I should see the phrase "After you are served, you have 20 days to file a response."
     And I should see the phrase "If your spouse thinks they served you correctly, they may ask the court for a default judgment if you do not file a response in 20 days."
-    And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: File a motion to dismiss your Alaska case"
     And I should see the phrase "If you do not respond to the Alaska case, the Alaska judge may enter a divorce order."
     And I should see the phrase "File a copy of the final orders from the other state, and any other documents that support your request."

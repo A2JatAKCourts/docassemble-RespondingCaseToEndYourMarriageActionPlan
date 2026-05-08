@@ -1,6 +1,6 @@
 @case_in_2_states_still_going_only_response
 Feature: User paths
-# 2026-04-24
+# 2026-05-06
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -37,7 +37,7 @@ Scenario: Row #37
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open divorce case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open divorce case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
 # minor_children True
@@ -101,7 +101,7 @@ Scenario: Row #38
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open divorce case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open divorce case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 3: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
@@ -167,7 +167,7 @@ Scenario: Row #39
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open legal separation case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open legal separation case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 3: Learn more about the differences between legal separation and divorce"
@@ -234,7 +234,7 @@ Scenario: Row #40
     And I should see the phrase "If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Options when you have cases in 2 states"
-    And I should see the phrase "If you have open divorce case in 2 states, one state will close its case."
+    And I should see the phrase "If you have an open divorce case in 2 states, one state will close its case."
     And I should see the phrase "You can (1) tell both judges you think your case should be in Alaska, or (2) ask the Alaska judge to dismiss your case so you can move forward in the other state."
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 3: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"

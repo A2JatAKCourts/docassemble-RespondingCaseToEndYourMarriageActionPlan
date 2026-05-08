@@ -1,6 +1,6 @@
 @ak_divorce_case
 Feature: User paths
-# 2026-04-27 refactoring children_of_the_marriage to husband_not_father
+# 2026-05-07 refactoring children_of_the_marriage to husband_not_father
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -40,7 +40,7 @@ Scenario: Row #167
     And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
-    And I should see the phrase "Step 8: Abuse or domestic violence and parenting"
+    And I should see the phrase "Step 8: Abuse or domestic violence resources and reaching an agreement"
     And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "Considerations if you and your spouse cannot agree"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
@@ -91,7 +91,7 @@ Scenario: Row #169
     And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
-    And I should see the phrase "Step 9: Abuse or domestic violence and parenting"
+    And I should see the phrase "Step 9: Abuse or domestic violence resources and reaching an agreement"
     And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "Considerations if you and your spouse cannot agree"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
@@ -141,7 +141,7 @@ Scenario: Row #172
     And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
-    And I should see the phrase "Step 9: Abuse or domestic violence and parenting"
+    And I should see the phrase " Step 9: Abuse or domestic violence resources and reaching an agreement"
     And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
     And I should see the phrase "Considerations if you and your spouse cannot agree"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"

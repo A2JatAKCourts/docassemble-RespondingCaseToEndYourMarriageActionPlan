@@ -116,8 +116,8 @@ code: |
     if case_type == 'legal separation':
       want_legal_separation
 
-  # Military only when at least one template that uses it will be shown (answer_jurisdiction_step or proper_service_step).
-  if type_of_response['improper service'] or type_of_response['wrong state'] or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')) or type_of_response['default']:
+  # Military only when at least one template that uses it will be shown (answer_jurisdiction_step or proper_service_step if type_of_response['default']).
+  if type_of_response.any_true('wrong state', 'default') or (type_of_response['case in 2 states'] and stage_of_other_case in ('still going', 'ended with no order')):
     military
   
   if not (type_of_response['default'] and stage_of_default == 'judgment entered'):
@@ -337,7 +337,6 @@ content: |
     * If you are not sure what you want, you can proceed with a legal separation, and change it to a divorce at any time.
     * If you decide you do not want a legal separation, check the box telling the court “I do not agree to a legal separation because I want the marriage to end in a divorce” in the “Counterclaims” section of your **Answer** (pages 2-3).
 ---
-
 
 
   
