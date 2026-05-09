@@ -26,7 +26,7 @@ Scenario: Row #15
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
     And I should see the phrase "When deciding which court should hear a divorce case,"
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree aand Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
@@ -298,7 +298,7 @@ Scenario: Row #19
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
     And I should see the phrase "When deciding which court should hear a divorce case,"
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree aand Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
@@ -747,7 +747,7 @@ Scenario: Row #290
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
     And I should see the phrase "When deciding which court should hear a divorce case,"
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree aand Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
@@ -973,7 +973,7 @@ Scenario: Row #293
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
     And I should see the phrase "When deciding which court should hear a divorce case,"
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree aand Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
 # military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
