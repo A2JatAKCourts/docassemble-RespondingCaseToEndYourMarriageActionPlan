@@ -26,14 +26,14 @@ Scenario: Row #94
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
-    And I should see the phrase "When deciding which court should hear a legal separation case, both courts will look at which court has the authority, called "jurisdiction," over the issues in your case."
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "When deciding which court should hear a legal separation case, both courts will look at which court has the authority, called “jurisdiction,” over the issues in your case."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called “jurisdiction,” to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
     And I should see the phrase "The court's power to grant a legal separation is based on residency"
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction,""
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
     And I should see the phrase "If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt."
     And I should see the phrase "If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property."
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children's "home state.""
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Learn about default judgment"
@@ -120,14 +120,14 @@ Scenario: Row #100
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
-    And I should see the phrase "When deciding which court should hear a divorce case, both courts will look at which court has the authority, called "jurisdiction," over the issues in your case."
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
-    And I should see the phrase "The court's power to grant a divorce is based on residency"
+    And I should see the phrase "When deciding which court should hear a divorce case, both courts will look at which court has the authority, called “jurisdiction,” over the issues in your case."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "The court's power to grant a divorce is based on residency""
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction,""
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
     And I should see the phrase "If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt."
     And I should see the phrase "If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property."
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children's "home state.""
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
@@ -136,7 +136,7 @@ Scenario: Row #100
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Default judgment"
-    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court's CourtView webpage."
+    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court’s CourtView webpage."
 # stage application filed
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
@@ -171,7 +171,7 @@ Scenario: Row #100
     And I should see the phrase "If you do not have a copy of the filed documents, you can ask your spouse or get a copy from your file at the courthouse."
 # wife_is_pregnant 'not husband', proper_service False
     And I should see the phrase "You could end up with 2 different orders from 2 different states."
-    And I should see the phrase "To prevent this, file a Motion to Dismiss to tell the Alaska judge: (1) about the other case, (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly."
+    And I should see the phrase "To prevent this, file a Motion to Dismiss to tell the Alaska judge: (1) about the other case, (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren’t served properly."
     And I should see the phrase "Tell the judge in the other state about the Alaska case."
     And I should see the phrase "it is important to file your motion as soon as possible to prevent the judge from entering a default judgment order."
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
@@ -214,11 +214,11 @@ Scenario: Row #106
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
-    And I should see the phrase "When deciding which court should hear a legal separation case, both courts will look at which court has the authority, called "jurisdiction," over the issues in your case."
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
+    And I should see the phrase "When deciding which court should hear a legal separation case, both courts will look at which court has the authority, called “jurisdiction,” over the issues in your case."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called “jurisdiction,” to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
     And I should see the phrase "The court's power to grant a legal separation is based on residency"
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called "jurisdiction,""
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called "jurisdiction""
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Learn about default judgment"
 # proper_service True
@@ -297,14 +297,14 @@ Scenario: Row #107
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
-    And I should see the phrase "When deciding which court should hear a divorce case, both courts will look at which court has the authority, called "jurisdiction," over the issues in your case."
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
-    And I should see the phrase "The court's power to grant a divorce is based on residency"
+    And I should see the phrase "When deciding which court should hear a divorce case, both courts will look at which court has the authority, called “jurisdiction,” over the issues in your case."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "The court's power to grant a divorce is based on residency""
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction,""
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
     And I should see the phrase "If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt."
     And I should see the phrase "If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property."
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children's "home state.""
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
@@ -313,7 +313,7 @@ Scenario: Row #107
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Default judgment"
-    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court's CourtView webpage."
+    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court’s CourtView webpage."
 # stage hearing scheduled
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
@@ -352,7 +352,7 @@ Scenario: Row #107
     And I should see the phrase "If you do not have a copy of the filed documents, you can ask your spouse or get a copy from your file at the courthouse."
 # wife_is_pregnant 'husband', proper_service False
     And I should see the phrase "You could end up with 2 different orders from 2 different states."
-    And I should see the phrase "To prevent this, file a Motion to Dismiss to tell the Alaska judge: (1) about the other case, (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly."
+    And I should see the phrase "To prevent this, file a Motion to Dismiss to tell the Alaska judge: (1) about the other case, (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren’t served properly."
     And I should see the phrase "Tell the judge in the other state about the Alaska case."
     And I should see the phrase "it is important to file your motion as soon as possible to prevent the judge from entering a default judgment order."
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
@@ -533,7 +533,7 @@ Scenario: Row #121
     And I should see the phrase "Your spouse started a legal separation case by filing documents with the court."
     And I should see the phrase "After you are served, you have 20 days to file a response."
     And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
-    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court's CourtView webpage."
+    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court’s CourtView webpage."
     And I should see the phrase "Step 2: File a motion to dismiss your Alaska case"
     And I should see the phrase "File a copy of the final orders from the other state, and any other documents that support your request."
     And I should see the phrase "It is best to file a Motion to Dismiss your Alaska case to tell the Alaska judge (1) about the order from the other state and (2) that you were not served properly."
@@ -624,7 +624,7 @@ Scenario: Row #133
     And I should see the phrase "Your spouse started a legal separation case by filing documents with the court."
     And I should see the phrase "After you are served, you have 20 days to file a response."
     And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
-    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court's CourtView webpage."
+    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court’s CourtView webpage."
     And I should see the phrase "There are 3 steps to get a default judgment:"
     And I should see the phrase "Military protections"
     And I should see the phrase "Step 2: File a motion to dismiss your Alaska case"
@@ -908,7 +908,7 @@ Scenario: Row #157
     And I should see the phrase "Your spouse started a legal separation case by filing documents with the court."
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Default judgment"
-    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court's CourtView webpage."
+    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court’s CourtView webpage."
     And I should see the phrase "There are 3 steps to get a default judgment:"
     And I should see the phrase "Military protections"
     And I should see the phrase "If the Servicemembers Civil Relief Act does not apply to your case to stop the default judgment, you have other options."
@@ -969,7 +969,7 @@ Scenario: Row #165
     And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt."
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
     And I should see the phrase "You can (1) tell the judge you were not served the correct way and ask to set aside the default judgment or (2) do nothing."
-    And I should see the phrase "If you are okay with the judge's orders you do not need to do anything."
+    And I should see the phrase "If you are okay with the judge’s orders you do not need to do anything."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
@@ -1013,11 +1013,11 @@ Scenario: Row #280
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
-    And I should see the phrase "When deciding which court should hear a legal separation case, both courts will look at which court has the authority, called "jurisdiction," over the issues in your case."
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
+    And I should see the phrase "When deciding which court should hear a legal separation case, both courts will look at which court has the authority, called “jurisdiction,” over the issues in your case."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called “jurisdiction,” to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt."
     And I should see the phrase "The court's power to grant a legal separation is based on residency"
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called "jurisdiction,""
+    And I should see the phrase "The Court's power to divide property and debt is based on the court's authority, called "jurisdiction""
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Learn about default judgment"
 # proper_service True
@@ -1100,14 +1100,14 @@ Scenario: Row #281
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
-    And I should see the phrase "When deciding which court should hear a divorce case, both courts will look at which court has the authority, called "jurisdiction," over the issues in your case."
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
-    And I should see the phrase "The court's power to grant a divorce is based on residency"
+    And I should see the phrase "When deciding which court should hear a divorce case, both courts will look at which court has the authority, called “jurisdiction,” over the issues in your case."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "The court's power to grant a divorce is based on residency""
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction,""
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
     And I should see the phrase "If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt."
     And I should see the phrase "If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property."
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children's "home state.""
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
@@ -1116,7 +1116,7 @@ Scenario: Row #281
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Default judgment"
-    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court's CourtView webpage."
+    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court’s CourtView webpage."
 # stage hearing scheduled
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
@@ -1155,7 +1155,7 @@ Scenario: Row #281
     And I should see the phrase "If you do not have a copy of the filed documents, you can ask your spouse or get a copy from your file at the courthouse."
 # wife_is_pregnant 'husband', proper_service False
     And I should see the phrase "You could end up with 2 different orders from 2 different states."
-    And I should see the phrase "To prevent this, file a Motion to Dismiss to tell the Alaska judge: (1) about the other case, (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly."
+    And I should see the phrase "To prevent this, file a Motion to Dismiss to tell the Alaska judge: (1) about the other case, (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren’t served properly."
     And I should see the phrase "Tell the judge in the other state about the Alaska case."
     And I should see the phrase "it is important to file your motion as soon as possible to prevent the judge from entering a default judgment order."
     And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
@@ -1172,10 +1172,10 @@ Scenario: Row #281
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 11: Abuse or domestic violence and parenting"
     And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
-    And I should see the phrase "The law presumes that a parent with a "history of domestic violence" not get custody or unsupervised visitation unless they meet certain requirements."
+    And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
     And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
+    And I should see the phrase "If you think you or your children’s health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 12: Get more information or help"
     And I take a screenshot
     And I download "responding_ending_marriage_action_plan.pdf"
@@ -1207,14 +1207,14 @@ Scenario: Row #282
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your divorce case"
-    And I should see the phrase "When deciding which court should hear a divorce case, both courts will look at which court has the authority, called "jurisdiction," over the issues in your case."
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called "jurisdiction," to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
-    And I should see the phrase "The court's power to grant a divorce is based on residency"
+    And I should see the phrase "When deciding which court should hear a divorce case, both courts will look at which court has the authority, called “jurisdiction,” over the issues in your case."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your divorce case if the court does not have the authority, called “jurisdiction,” to issue a divorce decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "The court's power to grant a divorce is based on residency""
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
-    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction,""
+    And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
     And I should see the phrase "If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt."
     And I should see the phrase "If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property."
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children's "home state.""
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Learn about proper service and default judgment"
@@ -1223,7 +1223,7 @@ Scenario: Row #282
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "A default judgment is when the judge decides your case without hearing from you."
     And I should see the phrase "Default judgment"
-    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court's CourtView webpage."
+    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court’s CourtView webpage."
 # stage application filed
     And I should see the phrase "There are 3 steps to get a default judgment:"
 # minor_children False
@@ -1258,7 +1258,7 @@ Scenario: Row #282
     And I should see the phrase "If you do not have a copy of the filed documents, you can ask your spouse or get a copy from your file at the courthouse."
 # wife_is_pregnant 'not husband', proper_service False
     And I should see the phrase "You could end up with 2 different orders from 2 different states."
-    And I should see the phrase "To prevent this, file a Motion to Dismiss to tell the Alaska judge: (1) about the other case, (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren't served properly."
+    And I should see the phrase "To prevent this, file a Motion to Dismiss to tell the Alaska judge: (1) about the other case, (2) your children have not lived in Alaska for the last 6 months, and (3) that you weren’t served properly."
     And I should see the phrase "Tell the judge in the other state about the Alaska case."
     And I should see the phrase "it is important to file your motion as soon as possible to prevent the judge from entering a default judgment order."
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
@@ -1274,10 +1274,10 @@ Scenario: Row #282
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
     And I should see the phrase "Step 12: Abuse or domestic violence and parenting"
     And I should see the phrase "People who have experienced domestic violence can be at risk during a court case."
-    And I should see the phrase "The law presumes that a parent with a "history of domestic violence" not get custody or unsupervised visitation unless they meet certain requirements."
+    And I should see the phrase "The law presumes that a parent with a “history of domestic violence” not get custody or unsupervised visitation unless they meet certain requirements."
     And I should see the phrase "Contact between parent and children"
     And I should see the phrase "If you think your spouse should not have any contact with your children,"
-    And I should see the phrase "If you think you or your children's health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
+    And I should see the phrase "If you think you or your children’s health, safety, or liberty would be harmed by providing the information on the Child Custody Jurisdiction Affidavit, DR-150 to your spouse:"
     And I should see the phrase "Step 13: Learn about paternity"
     And I should see the phrase "Step 14: Get more information or help"
     And I take a screenshot
@@ -1308,8 +1308,8 @@ Scenario: Row #283
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn if Alaska is the right state for your legal separation case"
-    And I should see the phrase "When deciding which court should hear a legal separation case, both courts will look at which court has the authority, called "jurisdiction," over the issues in your case."
-    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called "jurisdiction," to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
+    And I should see the phrase "When deciding which court should hear a legal separation case, both courts will look at which court has the authority, called “jurisdiction,” over the issues in your case."
+    And I should see the phrase "You can argue that the Alaska court is the wrong court for your legal separation case if the court does not have the authority, called “jurisdiction,” to issue a legal separation decree and Findings of Fact and Conclusions of Law Dividing your Property and Debt, Parenting Plan, and child support order."
     And I should see the phrase "The court's power to grant a legal separation is based on residency"
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
 # getting rid of apostrophes and quotes in assertion below
@@ -1338,7 +1338,7 @@ Scenario: Row #283
     And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
     And I should see the phrase "If you want your case in the other state, you can tell the Alaska court by stating it in your Answer and filing a Motion to Dismiss your Alaska case."
 # want_legal_separation unsure
-    And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court "I do NOT agree to a legal separation because I want the marriage to end in a divorce.""
+    And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
 # counterclaims
     And I should see the phrase "If you think the Alaska court should hear the case, use section 5 to tell the judge there are 2 cases and why you think the case should move forward in Alaska."
 # request for relief
@@ -1583,7 +1583,7 @@ Scenario: Row #288
     And I should see the phrase "Your spouse started a legal separation case by filing documents with the court."
     And I should see the phrase "After you are served, you have 20 days to file an Answer."
     And I should see the phrase "Default judgment"
-    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court's CourtView webpage."
+    And I should see the phrase "If you want to see what your spouse filed for default, or if the judge entered any orders, you can look up your case on the court’s CourtView webpage."
     And I should see the phrase "There are 3 steps to get a default judgment:"
     And I should see the phrase "Military protections"
     And I should see the phrase "If the Servicemembers Civil Relief Act does not apply to your case to stop the default judgment, you have other options."
@@ -1644,7 +1644,7 @@ Scenario: Row #289 #same as row 165
     And I should see the phrase "When a judge enters a default judgment, they usually also enter a divorce decree and findings of fact and conclusions of law dividing your property and debt."
     And I should see the phrase "Step 2: Options when the judge entered a default judgment"
     And I should see the phrase "You can (1) tell the judge you were not served the correct way and ask to set aside the default judgment or (2) do nothing."
-    And I should see the phrase "If you are okay with the judge's orders you do not need to do anything."
+    And I should see the phrase "If you are okay with the judge’s orders you do not need to do anything."
     And I should see the phrase "Step 3: Learn about the Motion to Set Aside Judgment or Order"
     And I should see the phrase "Step 4: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
