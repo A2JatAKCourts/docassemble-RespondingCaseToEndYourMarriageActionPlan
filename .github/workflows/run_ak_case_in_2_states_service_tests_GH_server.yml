@@ -1,7 +1,7 @@
-name: Automatic test for case in 2 states and improper service on GitHub Server
+name: Tests for case in 2 states and improper service on GitHub Server
 
 on:
-  push:
+#  push:
   workflow_dispatch:
     inputs:
       tags:
