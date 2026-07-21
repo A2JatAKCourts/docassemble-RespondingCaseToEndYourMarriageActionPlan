@@ -1,6 +1,6 @@
 @ak_divorce_case
 Feature: User paths
-# 2026-05-27
+# 2026-07-21
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -76,7 +76,7 @@ Scenario: Row #169
     And I should see the phrase "Step 1: Review your options when you agree with what your spouse is asking"
     And I should see the phrase "If you agree with everything your spouse asked for in the Complaint:"
     And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "If you agree with what your spouse asked for in their complaint, check the box in this section that says you “agree with all of the statements in the complaint.”"
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims.""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
@@ -176,7 +176,7 @@ Scenario: Row #173
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "Check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
@@ -269,7 +269,7 @@ Scenario: Row #180
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "Check the appropriate box in your Answer"
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
@@ -358,7 +358,7 @@ Scenario: Row #186
     And I should see the phrase "Step 1: Review your options when you agree with some of what your spouse is asking"
     And I should see the phrase "If you agree with some of what your spouse asked for in the Complaint:"
     And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims.""
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
@@ -462,7 +462,7 @@ Scenario: Row #195
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "Check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
@@ -549,7 +549,7 @@ Scenario: Row #205
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
@@ -658,7 +658,7 @@ Scenario: Row #214
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
@@ -751,7 +751,7 @@ Scenario: Row #222
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."
@@ -904,7 +904,7 @@ Scenario: Row #242
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, “I have no counterclaims.”"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "Forms to use if you reach an agreement"
-    And I should see the phrase "Parenting Plan Agreement & Order, SHC-1128"
+    And I should see the phrase "Parenting Plan, DR-475"
     And I should see the phrase "Request to Put Agreement on the Record, DR-264"
     And I should see the phrase "Step 3: File your documents with the court and serve your spouse"
     And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
@@ -951,7 +951,7 @@ Scenario: Row #244
     And I wait 0.5 seconds
     And I should see the phrase "Step 1: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "Check the appropriate box in your Answer."
     And I should see the phrase "If you disagree with any of the paragraphs in the complaint, list the paragraph numbers you disagree with."
     And I should see the phrase "If you are not sure if you agree or disagree with any of the paragraphs in the complaint, list the paragraph numbers you are not sure about."

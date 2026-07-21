@@ -1,6 +1,6 @@
 @service
 Feature: User paths
-# 2026-05-07
+# 2026-07-21
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -70,7 +70,7 @@ Scenario: Row #4
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
     And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint "
 # And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "You can add here that you were not served correctly."
 # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
@@ -161,7 +161,7 @@ Scenario: Row #6
     And I should see the phrase "Step 2: Decide if you want to move forward or wait"
     And I should see the phrase "Step 3: If you decide to move forward, fill out the forms to answer the complaint "
 # And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "Check the box telling the court "I do NOT agree to a legal separation because I want the marriage to end in a divorce."
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "Step 4: Sign if you use paper forms or do not use TrueFiling"
