@@ -1,6 +1,6 @@
 @ak_divorce_case
 Feature: User paths
-# 2026-07-21
+# 2026-07-23
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -187,7 +187,7 @@ Scenario: Row #173
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Because your spouse is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
+    And I should see the phrase "Because your spouse is not using TrueFiling and did not give the court an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -421,7 +421,7 @@ Scenario: Row #193
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Because your spouse is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
+    And I should see the phrase "Because your spouse is not using TrueFiling and did not give the court an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 6: Read the Standing Order"
     And I should see the phrase "Step 7: What to expect after you file your Answer"
     And I should see the phrase "Step 8: Learn more about the process"
@@ -671,7 +671,7 @@ Scenario: Row #214
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Because your spouse is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
+    And I should see the phrase "Because your spouse is not using TrueFiling and did not give the court an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"
@@ -912,7 +912,7 @@ Scenario: Row #242
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Because your spouse is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
+    And I should see the phrase "Because your spouse is not using TrueFiling and did not give the court an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 5: Read the Standing Order"
     And I should see the phrase "Step 6: What to expect after you file your Answer"
     And I should see the phrase "Step 7: Learn more about the process"

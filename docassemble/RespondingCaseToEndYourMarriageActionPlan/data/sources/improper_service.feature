@@ -1,6 +1,6 @@
 @service
 Feature: User paths
-# 2026-07-21
+# 2026-07-23
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -84,7 +84,7 @@ Scenario: Row #4
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 7: Read the Standing Order"
     And I should see the phrase "Step 8: What to expect after you file your documents"
     And I should see the phrase "Step 9: If your case is moving forward, learn more about the process"

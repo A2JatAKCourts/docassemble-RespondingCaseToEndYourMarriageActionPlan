@@ -1,6 +1,6 @@
 @case_in_2_states_service
 Feature: User paths
-# 2026-07-21
+# 2026-07-23
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -334,7 +334,7 @@ Scenario: Row #19
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -396,7 +396,7 @@ Scenario: Row #20
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Because your spouse is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
+    And I should see the phrase "Because your spouse is not using TrueFiling and did not give the court an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -507,7 +507,7 @@ Scenario: Row #23
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 6: What to expect after you file your documents"
     And I should see the phrase "Step 7: Get more information or help"
     And I take a screenshot
@@ -661,7 +661,7 @@ Scenario: Row #29
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your Answer"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -714,7 +714,7 @@ Scenario: Row #31
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Because your spouse is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
+    And I should see the phrase "Because your spouse is not using TrueFiling and did not give the court an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your Answer"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -861,7 +861,7 @@ Scenario: Row #291
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -1123,7 +1123,7 @@ Scenario: Row #295
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 6: What to expect after you file your documents"
     And I should see the phrase "Step 7: Get more information or help"
     And I take a screenshot
@@ -1288,7 +1288,7 @@ Scenario: Row #298
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your document with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
     And I should see the phrase "Step 8: Read the Standing Order"
     And I should see the phrase "Step 9: What to expect after you file your Answer"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
