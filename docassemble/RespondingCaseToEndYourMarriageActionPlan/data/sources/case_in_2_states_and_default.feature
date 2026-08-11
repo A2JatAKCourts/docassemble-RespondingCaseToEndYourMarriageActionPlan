@@ -54,7 +54,7 @@ Scenario: Row #94
     And I should see the phrase "The judges will then decide which court has jurisdiction."
 # minor_children True
     And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
-    And I should see the phrase "months.\nInclude where your children have lived the last 6 months."
+    And I should see the phrase "Include where your children have lived the last 6 months."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # proper_service True
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
