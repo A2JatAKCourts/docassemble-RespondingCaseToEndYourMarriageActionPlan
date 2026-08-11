@@ -54,7 +54,7 @@ Scenario: Row #94
     And I should see the phrase "The judges will then decide which court has jurisdiction."
 # minor_children True
     And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
-    And I should see the phrase "Alaska. Include where your children have lived the last 6 months."
+    And I should see the phrase "months.\nInclude where your children have lived the last 6 months."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # proper_service True
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
@@ -66,7 +66,7 @@ Scenario: Row #94
 # counterclaims
     And I should see the phrase "If you think the Alaska court should hear the case, use section 5 to tell the judge there are 2 cases and why you think the case should move forward in Alaska."
 # minor_children True
-    And I should see the phrase "Include where the children have lived the last 6 months."
+    And I should see the phrase "Alaska. Include where your children have lived the last 6 months."
 # request for relief
     And I should see the phrase "Use the Request for Relief section to ask the judge to move forward with the case in Alaska or dismiss it"
 # stage application filed, proper_service True
