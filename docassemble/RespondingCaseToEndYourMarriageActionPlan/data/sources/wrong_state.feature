@@ -1,6 +1,6 @@
 @wrong_state
 Feature: user paths
-# 2026-07-23
+# 2026-08-11
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -20,6 +20,7 @@ Scenario: Row #7
     | filling_manner                       | electronically |         | 
     | filing_method                        | efiling        |         | 
     | other_party_exempt                   | no             |         | 
+    | ak_patience_assembling               | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -30,7 +31,7 @@ Scenario: Row #7
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction,""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -43,7 +44,7 @@ Scenario: Row #7
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Step 4: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 5: File your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 6: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -74,6 +75,7 @@ Scenario: Row #8
     | filling_manner                       | electronically    |         | 
     | filing_method                        | mail or in person |         | 
     | have_complaint                       | False             |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 13 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -84,7 +86,7 @@ Scenario: Row #8
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -107,7 +109,7 @@ Scenario: Row #8
     And I should see the phrase "Step 6: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case" 
     And I should see the phrase "Step 7: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 8: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 9: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -140,6 +142,7 @@ Scenario: Row #9
     | filing_method                        | dunno          |         | 
     | other_party_exempt                   | yes            |         | 
     | other_party_enter_email              | True           |         | 
+    | ak_patience_assembling               | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -150,7 +153,7 @@ Scenario: Row #9
 # next line is military False
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -169,7 +172,7 @@ Scenario: Row #9
     And I should see the phrase "Step 4: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -202,6 +205,7 @@ Scenario: Row #14
     | filing_method                        | efiling          |         | 
     | have_complaint                       | True             |         | 
     | other_party_exempt                   | no               |         | 
+    | ak_patience_assembling               | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 13 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -229,7 +233,7 @@ Scenario: Row #14
     And I should see the phrase "Step 6: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 7: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 8: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 9: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -257,6 +261,7 @@ Scenario: Row #30
     | filling_manner                  | paper             |         | 
     | filing_method                   | mail or in person |         | 
     | other_party_exempt              | no                |         | 
+    | ak_patience_assembling          | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -267,7 +272,7 @@ Scenario: Row #30
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -313,6 +318,7 @@ Scenario: Row #31
     | filling_manner                  | paper            |         | 
     | filing_method                   | dunno            |         | 
     | other_party_exempt              | none             |         | 
+    | ak_patience_assembling          | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -362,6 +368,7 @@ Scenario: Row #33
     | filing_method                   | efiling          |         | 
     | other_party_exempt              | yes              |         | 
     | other_party_enter_email         | True             |         | 
+    | ak_patience_assembling          | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -372,7 +379,7 @@ Scenario: Row #33
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -416,6 +423,7 @@ Scenario: Row #36
     | filing_method                   | mail or in person |         | 
     | other_party_exempt              | yes               |         | 
     | other_party_enter_email         | False             |         | 
+    | ak_patience_assembling          | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -467,6 +475,7 @@ Scenario: Row #70
     | filing_method                        | dunno             |         | 
     | other_party_exempt                   | yes               |         | 
     | other_party_enter_email              | True              |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -477,7 +486,7 @@ Scenario: Row #70
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -506,7 +515,7 @@ Scenario: Row #70
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -541,6 +550,7 @@ Scenario: Row #72
     | filing_method                        | efiling           |         | 
     | other_party_exempt                   | yes               |         | 
     | other_party_enter_email              | False             |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -551,7 +561,7 @@ Scenario: Row #72
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -575,7 +585,7 @@ Scenario: Row #72
     And I should see the phrase "You can add here that you want the court to dismiss your case."
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -610,6 +620,7 @@ Scenario: Row #74
     | type_of_response['improper service'] | True              |         | 
     | have_complaint                       | True              |         | 
     | other_party_exempt                   | none              |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 13 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -641,7 +652,7 @@ Scenario: Row #74
     And I should see the phrase "Step 6: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 7: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 8: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 9: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -674,6 +685,7 @@ Scenario: Row #78
     | filing_method                        | dunno             |         | 
     | other_party_exempt                   | yes               |         | 
     | other_party_enter_email              | None              |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -684,7 +696,7 @@ Scenario: Row #78
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -712,7 +724,7 @@ Scenario: Row #78
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -746,6 +758,7 @@ Scenario: Row #81
     | filling_manner                       | paper             |         | 
     | filing_method                        | efiling           |         | 
     | other_party_exempt                   | no                |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -756,7 +769,7 @@ Scenario: Row #81
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -781,7 +794,7 @@ Scenario: Row #81
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -813,6 +826,7 @@ Scenario: Row #86
     | military                             | True              |         | 
     | stage_of_default                     | judgment entered  |         | 
     | other_party_exempt                   | none              |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -823,7 +837,7 @@ Scenario: Row #86
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a divorce case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -835,7 +849,7 @@ Scenario: Row #86
     And I should see the phrase "Step 5: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you are asking to set aside the default, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -868,6 +882,7 @@ Scenario: Row #93
     | have_complaint                       | True             |         | 
     | other_party_exempt                   | yes              |         | 
     | other_party_enter_email              | True             |         | 
+    | ak_patience_assembling               | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -888,7 +903,7 @@ Scenario: Row #93
     And I should see the phrase "Step 5: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -918,6 +933,7 @@ Scenario: Row #251
     | filing_method                       | efiling        |         | 
     | other_party_exempt                  | yes            |         | 
     | other_party_enter_email             | None           |         | 
+    | ak_patience_assembling              | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -972,6 +988,7 @@ Scenario: Row #252
     | filling_manner                      | dunno             |         | 
     | filing_method                       | mail or in person |         | 
     | other_party_exempt                  | no                |         | 
+    | ak_patience_assembling              | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -982,7 +999,7 @@ Scenario: Row #252
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -1033,6 +1050,7 @@ Scenario: Row #254
     | domestic_violence                    | True              |         | 
     | other_party_exempt                   | yes               |         | 
     | other_party_enter_email              | True              |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 13 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1043,7 +1061,7 @@ Scenario: Row #254
 # next line is military False
     And I should see the phrase "The Alaska court can grant a legal separation if either spouse is an Alaska resident. When filing for legal separation, a person is generally an Alaska resident if they are in Alaska and plan to stay."
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -1066,7 +1084,7 @@ Scenario: Row #254
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -1107,6 +1125,7 @@ Scenario: Row #255
     | domestic_violence                    | False             |         | 
     | other_party_exempt                   | yes               |         | 
     | other_party_enter_email              | False             |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1117,7 +1136,7 @@ Scenario: Row #255
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -1140,7 +1159,7 @@ Scenario: Row #255
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150 [Fill in PDF]"
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -1175,6 +1194,7 @@ Scenario: Row #256
     | filing_method                        | mail or in person |         | 
     | other_party_exempt                   | yes               |         | 
     | other_party_enter_email              | None              |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1185,7 +1205,7 @@ Scenario: Row #256
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -1197,7 +1217,7 @@ Scenario: Row #256
     And I should see the phrase "Step 5: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you are asking to set aside the default, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -1230,6 +1250,7 @@ Scenario: Row #257
     | filing_method                        | dunno             |         | 
     | domestic_violence                    | False             |         | 
     | other_party_exempt                   | no                |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1290,6 +1311,7 @@ Scenario: Row #258
     | have_complaint                       | True              |         | 
     | other_party_exempt                   | yes               |         | 
     | other_party_enter_email              | False             |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 13 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1300,7 +1322,7 @@ Scenario: Row #258
 # next line is military True
     And I should see the phrase "There are 3 options for where a military member or spouse can file a legal separation case:"
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -1321,7 +1343,7 @@ Scenario: Row #258
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -1363,6 +1385,7 @@ Scenario: Row #261
     | have_complaint                       | True              |         | 
     | other_party_exempt                   | yes               |         | 
     | other_party_enter_email              | None              |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1382,7 +1405,7 @@ Scenario: Row #261
     And I should see the phrase "Step 5: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -1414,6 +1437,7 @@ Scenario: Row #266
     | filing_method                        | dunno          |         | 
     | domestic_violence                    | True           |         | 
     | have_complaint                       | False          |         | 
+    | ak_patience_assembling               | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 13 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1425,7 +1449,7 @@ Scenario: Row #266
 # next line is military False
     And I should see the phrase "The Alaska court can grant a divorce if either spouse is an Alaska resident. When filing for divorce, a person is generally an Alaska resident if they are in Alaska and plan to stay."
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "If you think your divorce case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
@@ -1447,7 +1471,7 @@ Scenario: Row #266
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -1487,6 +1511,7 @@ Scenario: Row #273
     | filing_method                        | efiling          |         | 
     | domestic_violence                    | True             |         | 
     | other_party_exempt                   | none             |         | 
+    | ak_patience_assembling               | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 13 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1515,7 +1540,7 @@ Scenario: Row #273
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your documents"
@@ -1547,6 +1572,7 @@ Scenario: Row #278
     | domestic_violence                    | False             |         | 
     | have_complaint                       | True              |         | 
     | other_party_exempt                   | no                |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1575,7 +1601,7 @@ Scenario: Row #278
     And I should see the phrase "Step 5: If you think Alaska is the wrong state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -1609,6 +1635,7 @@ Scenario: Row #279
     | filing_method                        | dunno            |         | 
     | domestic_violence                    | True             |         | 
     | other_party_exempt                   | none             |         | 
+    | ak_patience_assembling               | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -1635,7 +1662,7 @@ Scenario: Row #279
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 6: File your documents with the court and serve your spouse"
     And I should see the phrase "Step 7: Serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."

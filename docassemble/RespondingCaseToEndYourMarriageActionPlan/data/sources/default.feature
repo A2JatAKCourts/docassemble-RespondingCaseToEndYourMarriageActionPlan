@@ -1,6 +1,6 @@
 @default
 Feature: User paths
-# 2026-07-23
+# 2026-08-11
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -20,6 +20,7 @@ Scenario: Row #46
     | filling_manner              | electronically    |         | 
     | filing_method               | efiling           |         | 
     | other_party_exempt          | none              |         | 
+    | ak_patience_assembling      | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -38,7 +39,7 @@ Scenario: Row #46
     And I should see the phrase "Fill out a TF-706 Motion (Request) and Affidavit"
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "Step 4: If you decide to move forward, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 5: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -70,6 +71,7 @@ Scenario: Row #61
     | filling_manner              | electronically    |         | 
     | filing_method               | mail or in person |         | 
     | have_complaint              | False             |         | 
+    | ak_patience_assembling      | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -91,7 +93,7 @@ Scenario: Row #61
     And I should see the phrase "Step 5: Or, tell the judge you were not served the correct way and ask to dismiss the case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 7: File your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 8: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -123,6 +125,7 @@ Scenario: Row #62
     | filling_manner              | electronically   |         | 
     | filing_method               | dunno            |         | 
     | other_party_exempt          | no               |         | 
+    | ak_patience_assembling      | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -136,7 +139,7 @@ Scenario: Row #62
     And I should see the phrase "Step 4: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -166,6 +169,7 @@ Scenario: Row #63
     | filing_method               | efiling          |         | 
     | other_party_exempt          | yes              |         | 
     | other_party_enter_email     | True             |         | 
+    | ak_patience_assembling      | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -177,7 +181,7 @@ Scenario: Row #63
     And I should see the phrase "Step 4: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
@@ -206,6 +210,7 @@ Scenario: Row #66
     | filling_manner              | paper                |         | 
     | filing_method               | mail or in person |         | 
     | other_party_exempt          | no                |         | 
+    | ak_patience_assembling      | True                 |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -219,7 +224,7 @@ Scenario: Row #66
     And I should see the phrase "Step 4: If you want to ask the court to set aside the default, fill out the forms"
     And I should see the phrase "Step 5: Sign if you use paper forms or do not use TrueFiling"
     And I should see the phrase "Step 6: If you are asking to set aside the default, file your documents with the court and serve your spouse"
-    And I should see the phrase "You have 20 days after you receive the Complaint to file your documents with the court and give a copy to your spouse."
+    And I should see the phrase "You have 20 days after you receive the Complaint, to file your documents with the court and give a copy to your spouse."
     And I should see the phrase "Step 7: Serve your spouse"
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"

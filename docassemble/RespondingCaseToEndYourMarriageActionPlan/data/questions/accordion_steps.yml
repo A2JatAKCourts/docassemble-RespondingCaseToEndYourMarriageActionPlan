@@ -1,5 +1,6 @@
 comment: |
-    2026-04-27 moving accordion_steps templates to branding package and refactoring children_of_the marriage to husband_not_father
+  2026-08-11 added waiting screen
+  2026-04-27 moving accordion_steps templates to branding package and refactoring children_of_the marriage to husband_not_father
 ---
 generic object: ALDocumentBundle
 template: x.get_email_copy
@@ -286,6 +287,8 @@ code: |
     
   for iter_idx, step_tuple in enumerate( step_list ):
     define(step_tuple[ 1 ], iter_idx + 1)
+  
+  ak_patience_assembling
   get_steps = True
 ---
 code: |

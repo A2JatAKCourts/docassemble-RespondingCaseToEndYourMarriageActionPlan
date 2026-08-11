@@ -1,6 +1,6 @@
 @case_in_2_states_still_going_only_response
 Feature: User paths
-# 2026-07-23
+# 2026-08-11
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -19,6 +19,7 @@ Scenario: Row #37
     | filling_manner                       | electronically |         | 
     | filing_method                        | efiling        |         | 
     | other_party_exempt                   | no             |         | 
+    | ak_patience_assembling               | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 10 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -32,7 +33,7 @@ Scenario: Row #37
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
     And I should see the phrase "If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt."
     And I should see the phrase "If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property." 
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.” The Alaska court has jurisdiction to make decisions, enter a Parenting Plan, or order child support."
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.” The Alaska court has jurisdiction to make decisions, enter a Parenting Plan, or order child support."
     And I should see the phrase "But if your children have not lived in Alaska for the last 6 months, Alaska is not the children’s “home state,” and the Alaska court does not have jurisdiction to make decisions, enter a Parenting Plan, or order child support."
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -83,6 +84,7 @@ Scenario: Row #38
     | filling_manner                       | electronically    |         | 
     | filing_method                        | mail or in person |         | 
     | other_party_exempt                   | none              |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -97,7 +99,7 @@ Scenario: Row #38
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
     And I should see the phrase "If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt."
     And I should see the phrase "If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property."
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.”"
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.”"
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
     And I should see the phrase "Step 2: Options when you have cases in 2 states"
@@ -149,6 +151,7 @@ Scenario: Row #39
     | filing_method                        | dunno            |         | 
     | other_party_exempt                   | yes              |         | 
     | other_party_enter_email              | True             |         | 
+    | ak_patience_assembling               | True             |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 12 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -162,7 +165,7 @@ Scenario: Row #39
     And I should see the phrase "The Court's power to divide property and debt and enter a Parenting Plan or custody order is based on the court's authority, called "jurisdiction""
     And I should see the phrase "If you and your spouse have not lived together, while married, for 6 months in the last 6 years, the court may not be able to divide your marital property and debt."
     And I should see the phrase "If you have property, like a home outside Alaska, the court may not have the authority to enforce orders about that property."
-    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is the children’s “home state.” The Alaska court has jurisdiction to make decisions, enter a Parenting Plan, or order child support."
+    And I should see the phrase "Generally, if your children have lived in Alaska for the last 6 months, Alaska is their “home state.” The Alaska court has jurisdiction to make decisions, enter a Parenting Plan, or order child support."
     And I should see the phrase "But if your children have not lived in Alaska for the last 6 months, Alaska is not the children’s “home state,” and the Alaska court does not have jurisdiction to make decisions, enter a Parenting Plan, or order child support."
     And I should see the phrase "Sometimes there is no home state."
     And I should see the phrase "Jurisdiction and residency can be complicated."
@@ -218,6 +221,7 @@ Scenario: Row #40
     | filing_method                        | efiling        |         | 
     | other_party_exempt                   | yes            |         | 
     | other_party_enter_email              | False          |         | 
+    | ak_patience_assembling               | True           |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 11 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -275,6 +279,7 @@ Scenario: Row #41
     | filing_method                        | mail or in person |         | 
     | other_party_exempt                   | yes               |         | 
     | other_party_enter_email              | None              |         | 
+    | ak_patience_assembling               | True              |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 6 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -315,6 +320,7 @@ Scenario: Row #43
     | filling_manner                       | paper               |         | 
     | filing_method                        | dunno               |         | 
     | other_party_exempt                   | no                  |         | 
+    | ak_patience_assembling               | True                |         | 
     And I should see the phrase "Your Action Plan for responding in your legal separation case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
@@ -357,6 +363,7 @@ Scenario: Row #45
     | filling_manner                       | dunno               |         | 
     | filing_method                        | efiling             |         | 
     | other_party_exempt                   | none                |         | 
+    | ak_patience_assembling               | True                |         | 
     And I should see the phrase "Your Action Plan for responding in your divorce case in 9 steps"
     And I tap the "#akc_expand_all" element and stay on the same page
     And I wait 0.5 seconds
