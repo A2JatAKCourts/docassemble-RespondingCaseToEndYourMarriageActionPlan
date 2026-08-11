@@ -1,6 +1,6 @@
 @case_in_2_states_still_going_only_response
 Feature: User paths
-# 2026-05-27
+# 2026-07-23
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -174,7 +174,7 @@ Scenario: Row #39
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
 # legal separation, wife_is_pregnant not husband
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
 # want_legal_separation unsure
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
@@ -252,7 +252,7 @@ Scenario: Row #40
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Because your spouse is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
+    And I should see the phrase "Because your spouse is not using TrueFiling and did not give the court an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 8: Read the Standing Order"
     And I should see the phrase "Step 9: What to expect after you file your documents"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -323,7 +323,7 @@ Scenario: Row #43
     And I should see the phrase "Step 2: Fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
 # legal separation, wife_is_pregnant husband
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150"
     And I should see the phrase "Step 3: Sign if you use paper forms or do not use TrueFiling"

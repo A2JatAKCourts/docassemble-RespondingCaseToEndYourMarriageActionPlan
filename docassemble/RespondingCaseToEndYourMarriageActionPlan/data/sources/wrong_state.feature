@@ -1,6 +1,6 @@
 @wrong_state
 Feature: user paths
-# 2026-05-27
+# 2026-07-23
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -94,7 +94,7 @@ Scenario: Row #8
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: Fill out the forms to respond and ask to dismiss if you think Alaska is the wrong state"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court "I do NOT agree to a legal separation because I want the marriage to end in a divorce.""
     And I should see the phrase "You can add here that you were not served correctly."
@@ -219,7 +219,7 @@ Scenario: Row #14
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: Fill out the forms to respond and ask to dismiss if you think Alaska is the wrong state"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your legal separation case."
     And I should see the phrase "Check the box that says you attached a Motion to Dismiss" 
     And I should see the phrase "You can add here that you were not served correctly."
@@ -327,7 +327,7 @@ Scenario: Row #31
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
     And I should see the phrase "Step 2: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate."
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your legal separation case."
     And I should see the phrase "Check the box that says you attached a Motion to Dismiss"
@@ -378,7 +378,7 @@ Scenario: Row #33
     And I should see the phrase "If you think your legal separation case should be in another state, you can tell the judge in the Affirmative Defense section of your Answer and attach a Motion to Dismiss."
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
     And I should see the phrase "Step 2: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state" 
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, “I have no counterclaims.”"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
     And I should see the phrase "You must use this form because wife is pregnant."
@@ -564,7 +564,7 @@ Scenario: Row #72
     And I should see the phrase "Fill out a TF-706 Motion (Request) and Affidavit"
     And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Fill in the title,"accepting a late Answer.""
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
     And I should see the phrase "You must use this form because wife is pregnant."
 # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
@@ -631,7 +631,7 @@ Scenario: Row #74
     And I should see the phrase "Option 2. Tell the judge you were not served the correct way and ask to dismiss the case"
     And I should see the phrase "Option 3. Do nothing"
     And I should see the phrase "Step 5: If you decide to move forward, fill out the forms to answer the complaint"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate."
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your legal separation case."
     And I should see the phrase "Check the box that says you attached a Motion to Dismiss"
@@ -768,7 +768,7 @@ Scenario: Row #81
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Because the clerk signed the entry of default, you have to ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858 [Fill in PDF]"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "Check the box telling the court "I do NOT agree to a legal separation because I want the marriage to end in a divorce.""
@@ -1055,7 +1055,7 @@ Scenario: Row #254
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint and respond within 20 days"
     And I should see the phrase "Because you did not file an Answer within 20 days of getting the Complaint, ask the judge to accept your Answer even though it is late."
     And I should see the phrase "Fill out a TF-706 Motion (Request) and Affidavit [Fill in PDF]"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate and/or child custody."
 # And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Child Custody Jurisdiction Affidavit, DR-150 [Fill in PDF]"
@@ -1506,7 +1506,7 @@ Scenario: Row #273
 # The answer step still appears
     And I should see the phrase "Step 3: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 4: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your legal separation case."
     And I should see the phrase "Check the box that says you attached a Motion to Dismiss"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate."
@@ -1625,7 +1625,7 @@ Scenario: Row #279
     And I should see the phrase "If you do not respond within 20 days, your spouse can ask for a default judgment, and the judge can decide without hearing from you."
     And I should see the phrase "Step 2: Learn about proper service"
     And I should see the phrase "Step 3: Fill out the forms to respond in 20 days and ask to dismiss if you think Alaska is the wrong state"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, “I have no counterclaims.”"
     And I should see the phrase "I have stated above that the case should be dismissed because the Alaska court does not have jurisdiction over the marital estate."
     And I should see the phrase "Check the box that explains why you think Alaska is the wrong state to decide your legal separation case."

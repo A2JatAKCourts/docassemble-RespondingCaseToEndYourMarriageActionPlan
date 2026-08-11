@@ -1,6 +1,6 @@
 @case_in_2_states_service
 Feature: User paths
-# 2026-05-27
+# 2026-07-23
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -112,7 +112,7 @@ Scenario: Row #16
 # proper_service True
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
 # legal separation, wife_is_pregnant husband
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "If you want your case in the other state, you can tell the Alaska court by stating it in your Answer and filing a Motion to Dismiss your Alaska case."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims.""
@@ -179,7 +179,7 @@ Scenario: Row #17
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # legal separation, wife_is_pregnant husband
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
 # proper_service False
     And I should see the phrase "You can add here that you were not served correctly."
@@ -251,7 +251,7 @@ Scenario: Row #18
 # proper_service True
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
 # legal separation, wife_is_pregnant not husband
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
 # want_legal_separation unsure
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
@@ -334,7 +334,7 @@ Scenario: Row #19
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the Certificate of Service and serve your spouse."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -386,7 +386,7 @@ Scenario: Row #20
 # proper_service True
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
 # legal separation, no children
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "If you want your case in the other state, you can tell the Alaska court by stating it in your Answer and filing a Motion to Dismiss your Alaska case."
     And I should see the phrase "Step 5: If you decide to move forward in the other state, file a motion to dismiss your Alaska case"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
@@ -396,7 +396,7 @@ Scenario: Row #20
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Because your spouse is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
+    And I should see the phrase "Because your spouse is not using TrueFiling and did not give the court an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -447,7 +447,7 @@ Scenario: Row #21
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # legal separation, no children
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
 # proper_service False
     And I should see the phrase "You can add here that you were not served correctly."
 # want_legal_separation no
@@ -507,7 +507,7 @@ Scenario: Row #23
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the Certificate of Service and serve your spouse."
     And I should see the phrase "Step 6: What to expect after you file your documents"
     And I should see the phrase "Step 7: Get more information or help"
     And I take a screenshot
@@ -595,7 +595,7 @@ Scenario: Row #27
     And I should see the phrase "If your spouse thinks they served you correctly, they may ask the court for a default judgment if you do not file an Answer in 20 days."
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "I do NOT agree to a legal separation because I want the marriage to end in a divorce"
@@ -647,7 +647,7 @@ Scenario: Row #29
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: If you decide to move forward, fill out the forms to answer the complaint"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
@@ -661,7 +661,7 @@ Scenario: Row #29
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the Certificate of Service and serve your spouse."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your Answer"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -704,7 +704,7 @@ Scenario: Row #31
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: If you decide to move forward, fill out the forms to answer the complaint"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
@@ -714,7 +714,7 @@ Scenario: Row #31
     And I should see the phrase "You need to give your spouse a copy of everything you file with the court."
     And I should see the phrase "If you are exempt and choose not to use TrueFiling, read If I am not using TrueFiling, how do I serve the other side?"
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
-    And I should see the phrase "Because your spouse is not using TrueFiling and did not give an email address, you cannot serve them through TrueFiling."
+    And I should see the phrase "Because your spouse is not using TrueFiling and did not give the court an email address, you cannot serve them through TrueFiling."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your Answer"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -842,7 +842,7 @@ Scenario: Row #291
     And I should see the phrase "If you do not respond in Alaska, you risk the Alaska judge deciding the case without hearing from you."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # legal separation, wife_is_pregnant husband
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
 # proper_service False
     And I should see the phrase "You can add here that you were not served correctly."
@@ -861,7 +861,7 @@ Scenario: Row #291
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the Certificate of Service and serve your spouse."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward in Alaska, learn more about the process"
@@ -922,7 +922,7 @@ Scenario: Row #292
 # proper_service True
     And I should see the phrase "You have 20 days from the date you get the complaint to:"
 # legal separation, wife_is_pregnant not husband
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
 # want_legal_separation unsure
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
@@ -1061,7 +1061,7 @@ Scenario: Row #294
 #    And I should see the phrase "Fill out the Counterclaim section with the Parenting Plan you want the judge to order."
     And I should see the phrase "Step 4: If you decide to move forward in Alaska, fill out the forms to answer the complaint"
 # legal separation, not minor children, wife_is_pregnant not pregnant
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "If you want your case in the other state, you can tell the Alaska court by stating it in your Answer and filing a Motion to Dismiss your Alaska case."
     And I should see the phrase "If you think the Alaska court should hear the case, use section 5 to tell the judge there are 2 cases and why you think the case should move forward in Alaska."
     And I should see the phrase "If you agree with everything in the Complaint and do not have any counterclaims, check the box at the beginning of the section that says, "I have no counterclaims.""
@@ -1123,7 +1123,7 @@ Scenario: Row #295
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the Certificate of Service and serve your spouse."
     And I should see the phrase "Step 6: What to expect after you file your documents"
     And I should see the phrase "Step 7: Get more information or help"
     And I take a screenshot
@@ -1220,7 +1220,7 @@ Scenario: Row #297
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: If you decide to move forward, fill out the forms to answer the complaint"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"
     And I should see the phrase "Step 6: Sign if you use paper forms or do not use TrueFiling"
@@ -1274,7 +1274,7 @@ Scenario: Row #298
     And I should see the phrase "If your spouse thinks they served you correctly, they may ask the court for a default judgment if you do not file an Answer in 20 days."
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "I do NOT agree to a legal separation because I want the marriage to end in a divorce"
@@ -1288,7 +1288,7 @@ Scenario: Row #298
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the Certificate of Service and serve your spouse."
     And I should see the phrase "Step 8: Read the Standing Order"
     And I should see the phrase "Step 9: What to expect after you file your Answer"
     And I should see the phrase "Step 10: If your case is moving forward in Alaska, learn more about the process"
@@ -1337,7 +1337,7 @@ Scenario: Row #299
     And I should see the phrase "Step 3: Decide if you want to move forward or wait"
     And I should see the phrase "Step 4: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 5: If you decide to move forward, fill out the forms to answer the complaint"
-    And I should see the phrase "Answer & Counterclaim to Legal Separation With Children, SHC-094"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITH CHILDREN, DR-867"
     And I should see the phrase "You must use this form because wife is pregnant."
     And I should see the phrase "You can add here that you were not served correctly."
     And I should see the phrase "If you decide you want a divorce instead of a legal separation"

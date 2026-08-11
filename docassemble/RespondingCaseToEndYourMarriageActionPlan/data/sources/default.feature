@@ -1,6 +1,6 @@
 @default
 Feature: User paths
-# 2026-04-28
+# 2026-07-23
 
 Background: 
   Given the maximum seconds for each Step is 90
@@ -85,7 +85,7 @@ Scenario: Row #61
     And I should see the phrase "Step 3: Learn more about the differences between legal separation and divorce"
     And I should see the phrase "Step 4: If you decide to move forward, fill out the forms to answer the complaint"
 # And I tap the "#YW5zd2VyX3N0ZXA .al_toggle" element and stay on the same page
-    And I should see the phrase "Answer & Counterclaim to Legal Separation Without Children, SHC-095"
+    And I should see the phrase "ANSWER AND COUNTERCLAIM TO COMPLAINT FOR LEGAL SEPARATION WITHOUT CHILDREN, DR-872"
     And I should see the phrase "If you decide you want a divorce instead of a legal separation, check the box telling the court “I do NOT agree to a legal separation because I want the marriage to end in a divorce.”"
     And I should see the phrase "Fill out a Motion, Affidavit, and Order to Set Aside Entry of Default and Accept Late Filed Answer, CIV-858"
     And I should see the phrase "Step 5: Or, tell the judge you were not served the correct way and ask to dismiss the case"
@@ -98,7 +98,7 @@ Scenario: Row #61
     And I should see the phrase "If you and your spouse are both using TrueFiling, you can serve them through TrueFiling."
     And I should see the phrase "If you do not have a copy of the complaint, you may not know if the other person is using TrueFiling."
     And I should see the phrase "If they are not using TrueFiling:"
-    And I should see the phrase "Wait to file your documents with the court until after you fill out the certificate of service and serve your spouse."
+    And I should see the phrase "Wait to file your documents with the court until after you fill out the Certificate of Service and serve your spouse."
     And I should see the phrase "Step 9: Read the Standing Order"
     And I should see the phrase "Step 10: What to expect after you file your documents"
     And I should see the phrase "Step 11: If your case is moving forward, learn more about the process"
